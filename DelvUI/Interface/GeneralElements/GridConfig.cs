@@ -4,8 +4,8 @@ using DelvUI.Config.Attributes;
 namespace DelvUI.Interface.GeneralElements
 {
     [Exportable(false)]
-    [Section("Misc")]
-    [SubSection("Grid", 0)]
+    [Section("杂项")]
+    [SubSection("网格", 0)]
     public class GridConfig : PluginConfigObject
     {
         public new static GridConfig DefaultConfig()
@@ -16,26 +16,26 @@ namespace DelvUI.Interface.GeneralElements
             return config;
         }
 
-        [DragFloat("Background Alpha", min = 0, max = 1, velocity = .05f)]
+        [DragFloat("背景不透明度", min = 0, max = 1, velocity = .05f)]
         [Order(10)]
         public float BackgroundAlpha = 0.3f;
 
-        [Checkbox("Show Center Lines")]
+        [Checkbox("显示中心线")]
         [Order(15)]
         public bool ShowCenterLines = true;
-        [Checkbox("Show Anchor Points")]
+        [Checkbox("显示锚点")]
         [Order(20)]
 
         public bool ShowAnchorPoints = true;
-        [Checkbox("Grid Divisions", spacing = true)]
+        [Checkbox("网格划分", spacing = true)]
         [Order(25)]
         public bool ShowGrid = true;
 
-        [DragInt("Divisions Distance", min = 50, max = 500)]
+        [DragInt("各部分的距离", min = 50, max = 500)]
         [Order(30, collapseWith = nameof(ShowGrid))]
         public int GridDivisionsDistance = 50;
 
-        [DragInt("Subdivision Count", min = 1, max = 10)]
+        [DragInt("细分计数", min = 1, max = 10)]
         [Order(35, collapseWith = nameof(ShowGrid))]
         public int GridSubdivisionCount = 4;
     }

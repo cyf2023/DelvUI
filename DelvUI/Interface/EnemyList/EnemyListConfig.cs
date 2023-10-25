@@ -158,7 +158,7 @@ namespace DelvUI.Interface.EnemyList
         }
     }
 
-    [DisableParentSettings("框架锚")]
+    [DisableParentSettings("FrameAnchor")]
     [Exportable(false)]
     [Section("敌对列表", true)]
     [SubSection("仇恨图标", 0)]
@@ -178,7 +178,7 @@ namespace DelvUI.Interface.EnemyList
         }
     }
 
-    [DisableParentSettings("框架锚")]
+    [DisableParentSettings("FrameAnchor")]
     [Exportable(false)]
     [Section("敌对列表", true)]
     [SubSection("信号图标", 0)]
@@ -202,7 +202,7 @@ namespace DelvUI.Interface.EnemyList
         }
     }
 
-    [DisableParentSettings("锚定在单元框架上", "单元框架锚", "非活动时隐藏", "填充方向")]
+    [DisableParentSettings("AnchorToUnitFrame", "UnitFrameAnchor", "HideWhenInactive", "FillDirection")]
     [Exportable(false)]
     [Section("敌人列表", true)]
     [SubSection("咏唱条", 0)]

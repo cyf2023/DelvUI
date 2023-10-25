@@ -153,169 +153,169 @@ namespace DelvUI.Interface.GeneralElements
     }
 
     [Disableable(false)]
-    [Section("Colors")]
-    [SubSection("Tanks", 0)]
+    [Section("颜色")]
+    [SubSection("坦克", 0)]
     public class TanksColorConfig : PluginConfigObject
     {
         public new static TanksColorConfig DefaultConfig() { return new TanksColorConfig(); }
 
-        [ColorEdit4("Paladin", spacing = true)]
+        [ColorEdit4("骑士", spacing = true)]
         [Order(5)]
         public PluginConfigColor PLDColor = new PluginConfigColor(new(168f / 255f, 210f / 255f, 230f / 255f, 100f / 100f));
 
-        [ColorEdit4("Dark Knight")]
+        [ColorEdit4("暗黑骑士")]
         [Order(10)]
         public PluginConfigColor DRKColor = new PluginConfigColor(new(209f / 255f, 38f / 255f, 204f / 255f, 100f / 100f));
 
-        [ColorEdit4("Warrior")]
+        [ColorEdit4("战士")]
         [Order(15)]
         public PluginConfigColor WARColor = new PluginConfigColor(new(207f / 255f, 38f / 255f, 33f / 255f, 100f / 100f));
 
-        [ColorEdit4("Gunbreaker")]
+        [ColorEdit4("绝枪战士")]
         [Order(20)]
         public PluginConfigColor GNBColor = new PluginConfigColor(new(121f / 255f, 109f / 255f, 48f / 255f, 100f / 100f));
 
-        [ColorEdit4("Gladiator", spacing = true)]
+        [ColorEdit4("剑术师", spacing = true)]
         [Order(25)]
         public PluginConfigColor GLAColor = new PluginConfigColor(new(168f / 255f, 210f / 255f, 230f / 255f, 100f / 100f));
 
-        [ColorEdit4("Marauder")]
+        [ColorEdit4("斧术师")]
         [Order(30)]
         public PluginConfigColor MRDColor = new PluginConfigColor(new(207f / 255f, 38f / 255f, 33f / 255f, 100f / 100f));
     }
 
     [Disableable(false)]
-    [Section("Colors")]
-    [SubSection("Healers", 0)]
+    [Section("颜色")]
+    [SubSection("治疗", 0)]
     public class HealersColorConfig : PluginConfigObject
     {
         public new static HealersColorConfig DefaultConfig() { return new HealersColorConfig(); }
 
-        [ColorEdit4("Scholar", spacing = true)]
+        [ColorEdit4("学者", spacing = true)]
         [Order(5)]
         public PluginConfigColor SCHColor = new PluginConfigColor(new(134f / 255f, 87f / 255f, 255f / 255f, 100f / 100f));
 
-        [ColorEdit4("White Mage")]
+        [ColorEdit4("白魔法师")]
         [Order(10)]
         public PluginConfigColor WHMColor = new PluginConfigColor(new(255f / 255f, 240f / 255f, 220f / 255f, 100f / 100f));
 
-        [ColorEdit4("Astrologian")]
+        [ColorEdit4("占星术士")]
         [Order(15)]
         public PluginConfigColor ASTColor = new PluginConfigColor(new(255f / 255f, 231f / 255f, 74f / 255f, 100f / 100f));
 
-        [ColorEdit4("Sage")]
+        [ColorEdit4("贤者")]
         [Order(20)]
         public PluginConfigColor SGEColor = new PluginConfigColor(new(144f / 255f, 176f / 255f, 255f / 255f, 100f / 100f));
 
-        [ColorEdit4("Conjurer", spacing = true)]
+        [ColorEdit4("幻术师", spacing = true)]
         [Order(25)]
         public PluginConfigColor CNJColor = new PluginConfigColor(new(255f / 255f, 240f / 255f, 220f / 255f, 100f / 100f));
     }
 
     [Disableable(false)]
-    [Section("Colors")]
-    [SubSection("Melee", 0)]
+    [Section("颜色")]
+    [SubSection("近战", 0)]
     public class MeleeColorConfig : PluginConfigObject
     {
         public new static MeleeColorConfig DefaultConfig() { return new MeleeColorConfig(); }
 
-        [ColorEdit4("Monk", spacing = true)]
+        [ColorEdit4("武僧", spacing = true)]
         [Order(5)]
         public PluginConfigColor MNKColor = new PluginConfigColor(new(214f / 255f, 156f / 255f, 0f / 255f, 100f / 100f));
 
-        [ColorEdit4("Ninja")]
+        [ColorEdit4("忍者")]
         [Order(10)]
         public PluginConfigColor NINColor = new PluginConfigColor(new(175f / 255f, 25f / 255f, 100f / 255f, 100f / 100f));
 
-        [ColorEdit4("Dragoon")]
+        [ColorEdit4("龙骑士")]
         [Order(15)]
         public PluginConfigColor DRGColor = new PluginConfigColor(new(65f / 255f, 100f / 255f, 205f / 255f, 100f / 100f));
 
-        [ColorEdit4("Samurai")]
+        [ColorEdit4("武士")]
         [Order(20)]
         public PluginConfigColor SAMColor = new PluginConfigColor(new(228f / 255f, 109f / 255f, 4f / 255f, 100f / 100f));
 
-        [ColorEdit4("Reaper")]
+        [ColorEdit4("钐镰客")]
         [Order(25)]
         public PluginConfigColor RPRColor = new PluginConfigColor(new(150f / 255f, 90f / 255f, 144f / 255f, 100f / 100f));
 
-        [ColorEdit4("Pugilist", spacing = true)]
+        [ColorEdit4("格斗家", spacing = true)]
         [Order(30)]
         public PluginConfigColor PGLColor = new PluginConfigColor(new(214f / 255f, 156f / 255f, 0f / 255f, 100f / 100f));
 
-        [ColorEdit4("Rogue")]
+        [ColorEdit4("双剑师")]
         [Order(35)]
         public PluginConfigColor ROGColor = new PluginConfigColor(new(175f / 255f, 25f / 255f, 100f / 255f, 100f / 100f));
 
-        [ColorEdit4("Lancer")]
+        [ColorEdit4("枪术师")]
         [Order(40)]
         public PluginConfigColor LNCColor = new PluginConfigColor(new(65f / 255f, 100f / 255f, 205f / 255f, 100f / 100f));
     }
 
     [Disableable(false)]
-    [Section("Colors")]
-    [SubSection("Ranged", 0)]
+    [Section("颜色")]
+    [SubSection("远敏", 0)]
     public class RangedColorConfig : PluginConfigObject
     {
         public new static RangedColorConfig DefaultConfig() { return new RangedColorConfig(); }
 
-        [ColorEdit4("Bard", spacing = true)]
+        [ColorEdit4("诗人", spacing = true)]
         [Order(5)]
         public PluginConfigColor BRDColor = new PluginConfigColor(new(145f / 255f, 186f / 255f, 94f / 255f, 100f / 100f));
 
-        [ColorEdit4("Machinist")]
+        [ColorEdit4("机工士")]
         [Order(10)]
         public PluginConfigColor MCHColor = new PluginConfigColor(new(110f / 255f, 225f / 255f, 214f / 255f, 100f / 100f));
 
-        [ColorEdit4("Dancer")]
+        [ColorEdit4("舞者")]
         [Order(15)]
         public PluginConfigColor DNCColor = new PluginConfigColor(new(226f / 255f, 176f / 255f, 175f / 255f, 100f / 100f));
 
-        [ColorEdit4("Archer", separator = true)]
+        [ColorEdit4("弓箭手", separator = true)]
         [Order(20)]
         public PluginConfigColor ARCColor = new PluginConfigColor(new(145f / 255f, 186f / 255f, 94f / 255f, 100f / 100f));
     }
 
     [Disableable(false)]
-    [Section("Colors")]
-    [SubSection("Caster", 0)]
+    [Section("颜色")]
+    [SubSection("法系", 0)]
     public class CastersColorConfig : PluginConfigObject
     {
         public new static CastersColorConfig DefaultConfig() { return new CastersColorConfig(); }
 
-        [ColorEdit4("Black Mage", spacing = true)]
+        [ColorEdit4("黑魔法师", spacing = true)]
         [Order(5)]
         public PluginConfigColor BLMColor = new PluginConfigColor(new(165f / 255f, 121f / 255f, 214f / 255f, 100f / 100f));
 
-        [ColorEdit4("Summoner")]
+        [ColorEdit4("召唤师")]
         [Order(10)]
         public PluginConfigColor SMNColor = new PluginConfigColor(new(45f / 255f, 155f / 255f, 120f / 255f, 100f / 100f));
 
-        [ColorEdit4("Red Mage")]
+        [ColorEdit4("赤魔法师")]
         [Order(15)]
         public PluginConfigColor RDMColor = new PluginConfigColor(new(232f / 255f, 123f / 255f, 123f / 255f, 100f / 100f));
 
-        [ColorEdit4("Blue Mage", spacing = true)]
+        [ColorEdit4("青魔法师", spacing = true)]
         [Order(20)]
         public PluginConfigColor BLUColor = new PluginConfigColor(new(0f / 255f, 185f / 255f, 247f / 255f, 100f / 100f));
 
-        [ColorEdit4("Thaumaturge")]
+        [ColorEdit4("咒术师")]
         [Order(25)]
         public PluginConfigColor THMColor = new PluginConfigColor(new(165f / 255f, 121f / 255f, 214f / 255f, 100f / 100f));
 
-        [ColorEdit4("Arcanist")]
+        [ColorEdit4("秘术师")]
         [Order(30)]
         public PluginConfigColor ACNColor = new PluginConfigColor(new(45f / 255f, 155f / 255f, 120f / 255f, 100f / 100f));
     }
 
     [Disableable(false)]
-    [Section("Colors")]
-    [SubSection("Roles", 0)]
+    [Section("颜色")]
+    [SubSection("职能", 0)]
     public class RolesColorConfig : PluginConfigObject
     {
         public new static RolesColorConfig DefaultConfig() { return new RolesColorConfig(); }
 
-        [ColorEdit4("Tank")]
+        [ColorEdit4("坦克")]
         [Order(10)]
         public PluginConfigColor TankRoleColor = new PluginConfigColor(new(21f / 255f, 28f / 255f, 100f / 255f, 100f / 100f));
 
@@ -323,67 +323,67 @@ namespace DelvUI.Interface.GeneralElements
         [Order(15)]
         public PluginConfigColor DPSRoleColor = new PluginConfigColor(new(153f / 255f, 23f / 255f, 23f / 255f, 100f / 100f));
 
-        [ColorEdit4("Healer")]
+        [ColorEdit4("治疗")]
         [Order(20)]
         public PluginConfigColor HealerRoleColor = new PluginConfigColor(new(46f / 255f, 125f / 255f, 50f / 255f, 100f / 100f));
 
-        [ColorEdit4("Disciple of the Land", spacing = true)]
+        [ColorEdit4("大地使者", spacing = true)]
         [Order(25)]
         public PluginConfigColor LANDColor = new PluginConfigColor(new(99f / 255f, 172f / 255f, 14f / 255f, 100f / 100f));
 
-        [ColorEdit4("Disciple of the Hand")]
+        [ColorEdit4("能工巧匠")]
         [Order(30)]
         public PluginConfigColor HANDColor = new PluginConfigColor(new(99f / 255f, 172f / 255f, 14f / 255f, 100f / 100f));
 
-        [Checkbox("Use Specific DPS Colors", spacing = true)]
+        [Checkbox("使用特定的DPS颜色", spacing = true)]
         [Order(35)]
         public bool UseSpecificDPSColors = false;
 
-        [ColorEdit4("Melee DPS")]
+        [ColorEdit4("近战DPS")]
         [Order(40, collapseWith = nameof(UseSpecificDPSColors))]
         public PluginConfigColor MeleeDPSRoleColor = new PluginConfigColor(new(151f / 255f, 56f / 255f, 56f / 255f, 100f / 100f));
 
-        [ColorEdit4("Ranged DPS")]
+        [ColorEdit4("远敏DPS")]
         [Order(40, collapseWith = nameof(UseSpecificDPSColors))]
         public PluginConfigColor RangedDPSRoleColor = new PluginConfigColor(new(250f / 255f, 185f / 255f, 67f / 255f, 100f / 100f));
 
-        [ColorEdit4("Caster DPS")]
+        [ColorEdit4("法系DPS")]
         [Order(40, collapseWith = nameof(UseSpecificDPSColors))]
         public PluginConfigColor CasterDPSRoleColor = new PluginConfigColor(new(154f / 255f, 82f / 255f, 193f / 255f, 100f / 100f));
     }
 
     [Disableable(false)]
-    [Section("Colors")]
-    [SubSection("Misc", 0)]
+    [Section("颜色")]
+    [SubSection("杂项", 0)]
     public class MiscColorConfig : PluginConfigObject
     {
         public new static MiscColorConfig DefaultConfig() { return new MiscColorConfig(); }
 
-        [Combo("Gradient Type For Bars", "Flat Color", "Right", "Left", "Up", "Down", "Centered Horizontal", spacing = true)]
+        [Combo("条的渐变类型", "平铺", "右", "左", "上", "下", "水平居中", spacing = true)]
         [Order(4)]
         public GradientDirection GradientDirection = GradientDirection.Down;
 
-        [ColorEdit4("Empty Unit Frame", separator = true)]
+        [ColorEdit4("空单元框架", separator = true)]
         [Order(5)]
         public PluginConfigColor EmptyUnitFrameColor = new PluginConfigColor(new(0f / 255f, 0f / 255f, 0f / 255f, 95f / 100f));
 
-        [ColorEdit4("Empty Bar")]
+        [ColorEdit4("空的条")]
         [Order(10)]
         public PluginConfigColor EmptyColor = new PluginConfigColor(new(0f / 255f, 0f / 255f, 0f / 255f, 50f / 100f));
 
-        [ColorEdit4("Partially Filled Bar")]
+        [ColorEdit4("部分填充的条")]
         [Order(15)]
         public PluginConfigColor PartialFillColor = new PluginConfigColor(new(180f / 255f, 180f / 255f, 180f / 255f, 100f / 100f));
 
-        [ColorEdit4("NPC Friendly", separator = true)]
+        [ColorEdit4("友好NPC", separator = true)]
         [Order(20)]
         public PluginConfigColor NPCFriendlyColor = new PluginConfigColor(new(99f / 255f, 172f / 255f, 14f / 255f, 100f / 100f));
 
-        [ColorEdit4("NPC Hostile")]
+        [ColorEdit4("敌对NPC")]
         [Order(25)]
         public PluginConfigColor NPCHostileColor = new PluginConfigColor(new(233f / 255f, 4f / 255f, 4f / 255f, 100f / 100f));
 
-        [ColorEdit4("NPC Neutral")]
+        [ColorEdit4("中立NPC")]
         [Order(30)]
         public PluginConfigColor NPCNeutralColor = new PluginConfigColor(new(218f / 255f, 157f / 255f, 46f / 255f, 100f / 100f));
     }
@@ -392,39 +392,39 @@ namespace DelvUI.Interface.GeneralElements
     public class ColorByHealthValueConfig : PluginConfigObject
     {
 
-        [Checkbox("Use Max Health Color")]
+        [Checkbox("使用最大生命值颜色")]
         [Order(5)]
         public bool UseMaxHealthColor = false;
 
-        [ColorEdit4("Max Health Color")]
+        [ColorEdit4("最大生命值颜色")]
         [Order(10, collapseWith = nameof(UseMaxHealthColor))]
         public PluginConfigColor MaxHealthColor = new PluginConfigColor(new(18f / 255f, 18f / 255f, 18f / 255f, 100f / 100f));
 
-        [Checkbox("Job Color as Max Health Color")]
+        [Checkbox("职业颜色设为最大生命值颜色")]
         [Order(15, collapseWith = nameof(UseMaxHealthColor))]
         public bool UseJobColorAsMaxHealth = false;
 
-        [Checkbox("Job Role as Max Health Color")]
+        [Checkbox("职能颜色设为最大生命值颜色")]
         [Order(20, collapseWith = nameof(UseMaxHealthColor))]
         public bool UseRoleColorAsMaxHealth = false;
 
-        [ColorEdit4("High Health Color")]
+        [ColorEdit4("高生命值颜色")]
         [Order(25)]
         public PluginConfigColor FullHealthColor = new PluginConfigColor(new(0f / 255f, 255f / 255f, 0f / 255f, 100f / 100f));
 
-        [ColorEdit4("Low Health Color")]
+        [ColorEdit4("低生命值颜色")]
         [Order(30)]
         public PluginConfigColor LowHealthColor = new PluginConfigColor(new(255f / 255f, 0f / 255f, 0f / 255f, 100f / 100f));
 
-        [DragFloat("Max Health Color Above Health %", min = 50f, max = 100f, velocity = 1f)]
+        [DragFloat("最大生命值颜色高于的百分比", min = 50f, max = 100f, velocity = 1f)]
         [Order(35)]
         public float FullHealthColorThreshold = 75f;
 
-        [DragFloat("Low Health Color Below Health %", min = 0f, max = 50f, velocity = 1f)]
+        [DragFloat("低生命值颜色低于的百分比", min = 0f, max = 50f, velocity = 1f)]
         [Order(40)]
         public float LowHealthColorThreshold = 25f;
 
-        [Combo("Blend Mode", "LAB", "LChab", "XYZ", "RGB", "LChuv", "Luv", "Jzazbz", "JzCzhz")]
+        [Combo("混合模式", "LAB", "LChab", "XYZ", "RGB", "LChuv", "Luv", "Jzazbz", "JzCzhz")]
         [Order(45)]
         public BlendMode BlendMode = BlendMode.LAB;
     }

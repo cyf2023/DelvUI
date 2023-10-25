@@ -6,7 +6,7 @@ using System.Numerics;
 
 namespace DelvUI.Interface.GeneralElements
 {
-    [DisableParentSettings("大小")]
+    [DisableParentSettings("Size")]
     [Section("其他元素")]
     [SubSection("GCD指示器", 0)]
     public class GCDIndicatorConfig : AnchorablePluginConfigObject
@@ -84,7 +84,7 @@ namespace DelvUI.Interface.GeneralElements
         public new static GCDIndicatorConfig DefaultConfig() { return new GCDIndicatorConfig() { Enabled = false, Strata = StrataLevel.MID_HIGH }; }
     }
 
-    [DisableParentSettings("位置", "锚", "非活动时隐藏", "填充颜色", "背景色", "描边")]
+    [DisableParentSettings("Position", "Anchor", "HideWhenInactive", "FillColor", "BackgroundColor", "DrawBorder")]
     [Exportable(false)]
     public class GCDBarConfig : BarConfig
     {

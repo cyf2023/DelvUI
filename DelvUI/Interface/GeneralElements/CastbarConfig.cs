@@ -165,7 +165,7 @@ namespace DelvUI.Interface.GeneralElements
         }
     }
 
-    [DisableParentSettings("非活动时隐藏")]
+    [DisableParentSettings("HideWhenInactive")]
     public abstract class CastbarConfig : BarConfig
     {
         [Checkbox("预览")]
@@ -221,12 +221,12 @@ namespace DelvUI.Interface.GeneralElements
         public CastbarConfigConverter()
         {
             SameClassFieldConverter<LabelConfig> name = new SameClassFieldConverter<LabelConfig>(
-                "咏唱名字标签",
+                "CastNameLabel",
                 new LabelConfig(Vector2.Zero, "", DrawAnchor.Center, DrawAnchor.Center)
             );
 
             NewClassFieldConverter<LabelConfig, NumericLabelConfig> time = new NewClassFieldConverter<LabelConfig, NumericLabelConfig>(
-                "咏唱时间标签",
+                "CastTimeLabel",
                 new NumericLabelConfig(new Vector2(-5, 0), "", DrawAnchor.Right, DrawAnchor.Right),
                 (oldValue) =>
                 {
@@ -242,8 +242,8 @@ namespace DelvUI.Interface.GeneralElements
                     return label;
                 });
 
-            FieldConvertersMap.Add("咏唱名字设置", name);
-            FieldConvertersMap.Add("咏唱时间设置", time);
+            FieldConvertersMap.Add("CastNameConfig", name);
+            FieldConvertersMap.Add("CastTimeConfig", time);
         }
 
         public override bool CanConvert(Type objectType)

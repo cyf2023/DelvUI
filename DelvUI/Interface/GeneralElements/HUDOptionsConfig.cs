@@ -7,55 +7,55 @@ using System.Numerics;
 namespace DelvUI.Interface.GeneralElements
 {
     [Disableable(false)]
-    [Section("Misc")]
-    [SubSection("HUD Options", 0)]
+    [Section("杂项")]
+    [SubSection("HUD设置", 0)]
     public class HUDOptionsConfig : PluginConfigObject
     {
-        [Checkbox("Global HUD Position")]
+        [Checkbox("全局HUD位置")]
         [Order(5)]
         public bool UseGlobalHudShift = false;
 
-        [DragInt2("Position", min = -4000, max = 4000)]
+        [DragInt2("位置", min = -4000, max = 4000)]
         [Order(6, collapseWith = nameof(UseGlobalHudShift))]
         public Vector2 HudOffset = new(0, 0);
 
-        [Checkbox("Dim DelvUI's settings window when not focused")]
+        [Checkbox("当不聚焦时，调暗DelvUI的设置窗口")]
         [Order(10)]
         public bool DimConfigWindow = false;
 
-        [Checkbox("Automatically disable HUD elements preview", help = "If enabled, all HUD elements preview modes are disabled when DelvUI's setting window is closed.")]
+        [Checkbox("自动禁用HUD元素预览", help = "如果启用，当DelvUI的设置窗口关闭时，禁用所有HUD元素预览模式。")]
         [Order(11)]
         public bool AutomaticPreviewDisabling = true;
 
-        [Checkbox("Use DelvUI style", help = "If enabled, DelvUI will use its own style for the setting window instead of the general Dalamud style.")]
+        [Checkbox("使用DelvUI样式", help = "如果启用，DelvUI将使用自己的风格设置窗口，而不是一般的Dalamud风格。")]
         [Order(12)]
         public bool OverrideDalamudStyle = true;
 
-        [Checkbox("Mouseover", separator = true)]
+        [Checkbox("鼠标悬停", separator = true)]
         [Order(15)]
         public bool MouseoverEnabled = true;
 
-        [Checkbox("Automatic Mode", help =
-            "When enabled: All your actions will automatically assume mouseover when your cursor is on top of a unit frame.\n" +
-            "Mouseover macros or other mouseover plugins are not necessary and WON'T WORK in this mode!\n\n" +
-            "When disabled: DelvUI unit frames will behave like the game's ones.\n" +
-            "You'll need to use mouseover macros or other mouseover related plugins in this mode.")]
+        [Checkbox("自动模式", help =
+            "启用时：当你的光标在一个单元框架上时，你的所有动作都将自动被认为是悬停。\n" +
+            "鼠标悬停宏或其他鼠标悬停插件是不必要的，且不会在此模式下工作！\n\n" +
+            "禁用时：DelvUI单元框架将表现得像游戏中的一样。\n" +
+            "在这种模式下，你需要使用鼠标悬停宏或其他鼠标悬停相关插件。")]
         [Order(16, collapseWith = nameof(MouseoverEnabled))]
         public bool MouseoverAutomaticMode = true;
 
-        [Checkbox("Hide Default Job Gauges", isMonitored = true, separator = true)]
+        [Checkbox("隐藏默认职业量谱", isMonitored = true, separator = true)]
         [Order(40)]
         public bool HideDefaultJobGauges = false;
 
-        [Checkbox("Hide Default Castbar", isMonitored = true)]
+        [Checkbox("隐藏默认咏唱条", isMonitored = true)]
         [Order(45)]
         public bool HideDefaultCastbar = false;
 
-        [Checkbox("Hide Default Pulltimer", isMonitored = true)]
+        [Checkbox("隐藏默认倒计时", isMonitored = true)]
         [Order(50)]
         public bool HideDefaultPulltimer = false;
 
-        [Checkbox("Use Regional Number Format", help = "When enabled, DelvUI will use your system's regional format settings when showing numbers.\nWhen disabled, DelvUI will use English number formatting instead.", separator = true)]
+        [Checkbox("使用地区数字格式", help = "启用后，DelvUI将在显示数字时使用你的系统的区域格式设置。\n当禁用时，DelvUI将使用英文数字格式。", separator = true)]
         [Order(60)]
         public bool UseRegionalNumberFormats = true;
 
