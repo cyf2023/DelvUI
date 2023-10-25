@@ -9,7 +9,7 @@ namespace DelvUI.Interface.Bars
     [Exportable(false)]
     public class ChunkedBarConfig : BarConfig
     {
-        [DragInt("Padding", min = -4000, max = 4000)]
+        [DragInt("填充", min = -4000, max = 4000)]
         [Order(45)]
         public int Padding = 2;
 
@@ -26,23 +26,23 @@ namespace DelvUI.Interface.Bars
     [Exportable(false)]
     public class ChunkedProgressBarConfig : ChunkedBarConfig
     {
-        [Checkbox("Show In Chunks", spacing = true)]
+        [Checkbox("在区块中显示", spacing = true)]
         [Order(46)]
         public bool UseChunks = true;
 
-        [RadioSelector("Show Text on All Chunks", "Show Text on Active Chunk")]
+        [RadioSelector("在所有区块上显示文本", "在活跃区块上显示文本")]
         [Order(47, collapseWith = nameof(UseChunks))]
         public LabelMode LabelMode;
 
-        [Checkbox("Use Partial Fill Color", spacing = true)]
+        [Checkbox("使用部分填充色", spacing = true)]
         [Order(50)]
         public bool UsePartialFillColor = false;
 
-        [ColorEdit4("Partial Fill Color")]
+        [ColorEdit4("部分填充色")]
         [Order(55, collapseWith = nameof(UsePartialFillColor))]
         public PluginConfigColor PartialFillColor;
 
-        [NestedConfig("Bar Text", 1000, separator = false, spacing = true)]
+        [NestedConfig("条的文本", 1000, separator = false, spacing = true)]
         public NumericLabelConfig Label;
 
         public ChunkedProgressBarConfig(

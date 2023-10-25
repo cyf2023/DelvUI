@@ -17,8 +17,8 @@ namespace DelvUI.Interface.EnemyList
     }
 
     [Exportable(false)]
-    [Section("Enemy List", true)]
-    [SubSection("General", 0)]
+    [Section("敌对列表", true)]
+    [SubSection("通常", 0)]
     public class EnemyListConfig : MovablePluginConfigObject
     {
         public new static EnemyListConfig DefaultConfig()
@@ -30,44 +30,44 @@ namespace DelvUI.Interface.EnemyList
             return config;
         }
 
-        [Checkbox("Preview", isMonitored = true)]
+        [Checkbox("预览", isMonitored = true)]
         [Order(4)]
         public bool Preview = false;
 
-        [Combo("Growth Direction", "Down", "Up", spacing = true)]
+        [Combo("发展方向", "下", "上", spacing = true)]
         [Order(20)]
         public EnemyListGrowthDirection GrowthDirection = EnemyListGrowthDirection.Down;
 
-        [DragInt("Vertical Padding", min = 0, max = 500)]
+        [DragInt("垂直填充", min = 0, max = 500)]
         [Order(25)]
         public int VerticalPadding = 10;
     }
 
     [Exportable(false)]
-    [DisableParentSettings("Position", "Anchor", "HideWhenInactive")]
-    [Section("Enemy List", true)]
-    [SubSection("Health Bar", 0)]
+    [DisableParentSettings("位置", "锚", "不活跃时隐藏")]
+    [Section("敌对列表", true)]
+    [SubSection("血条", 0)]
     public class EnemyListHealthBarConfig : BarConfig
     {
-        [NestedConfig("Name Label", 70)]
+        [NestedConfig("名字标签", 70)]
         public EditableLabelConfig NameLabel = new EditableLabelConfig(new Vector2(-5, 12), "[name]", DrawAnchor.TopRight, DrawAnchor.BottomRight);
 
-        [NestedConfig("Health Label", 80)]
+        [NestedConfig("血量标签", 80)]
         public EditableLabelConfig HealthLabel = new EditableLabelConfig(new Vector2(30, 0), "[health:percent]%", DrawAnchor.Left, DrawAnchor.Left);
 
-        [NestedConfig("Order Label", 90)]
+        [NestedConfig("目标标签", 90)]
         public DefaultFontLabelConfig OrderLabel = new DefaultFontLabelConfig(new Vector2(5, 0), "", DrawAnchor.Left, DrawAnchor.Left);
 
-        [NestedConfig("Colors", 100)]
+        [NestedConfig("颜色", 100)]
         public EnemyListHealthBarColorsConfig Colors = new EnemyListHealthBarColorsConfig();
 
-        [NestedConfig("Change Alpha Based on Range", 110)]
+        [NestedConfig("根据范围改变不透明度", 110)]
         public EnemyListRangeConfig RangeConfig = new EnemyListRangeConfig();
 
-        [NestedConfig("Use Smooth Transitions", 120)]
+        [NestedConfig("使用平滑过渡", 120)]
         public SmoothHealthConfig SmoothHealthConfig = new SmoothHealthConfig();
 
-        [NestedConfig("Custom Mouseover Area", 130)]
+        [NestedConfig("自定义鼠标悬停区域", 130)]
         public MouseoverAreaConfig MouseoverAreaConfig = new MouseoverAreaConfig();
 
         public new static EnemyListHealthBarConfig DefaultConfig()
@@ -95,42 +95,42 @@ namespace DelvUI.Interface.EnemyList
     [Exportable(false)]
     public class EnemyListHealthBarColorsConfig : PluginConfigObject
     {
-        [NestedConfig("Color Based On Health Value", 30, collapsingHeader = false)]
+        [NestedConfig("基于血量的颜色", 30, collapsingHeader = false)]
         public ColorByHealthValueConfig ColorByHealth = new ColorByHealthValueConfig();
 
-        [Checkbox("Highlight When Hovering With Cursor Or Soft Targeting", spacing = true)]
+        [Checkbox("用光标悬停或软选中时高亮显示", spacing = true)]
         [Order(40)]
         public bool ShowHighlight = true;
 
-        [ColorEdit4("Highlight Color")]
+        [ColorEdit4("高亮颜色")]
         [Order(41, collapseWith = nameof(ShowHighlight))]
         public PluginConfigColor HighlightColor = new PluginConfigColor(new Vector4(255f / 255f, 255f / 255f, 255f / 255f, 5f / 100f));
 
-        [Checkbox("Missing Health Color", spacing = true)]
+        [Checkbox("缺失血量颜色", spacing = true)]
         [Order(45)]
         public bool UseMissingHealthBar = false;
 
-        [ColorEdit4("Color" + "##MissingHealth")]
+        [ColorEdit4("颜色" + "##MissingHealth")]
         [Order(46, collapseWith = nameof(UseMissingHealthBar))]
         public PluginConfigColor HealthMissingColor = new PluginConfigColor(new Vector4(255f / 255f, 0f / 255f, 0f / 255f, 100f / 100f));
 
-        [ColorEdit4("Target Border Color", spacing = true)]
+        [ColorEdit4("目标边框颜色", spacing = true)]
         [Order(50)]
         public PluginConfigColor TargetBordercolor = new PluginConfigColor(new Vector4(255f / 255f, 255f / 255f, 255f / 255f, 100f / 100f));
 
-        [DragInt("Target Border Thickness", min = 1, max = 10)]
+        [DragInt("目标边框厚度", min = 1, max = 10)]
         [Order(51)]
         public int TargetBorderThickness = 1;
 
-        [Checkbox("Show Enmity Border Colors", spacing = true)]
+        [Checkbox("显示仇恨边框颜色", spacing = true)]
         [Order(60)]
         public bool ShowEnmityBorderColors = true;
 
-        [ColorEdit4("Enmity Leader Color")]
+        [ColorEdit4("一仇颜色")]
         [Order(61, collapseWith = nameof(ShowEnmityBorderColors))]
         public PluginConfigColor EnmityLeaderBorderColor = new PluginConfigColor(new Vector4(255f / 255f, 40f / 255f, 40f / 255f, 100f / 100f));
 
-        [ColorEdit4("Enmity Close To Leader Color")]
+        [ColorEdit4("接近一仇颜色")]
         [Order(62, collapseWith = nameof(ShowEnmityBorderColors))]
         public PluginConfigColor EnmitySecondBorderColor = new PluginConfigColor(new Vector4(255f / 255f, 175f / 255f, 40f / 255f, 100f / 100f));
     }
@@ -138,11 +138,11 @@ namespace DelvUI.Interface.EnemyList
     [Exportable(false)]
     public class EnemyListRangeConfig : PluginConfigObject
     {
-        [DragInt("Range (yalms)", min = 1, max = 500)]
+        [DragInt("范围 (yalms)", min = 1, max = 500)]
         [Order(5)]
         public int Range = 30;
 
-        [DragFloat("Alpha", min = 1, max = 100)]
+        [DragFloat("透明度", min = 1, max = 100)]
         [Order(10)]
         public float Alpha = 25;
 
@@ -158,13 +158,13 @@ namespace DelvUI.Interface.EnemyList
         }
     }
 
-    [DisableParentSettings("FrameAnchor")]
+    [DisableParentSettings("框架锚")]
     [Exportable(false)]
-    [Section("Enemy List", true)]
-    [SubSection("Enmity Icon", 0)]
+    [Section("敌对列表", true)]
+    [SubSection("仇恨图标", 0)]
     public class EnemyListEnmityIconConfig : IconConfig
     {
-        [Anchor("Health Bar Anchor")]
+        [Anchor("血条锚")]
         [Order(16)]
         public DrawAnchor HealthBarAnchor = DrawAnchor.TopLeft;
 
@@ -178,17 +178,17 @@ namespace DelvUI.Interface.EnemyList
         }
     }
 
-    [DisableParentSettings("FrameAnchor")]
+    [DisableParentSettings("框架锚")]
     [Exportable(false)]
-    [Section("Enemy List", true)]
-    [SubSection("Sign Icon", 0)]
+    [Section("敌对列表", true)]
+    [SubSection("信号图标", 0)]
     public class EnemyListSignIconConfig : SignIconConfig
     {
-        [Anchor("Health Bar Anchor")]
+        [Anchor("血条锚")]
         [Order(16)]
         public DrawAnchor HealthBarAnchor = DrawAnchor.TopLeft;
 
-        [Checkbox("Replace Order Label", help = "When enabled and if the enemy has a sign assigned, the sign icon will be drawn instead of the order label.")]
+        [Checkbox("替换目标标签", help = "当启用时，如果敌人分配了一个标志，将绘制标志图标而不是次序标签。")]
         [Order(30)]
         public bool ReplaceOrderLabel = true;
 
@@ -202,10 +202,10 @@ namespace DelvUI.Interface.EnemyList
         }
     }
 
-    [DisableParentSettings("AnchorToUnitFrame", "UnitFrameAnchor", "HideWhenInactive", "FillDirection")]
+    [DisableParentSettings("锚定在单元框架上", "单元框架锚", "非活动时隐藏", "填充方向")]
     [Exportable(false)]
-    [Section("Enemy List", true)]
-    [SubSection("Castbar", 0)]
+    [Section("敌人列表", true)]
+    [SubSection("咏唱条", 0)]
     public class EnemyListCastbarConfig : TargetCastbarConfig
     {
         public new static EnemyListCastbarConfig DefaultConfig()
@@ -227,7 +227,7 @@ namespace DelvUI.Interface.EnemyList
             return config;
         }
 
-        [Anchor("Health Bar Anchor")]
+        [Anchor("血条锚")]
         [Order(16)]
         public DrawAnchor HealthBarAnchor = DrawAnchor.BottomLeft;
 
@@ -239,8 +239,8 @@ namespace DelvUI.Interface.EnemyList
     }
 
     [Exportable(false)]
-    [Section("Enemy List", true)]
-    [SubSection("Buffs", 0)]
+    [Section("敌人列表", true)]
+    [SubSection("增益效果", 0)]
     public class EnemyListBuffsConfig : EnemyListStatusEffectsListConfig
     {
         public new static EnemyListBuffsConfig DefaultConfig()
@@ -273,8 +273,8 @@ namespace DelvUI.Interface.EnemyList
     }
 
     [Exportable(false)]
-    [Section("Enemy List", true)]
-    [SubSection("Debuffs", 0)]
+    [Section("敌人列表", true)]
+    [SubSection("减益效果", 0)]
     public class EnemyListDebuffsConfig : EnemyListStatusEffectsListConfig
     {
         public new static EnemyListDebuffsConfig DefaultConfig()
@@ -307,7 +307,7 @@ namespace DelvUI.Interface.EnemyList
 
     public class EnemyListStatusEffectsListConfig : StatusEffectsListConfig
     {
-        [Anchor("Health Bar Anchor")]
+        [Anchor("血条锚")]
         [Order(4)]
         public DrawAnchor HealthBarAnchor = DrawAnchor.BottomLeft;
 

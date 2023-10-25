@@ -9,10 +9,10 @@ namespace DelvUI.Interface.Bars
     [Exportable(false)]
     public class ProgressBarConfig : BarConfig
     {
-        [NestedConfig("Threshold", 45)]
+        [NestedConfig("阈值", 45)]
         public ThresholdConfig ThresholdConfig = new ThresholdConfig();
 
-        [NestedConfig("Bar Text", 1000)]
+        [NestedConfig("条文本", 1000)]
         public NumericLabelConfig Label;
 
         public ProgressBarConfig(
@@ -32,31 +32,31 @@ namespace DelvUI.Interface.Bars
     [Exportable(false)]
     public class ThresholdConfig : PluginConfigObject
     {
-        [DragFloat("Threshold Value", min = 0f, max = 10000f)]
+        [DragFloat("阈值", min = 0f, max = 10000f)]
         [Order(10)]
         public float Value = 0f;
 
-        [Checkbox("Change Color")]
+        [Checkbox("改变颜色")]
         [Order(15)]
         public bool ChangeColor = true;
 
-        [Combo("Activate Above/Below Threshold", "Above", "Below")]
+        [Combo("高于/低于阈值时激活", "高于", "低于")]
         [Order(20, collapseWith = nameof(ChangeColor))]
         public ThresholdType ThresholdType = ThresholdType.Below;
 
-        [ColorEdit4("Color")]
+        [ColorEdit4("颜色")]
         [Order(25, collapseWith = nameof(ChangeColor))]
         public PluginConfigColor Color = new PluginConfigColor(new(230f / 255f, 33f / 255f, 33f / 255f, 100f / 100f));
 
-        [Checkbox("Show Threshold Marker")]
+        [Checkbox("显示阈值标记")]
         [Order(30)]
         public bool ShowMarker = false;
 
-        [DragInt("Threshold Marker Size", min = 0, max = 10000)]
+        [DragInt("阈值标记大小", min = 0, max = 10000)]
         [Order(35, collapseWith = nameof(ShowMarker))]
         public int MarkerSize = 2;
 
-        [ColorEdit4("Threshold Marker Color")]
+        [ColorEdit4("阈值标记颜色")]
         [Order(40, collapseWith = nameof(ShowMarker))]
         public PluginConfigColor MarkerColor = new PluginConfigColor(new Vector4(0f / 255f, 0f / 255f, 0f / 255f, 100f / 100f));
 
