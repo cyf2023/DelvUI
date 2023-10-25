@@ -30,7 +30,7 @@ namespace DelvUI.Interface.Bars
         [Order(46)]
         public bool UseChunks = true;
 
-        [RadioSelector("在所有区块上显示文本", "在活跃区块上显示文本")]
+        [RadioSelector("在所有区块上显示文本", "在活动区块上显示文本")]
         [Order(47, collapseWith = nameof(UseChunks))]
         public LabelMode LabelMode;
 

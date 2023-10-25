@@ -44,7 +44,7 @@ namespace DelvUI.Interface.Bars
         [NestedConfig("阴影", 40, spacing = true)]
         public ShadowConfig ShadowConfig = new ShadowConfig() { Enabled = false };
 
-        [Checkbox("非活跃时隐藏", spacing = true)]
+        [Checkbox("非活动时隐藏", spacing = true)]
         [Order(41)]
         public bool HideWhenInactive = false;
 

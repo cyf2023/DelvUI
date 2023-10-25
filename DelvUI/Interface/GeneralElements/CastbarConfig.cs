@@ -7,23 +7,23 @@ using System.Numerics;
 
 namespace DelvUI.Interface.GeneralElements
 {
-    [Section("Castbars")]
-    [SubSection("Player", 0)]
+    [Section("咏唱条")]
+    [SubSection("玩家", 0)]
     public class PlayerCastbarConfig : UnitFrameCastbarConfig
     {
-        [Checkbox("Use Job Color", spacing = true)]
+        [Checkbox("使用职业颜色", spacing = true)]
         [Order(19)]
         public bool UseJobColor = false;
 
-        [Checkbox("Slide Cast", spacing = true)]
+        [Checkbox("滑步咏唱", spacing = true)]
         [Order(60)]
         public bool ShowSlideCast = true;
 
-        [DragInt("Time (milliseconds)", min = 0, max = 10000)]
+        [DragInt("时间（毫秒）", min = 0, max = 10000)]
         [Order(61, collapseWith = nameof(ShowSlideCast))]
         public int SlideCastTime = 500;
 
-        [ColorEdit4("Color ##SlidecastColor")]
+        [ColorEdit4("颜色 ##SlidecastColor")]
         [Order(62, collapseWith = nameof(ShowSlideCast))]
         public PluginConfigColor SlideCastColor = new PluginConfigColor(new(190f / 255f, 28f / 255f, 57f / 255f, 100f / 100f));
 
@@ -46,31 +46,31 @@ namespace DelvUI.Interface.GeneralElements
         }
     }
 
-    [Section("Castbars")]
-    [SubSection("Target", 0)]
+    [Section("咏唱条")]
+    [SubSection("目标", 0)]
     public class TargetCastbarConfig : UnitFrameCastbarConfig
     {
-        [Checkbox("Interruptable Color", spacing = true)]
+        [Checkbox("可被打断的颜色", spacing = true)]
         [Order(50)]
         public bool ShowInterruptableColor = true;
 
-        [ColorEdit4("Interruptable")]
+        [ColorEdit4("可被打断")]
         [Order(51, collapseWith = nameof(ShowInterruptableColor))]
         public PluginConfigColor InterruptableColor = new PluginConfigColor(new(255f / 255f, 87f / 255f, 113f / 255f, 100f / 100f));
 
-        [Checkbox("Damage Type Colors", spacing = true)]
+        [Checkbox("伤害类型颜色", spacing = true)]
         [Order(60)]
         public bool UseColorForDamageTypes = true;
 
-        [ColorEdit4("Physical")]
+        [ColorEdit4("物理")]
         [Order(61, collapseWith = nameof(UseColorForDamageTypes))]
         public PluginConfigColor PhysicalDamageColor = new PluginConfigColor(new(190f / 255f, 28f / 255f, 57f / 255f, 100f / 100f));
 
-        [ColorEdit4("Magical")]
+        [ColorEdit4("魔法")]
         [Order(62, collapseWith = nameof(UseColorForDamageTypes))]
         public PluginConfigColor MagicalDamageColor = new PluginConfigColor(new(0f / 255f, 72f / 255f, 179f / 255f, 100f / 100f));
 
-        [ColorEdit4("Darkness")]
+        [ColorEdit4("真实")] // Darkness 翻译成了真实
         [Order(63, collapseWith = nameof(UseColorForDamageTypes))]
         public PluginConfigColor DarknessDamageColor = new PluginConfigColor(new(188f / 255f, 19f / 255f, 254f / 255f, 100f / 100f));
 
@@ -92,8 +92,8 @@ namespace DelvUI.Interface.GeneralElements
         }
     }
 
-    [Section("Castbars")]
-    [SubSection("Target of Target", 0)]
+    [Section("咏唱条")]
+    [SubSection("目标的目标", 0)]
     public class TargetOfTargetCastbarConfig : TargetCastbarConfig
     {
         public TargetOfTargetCastbarConfig(Vector2 position, Vector2 size, LabelConfig castNameConfig, NumericLabelConfig castTimeConfig)
@@ -120,8 +120,8 @@ namespace DelvUI.Interface.GeneralElements
         }
     }
 
-    [Section("Castbars")]
-    [SubSection("Focus Target", 0)]
+    [Section("咏唱条")]
+    [SubSection("焦点目标", 0)]
     public class FocusTargetCastbarConfig : TargetCastbarConfig
     {
         public FocusTargetCastbarConfig(Vector2 position, Vector2 size, LabelConfig castNameConfig, NumericLabelConfig castTimeConfig)
@@ -150,11 +150,11 @@ namespace DelvUI.Interface.GeneralElements
 
     public abstract class UnitFrameCastbarConfig : CastbarConfig
     {
-        [Checkbox("Anchor to Unit Frame")]
+        [Checkbox("锚定到单元框架")]
         [Order(16)]
         public bool AnchorToUnitFrame = false;
 
-        [Anchor("Unit Frame Anchor")]
+        [Anchor("单元框架锚")]
         [Order(17, collapseWith = nameof(AnchorToUnitFrame))]
         public DrawAnchor UnitFrameAnchor = DrawAnchor.Bottom;
 
@@ -165,44 +165,44 @@ namespace DelvUI.Interface.GeneralElements
         }
     }
 
-    [DisableParentSettings("HideWhenInactive")]
+    [DisableParentSettings("非活动时隐藏")]
     public abstract class CastbarConfig : BarConfig
     {
-        [Checkbox("Preview")]
+        [Checkbox("预览")]
         [Order(3)]
         public bool Preview = false;
 
-        [Checkbox("Show Ability Icon")]
+        [Checkbox("显示能力图标")]
         [Order(4)]
         public bool ShowIcon = true;
 
-        [Checkbox("Reverse Fill Background Color")]
+        [Checkbox("反向填充背景色")]
         [Order(5)]
         public bool UseReverseFill = false;
 
-        [Checkbox("Show Current Cast Time + Max Cast Time")]
+        [Checkbox("显示当前咏唱时间+最大咏唱时间")]
         [Order(6)]
         public bool ShowMaxCastTime = false;
 
-        [Checkbox("Separate Icon", spacing = true)]
+        [Checkbox("分离图标", spacing = true)]
         [Order(100)]
         public bool SeparateIcon = false;
 
-        [DragInt2("Custom Icon Position", min = -500, max = 500)]
+        [DragInt2("自定义图标位置", min = -500, max = 500)]
         [Order(101, collapseWith = nameof(SeparateIcon))]
         public Vector2 CustomIconPosition = Vector2.Zero;
 
-        [DragInt2("Custom Icon Size", min = 1, max = 500)]
+        [DragInt2("自定义图标大小", min = 1, max = 500)]
         [Order(101, collapseWith = nameof(SeparateIcon))]
         public Vector2 CustomIconSize = new Vector2(40);
 
-        [NestedConfig("Cast Name", 500)]
+        [NestedConfig("咏唱名字", 500)]
         public LabelConfig CastNameLabel;
 
-        [NestedConfig("Cast Time", 505)]
+        [NestedConfig("咏唱时间", 505)]
         public NumericLabelConfig CastTimeLabel;
 
-        [ColorEdit4("Color" + "##ReverseFill")]
+        [ColorEdit4("颜色" + "##ReverseFill")]
         [Order(515, collapseWith = nameof(UseReverseFill))]
         public PluginConfigColor ReverseFillColor = new(new Vector4(255f / 255f, 0f / 255f, 0f / 255f, 100f / 100f));
 
@@ -221,12 +221,12 @@ namespace DelvUI.Interface.GeneralElements
         public CastbarConfigConverter()
         {
             SameClassFieldConverter<LabelConfig> name = new SameClassFieldConverter<LabelConfig>(
-                "CastNameLabel",
+                "咏唱名字标签",
                 new LabelConfig(Vector2.Zero, "", DrawAnchor.Center, DrawAnchor.Center)
             );
 
             NewClassFieldConverter<LabelConfig, NumericLabelConfig> time = new NewClassFieldConverter<LabelConfig, NumericLabelConfig>(
-                "CastTimeLabel",
+                "咏唱时间标签",
                 new NumericLabelConfig(new Vector2(-5, 0), "", DrawAnchor.Right, DrawAnchor.Right),
                 (oldValue) =>
                 {
@@ -242,8 +242,8 @@ namespace DelvUI.Interface.GeneralElements
                     return label;
                 });
 
-            FieldConvertersMap.Add("CastNameConfig", name);
-            FieldConvertersMap.Add("CastTimeConfig", time);
+            FieldConvertersMap.Add("咏唱名字设置", name);
+            FieldConvertersMap.Add("咏唱时间设置", time);
         }
 
         public override bool CanConvert(Type objectType)

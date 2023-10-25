@@ -44,7 +44,7 @@ namespace DelvUI.Interface.EnemyList
     }
 
     [Exportable(false)]
-    [DisableParentSettings("位置", "锚", "不活跃时隐藏")]
+    [DisableParentSettings("位置", "锚", "不活动时隐藏")]
     [Section("敌对列表", true)]
     [SubSection("血条", 0)]
     public class EnemyListHealthBarConfig : BarConfig

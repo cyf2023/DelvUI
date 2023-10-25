@@ -8,36 +8,36 @@ using System.Numerics;
 
 namespace DelvUI.Interface.GeneralElements
 {
-    [Section("Other Elements")]
-    [SubSection("Experience Bar", 0)]
+    [Section("其他元素")]
+    [SubSection("经验条", 0)]
     public class ExperienceBarConfig : BarConfig
     {
-        [Checkbox("Hide When Downsynced")]
+        [Checkbox("降级时隐藏")]
         [Order(44, collapseWith = nameof(HideWhenInactive))]
         public bool HideWhenDownsynced = false;
 
-        [Checkbox("Use Job Color")]
+        [Checkbox("使用职业颜色")]
         [Order(45)]
         public bool UseJobColor = false;
 
-        [Checkbox("Show Rested Exp")]
+        [Checkbox("显示休息经验")]
         [Order(50)]
         public bool ShowRestedExp = true;
 
-        [ColorEdit4("Rested Exp Color")]
+        [ColorEdit4("休息经验颜色")]
         [Order(55, collapseWith = nameof(ShowRestedExp))]
         public PluginConfigColor RestedExpColor = new PluginConfigColor(new Vector4(110f / 255f, 197f / 255f, 207f / 255f, 50f / 100f));
 
-        [NestedConfig("Left Text", 60)]
+        [NestedConfig("左侧文本", 60)]
         public EditableLabelConfig LeftLabel;
 
-        [NestedConfig("Right Text", 61)]
+        [NestedConfig("右侧文本", 61)]
         public EditableLabelConfig RightLabel;
 
-        [NestedConfig("Sanctuary Icon", 62)]
+        [NestedConfig("休息区图标", 62)]
         public IconLabelConfig SanctuaryLabel = new IconLabelConfig(new Vector2(5, 0), FontAwesomeIcon.Moon, DrawAnchor.Right, DrawAnchor.Left);
 
-        [NestedConfig("Visibility", 70)]
+        [NestedConfig("可见性", 70)]
         public VisibilityConfig VisibilityConfig = new VisibilityConfig();
 
         public ExperienceBarConfig(Vector2 position, Vector2 size, PluginConfigColor fillColor) : base(position, size, fillColor)

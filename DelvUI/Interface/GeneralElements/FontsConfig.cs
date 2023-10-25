@@ -30,8 +30,8 @@ namespace DelvUI.Interface.GeneralElements
     }
 
     [Disableable(false)]
-    [Section("Customization")]
-    [SubSection("Fonts", 0)]
+    [Section("定制")]
+    [SubSection("字体", 0)]
     public class FontsConfig : PluginConfigObject
     {
         public new static FontsConfig DefaultConfig() { return new FontsConfig(); }
@@ -196,7 +196,7 @@ namespace DelvUI.Interface.GeneralElements
                 }
             };
 
-            _fileDialogManager.OpenFolderDialog("Select Fonts Folder", callback);
+            _fileDialogManager.OpenFolderDialog("选择字体文件夹", callback);
         }
 
         [ManualDraw]
@@ -210,17 +210,17 @@ namespace DelvUI.Interface.GeneralElements
                 ImGuiTableFlags.ScrollY |
                 ImGuiTableFlags.SizingFixedSame;
 
-            if (ImGui.BeginChild("Fonts", new Vector2(400, 500), false, ImGuiWindowFlags.NoSavedSettings | ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse))
+            if (ImGui.BeginChild("字体", new Vector2(400, 500), false, ImGuiWindowFlags.NoSavedSettings | ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse))
             {
                 if (_fonts.Length == 0)
                 {
                     ImGuiHelper.Tab();
-                    ImGui.Text("Default font not found in \"%appdata%/Roaming/XIVLauncher/InstalledPlugins/DelvUI/Media/Fonts/Expressway.ttf\"");
+                    ImGui.Text("此处未找到默认字体 \"%appdata%/Roaming/XIVLauncher/InstalledPlugins/DelvUI/Media/Fonts/Expressway.ttf\"");
                     return false;
                 }
 
                 ImGuiHelper.NewLineAndTab();
-                if (ImGui.InputText("Path", ref FontsPath, 200, ImGuiInputTextFlags.EnterReturnsTrue))
+                if (ImGui.InputText("路径", ref FontsPath, 200, ImGuiInputTextFlags.EnterReturnsTrue))
                 {
                     changed = true;
                     ReloadFonts();
@@ -235,7 +235,7 @@ namespace DelvUI.Interface.GeneralElements
                 ImGui.PopFont();
 
                 ImGuiHelper.Tab();
-                ImGui.Combo("Font ##font", ref _inputFont, _fonts, _fonts.Length, 10);
+                ImGui.Combo("字体 ##font", ref _inputFont, _fonts, _fonts.Length, 10);
 
                 ImGui.SameLine();
                 ImGui.PushFont(UiBuilder.IconFont);
@@ -246,7 +246,7 @@ namespace DelvUI.Interface.GeneralElements
                 ImGui.PopFont();
 
                 ImGuiHelper.Tab();
-                ImGui.Combo("Size  ##size", ref _inputSize, _sizes, _sizes.Length, 10);
+                ImGui.Combo("大小  ##size", ref _inputSize, _sizes, _sizes.Length, 10);
 
                 ImGui.SameLine();
                 ImGui.PushFont(UiBuilder.IconFont);
@@ -257,11 +257,11 @@ namespace DelvUI.Interface.GeneralElements
                 ImGui.PopFont();
 
                 ImGuiHelper.NewLineAndTab();
-                if (ImGui.BeginTable("table", 3, flags, new Vector2(326, 300)))
+                if (ImGui.BeginTable("表格", 3, flags, new Vector2(326, 300)))
                 {
-                    ImGui.TableSetupColumn("Name", ImGuiTableColumnFlags.WidthStretch, 0, 0);
-                    ImGui.TableSetupColumn("Size", ImGuiTableColumnFlags.WidthFixed, 0, 1);
-                    ImGui.TableSetupColumn("Actions", ImGuiTableColumnFlags.WidthFixed, 0, 2);
+                    ImGui.TableSetupColumn("名字", ImGuiTableColumnFlags.WidthStretch, 0, 0);
+                    ImGui.TableSetupColumn("大小", ImGuiTableColumnFlags.WidthFixed, 0, 1);
+                    ImGui.TableSetupColumn("动作", ImGuiTableColumnFlags.WidthFixed, 0, 2);
 
                     ImGui.TableSetupScrollFreeze(0, 1);
                     ImGui.TableHeadersRow();
@@ -318,14 +318,14 @@ namespace DelvUI.Interface.GeneralElements
                 }
 
                 ImGuiHelper.NewLineAndTab();
-                if (ImGui.Checkbox("Support Chinese", ref SupportChineseCharacters))
+                if (ImGui.Checkbox("支持中文", ref SupportChineseCharacters))
                 {
                     changed = true;
                     Plugin.UiBuilder.RebuildFonts();
                 }
 
                 ImGui.SameLine();
-                if (ImGui.Checkbox("Support Korean", ref SupportKoreanCharacters))
+                if (ImGui.Checkbox("支持韩文", ref SupportKoreanCharacters))
                 {
                     changed = true;
                     Plugin.UiBuilder.RebuildFonts();
@@ -335,8 +335,8 @@ namespace DelvUI.Interface.GeneralElements
             // apply confirmation
             if (_applyingIndex >= 0)
             {
-                string[] lines = new string[] { "Are you sure you want to apply this font", "to all labels using a font with the same size?" };
-                var (didConfirm, didClose) = ImGuiHelper.DrawConfirmationModal("Apply to all labels?", lines);
+                string[] lines = new string[] { "你确定你想要将这种字体应用到", "使用相同大小字体的所有标签？" };
+                var (didConfirm, didClose) = ImGuiHelper.DrawConfirmationModal("应用到所有标签？", lines);
 
                 if (didConfirm)
                 {
@@ -366,8 +366,8 @@ namespace DelvUI.Interface.GeneralElements
             // delete confirmation
             if (_removingIndex >= 0)
             {
-                string[] lines = new string[] { "Are you sure you want to remove this font?" };
-                var (didConfirm, didClose) = ImGuiHelper.DrawConfirmationModal("Remove custom font?", lines);
+                string[] lines = new string[] { "你确定要删除此字体吗？" };
+                var (didConfirm, didClose) = ImGuiHelper.DrawConfirmationModal("删除自定义字体？", lines);
 
                 if (didConfirm)
                 {
