@@ -12,59 +12,59 @@ namespace DelvUI.Interface
     [Exportable(false)]
     public class VisibilityConfig : PluginConfigObject
     {
-        [Checkbox("Hide outside of combat")]
+        [Checkbox("脱离战斗隐藏")]
         [Order(5)]
         public bool HideOutsideOfCombat = false;
 
-        [Checkbox("Hide in combat")]
+        [Checkbox("进入战斗隐藏")]
         [Order(6)]
         public bool HideInCombat = false;
 
-        [Checkbox("Hide in Gold Saucer")]
+        [Checkbox("在金碟隐藏")]
         [Order(7)]
         public bool HideInGoldSaucer = false;
 
-        [Checkbox("Hide while at full HP")]
+        [Checkbox("满血时隐藏")]
         [Order(8)]
         public bool HideOnFullHP = false;
 
-        [Checkbox("Hide when in duty")]
+        [Checkbox("处在任务中隐藏")]
         [Order(9)]
         public bool HideInDuty = false;
 
-        [Checkbox("Hide in Island Sanctuary")]
+        [Checkbox("在无人岛时隐藏")]
         [Order(10)]
         public bool HideInIslandSanctuary = false;
 
-        [Checkbox("Hide in PvP")]
+        [Checkbox("在PvP中隐藏")]
         [Order(11)]
         public bool HideInPvP = false;
 
-        [Checkbox("Always show when in duty")]
+        [Checkbox("在任务中总是显示")]
         [Order(20)]
         public bool ShowInDuty = false;
 
-        [Checkbox("Always show when weapon is drawn")]
+        [Checkbox("在武器拔出时总是显示")]
         [Order(21)]
         public bool ShowOnWeaponDrawn = false;
 
-        [Checkbox("Always show when crafting")]
+        [Checkbox("在制作时总是显示")]
         [Order(22)]
         public bool ShowWhileCrafting = false;
 
-        [Checkbox("Always show when gathering")]
+        [Checkbox("在采集时总是显示")]
         [Order(23)]
         public bool ShowWhileGathering = false;
 
-        [Checkbox("Always show while in a party")]
+        [Checkbox("组队时总是显示")]
         [Order(24)]
         public bool ShowInParty = false;
 
-        [Checkbox("Always show while in Island Sanctuary")]
+        [Checkbox("在无人岛时总是显示")]
         [Order(25)]
         public bool ShowInIslandSanctuary = false;
 
-        [Checkbox("Always show while in PvP")]
+        [Checkbox("在PvP中总是显示")]
         [Order(26)]
         public bool ShowInPvP = false;
 

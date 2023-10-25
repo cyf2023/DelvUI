@@ -44,7 +44,7 @@ namespace DelvUI.Interface.EnemyList
     }
 
     [Exportable(false)]
-    [DisableParentSettings("位置", "锚", "不活动时隐藏")]
+    [DisableParentSettings("Position", "Anchor", "HideWhenInactive")]
     [Section("敌对列表", true)]
     [SubSection("血条", 0)]
     public class EnemyListHealthBarConfig : BarConfig
@@ -138,7 +138,7 @@ namespace DelvUI.Interface.EnemyList
     [Exportable(false)]
     public class EnemyListRangeConfig : PluginConfigObject
     {
-        [DragInt("范围 (yalms)", min = 1, max = 500)]
+        [DragInt("距离(yalms)", min = 1, max = 500)]
         [Order(5)]
         public int Range = 30;
 
@@ -181,14 +181,14 @@ namespace DelvUI.Interface.EnemyList
     [DisableParentSettings("FrameAnchor")]
     [Exportable(false)]
     [Section("敌对列表", true)]
-    [SubSection("信号图标", 0)]
+    [SubSection("标记图标", 0)]
     public class EnemyListSignIconConfig : SignIconConfig
     {
         [Anchor("血条锚")]
         [Order(16)]
         public DrawAnchor HealthBarAnchor = DrawAnchor.TopLeft;
 
-        [Checkbox("替换目标标签", help = "当启用时，如果敌人分配了一个标志，将绘制标志图标而不是次序标签。")]
+        [Checkbox("替换目标标签", help = "当启用时，如果敌人分配了一个标记，将绘制标记图标而不是次序标签。")]
         [Order(30)]
         public bool ReplaceOrderLabel = true;
 

@@ -11,7 +11,7 @@ namespace DelvUI.Interface.GeneralElements
 {
     public class IconConfig : AnchorablePluginConfigObject
     {
-        [Anchor("Frame Anchor")]
+        [Anchor("框架锚")]
         [Order(16)]
         public DrawAnchor FrameAnchor = DrawAnchor.Center;
 
@@ -34,7 +34,7 @@ namespace DelvUI.Interface.GeneralElements
 
     public class IconWithLabelConfig : IconConfig
     {
-        [NestedConfig("Label", 20)]
+        [NestedConfig("标签", 20)]
         public NumericLabelConfig NumericLabel = new NumericLabelConfig(Vector2.Zero, "", DrawAnchor.Center, DrawAnchor.Center);
 
         public IconWithLabelConfig(Vector2 position, Vector2 size, DrawAnchor anchor, DrawAnchor frameAnchor)
@@ -52,15 +52,15 @@ namespace DelvUI.Interface.GeneralElements
         {
         }
 
-        [Combo("Style", "Style 1", "Style 2", "Style 3", spacing = true)]
+        [Combo("风格", "风格1", "风格2", "风格3", spacing = true)]
         [Order(25)]
         public int Style = 0;
 
-        [Checkbox("Use Role Icons", spacing = true)]
+        [Checkbox("使用职能图标", spacing = true)]
         [Order(30)]
         public bool UseRoleIcons = false;
 
-        [Checkbox("Use Specific DPS Role Icons")]
+        [Checkbox("使用特定的DPS职能图标")]
         [Order(35, collapseWith = nameof(UseRoleIcons))]
         public bool UseSpecificDPSRoleIcons = false;
     }
@@ -74,7 +74,7 @@ namespace DelvUI.Interface.GeneralElements
         {
         }
 
-        [Checkbox("Preview")]
+        [Checkbox("预览")]
         [Order(35)]
         public bool Preview = false;
 
@@ -98,11 +98,11 @@ namespace DelvUI.Interface.GeneralElements
         {
         }
 
-        [Combo("Nameplate Label Anchor", new string[] { "Name", "Title", "Highest", "Lowest" }, spacing = true)]
+        [Combo("铭牌标签", new string[] { "Name", "Title", "Highest", "Lowest" }, spacing = true)]
         [Order(17)]
         public NameplateLabelAnchor NameplateLabelAnchor = NameplateLabelAnchor.Name;
 
-        [Checkbox("Prioritize Health Bar as Anchor when visible", help = "When enabled, the icon will anchor to the Health Bar if it's visible.\nIf the Health Bar disappears, it will anchor back to the desired label.")]
+        [Checkbox("当血条可见时优先作为锚", help = "启用后，如果血条可见，图标将锚定在血条上。\n如果血条消失，它将锚定回所需的标签。")]
         [Order(18)]
         public bool PrioritizeHealthBarAnchor = false;
     }
@@ -116,7 +116,7 @@ namespace DelvUI.Interface.GeneralElements
         {
         }
 
-        [Checkbox("Only show disconnected icon", spacing = true)]
+        [Checkbox("只显示断开连接图标", spacing = true)]
         [Order(19)]
         public bool OnlyShowDisconnected = false;
 
@@ -138,11 +138,11 @@ namespace DelvUI.Interface.GeneralElements
         {
         }
 
-        [Combo("Nameplate Label Anchor", new string[] { "Name", "Title", "Highest", "Lowest" }, spacing = true)]
+        [Combo("铭牌标签", new string[] { "名字", "标题", "最高", "最低" }, spacing = true)]
         [Order(17)]
         public NameplateLabelAnchor NameplateLabelAnchor = NameplateLabelAnchor.Name;
 
-        [Checkbox("Prioritize Health Bar as Anchor when visible", help = "When enabled, the icon will anchor to the Health Bar if it's visible.\nIf the Health Bar disappears, it will anchor back to the desired label.")]
+        [Checkbox("当血条可见时优先作为锚", help = "启用后，如果血条可见，图标将锚定在血条上。\n如果血条消失，它将锚定回所需的标签。")]
         [Order(18)]
         public bool PrioritizeHealthBarAnchor = false;
     }

@@ -23,7 +23,7 @@ namespace DelvUI.Interface.GeneralElements
         [Order(61, collapseWith = nameof(ShowSlideCast))]
         public int SlideCastTime = 500;
 
-        [ColorEdit4("颜色 ##SlidecastColor")]
+        [ColorEdit4("颜色##SlidecastColor")]
         [Order(62, collapseWith = nameof(ShowSlideCast))]
         public PluginConfigColor SlideCastColor = new PluginConfigColor(new(190f / 255f, 28f / 255f, 57f / 255f, 100f / 100f));
 

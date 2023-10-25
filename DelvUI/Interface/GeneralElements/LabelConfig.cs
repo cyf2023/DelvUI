@@ -12,7 +12,7 @@ namespace DelvUI.Interface.GeneralElements
     [Exportable(false)]
     public class EditableLabelConfig : LabelConfig
     {
-        [InputText("Text")]
+        [InputText("文本")]
         [Order(10)]
         public string Text;
 
@@ -33,7 +33,7 @@ namespace DelvUI.Interface.GeneralElements
     [Exportable(false)]
     public class EditableNonFormattableLabelConfig : LabelConfig
     {
-        [InputText("Text", formattable = false)]
+        [InputText("文本", formattable = false)]
         [Order(10)]
         public string Text;
 
@@ -54,15 +54,15 @@ namespace DelvUI.Interface.GeneralElements
     [Exportable(false)]
     public class NumericLabelConfig : LabelConfig
     {
-        [Combo("Number Format", "No Decimals (i.e. \"12\")", "One Decimal (i.e. \"12.3\")", "Two Decimals (i.e. \"12.34\")")]
+        [Combo("数字格式", "无小数（如\"12\"）", "一位小数（如\"12.3\"）", "两位小数（如\"12.34\"）")]
         [Order(10)]
         public int NumberFormat;
 
-        [Combo("Rounding Mode", "Truncate", "Floor", "Ceil", "Round")]
+        [Combo("舍入模式", "去除小数", "向下取整", "向上取整", "四舍五入")]
         [Order(15)]
         public int NumberFunction;
 
-        [Checkbox("Hide Text When Zero")]
+        [Checkbox("当文本为零时隐藏文本")]
         [Order(65)]
         public bool HideIfZero = false;
 
@@ -133,7 +133,7 @@ namespace DelvUI.Interface.GeneralElements
     [Exportable(false)]
     public class DefaultFontLabelConfig : LabelConfig
     {
-        [DragFloat("Scale", min = 1, max = 5, velocity = 0.05f)]
+        [DragFloat("大小", min = 1, max = 5, velocity = 0.05f)]
         [Order(11)]
         public float FontScale = 1;
 
@@ -155,34 +155,34 @@ namespace DelvUI.Interface.GeneralElements
         [Order(15)]
         public string? FontID = null;
 
-        [Anchor("Frame Anchor")]
+        [Anchor("框架锚")]
         [Order(20)]
         public DrawAnchor FrameAnchor = DrawAnchor.Center;
 
-        [Anchor("Text Anchor")]
+        [Anchor("文本锚")]
         [Order(25)]
         public DrawAnchor TextAnchor = DrawAnchor.TopLeft;
 
-        [ColorEdit4("Color ##Text")]
+        [ColorEdit4("颜色##Text")]
         [Order(30)]
         public PluginConfigColor Color = new PluginConfigColor(Vector4.One);
 
-        [Checkbox("Outline")]
+        [Checkbox("描边")]
         [Order(35)]
         public bool ShowOutline = true;
 
-        [ColorEdit4("Color ##Outline")]
+        [ColorEdit4("颜色##Outline")]
         [Order(40, collapseWith = nameof(ShowOutline))]
         public PluginConfigColor OutlineColor = new PluginConfigColor(Vector4.UnitW);
 
-        [NestedConfig("Shadow", 45)]
+        [NestedConfig("阴影", 45)]
         public ShadowConfig ShadowConfig = new ShadowConfig() { Enabled = false };
 
-        [Checkbox("Use Job Color", spacing = true)]
+        [Checkbox("使用职业颜色", spacing = true)]
         [Order(60)]
         public bool UseJobColor = false;
 
-        [Checkbox("Use Role Color")]
+        [Checkbox("使用职能颜色")]
         [Order(65)]
         public bool UseRoleColor = false;
 

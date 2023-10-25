@@ -6,8 +6,8 @@ using System.Numerics;
 namespace DelvUI.Interface.GeneralElements
 {
     [DisableParentSettings("HideWhenInactive", "Label")]
-    [Section("Mana Bars")]
-    [SubSection("Player", 0)]
+    [Section("魔力条")]
+    [SubSection("玩家", 0)]
     public class PlayerPrimaryResourceConfig : UnitFramePrimaryResourceConfig
     {
         public PlayerPrimaryResourceConfig(Vector2 position, Vector2 size)
@@ -29,8 +29,8 @@ namespace DelvUI.Interface.GeneralElements
     }
 
     [DisableParentSettings("HideWhenInactive", "Label")]
-    [Section("Mana Bars")]
-    [SubSection("Target", 0)]
+    [Section("魔力条")]
+    [SubSection("目标", 0)]
     public class TargetPrimaryResourceConfig : UnitFramePrimaryResourceConfig
     {
         public TargetPrimaryResourceConfig(Vector2 position, Vector2 size)
@@ -52,8 +52,8 @@ namespace DelvUI.Interface.GeneralElements
     }
 
     [DisableParentSettings("HideWhenInactive", "Label")]
-    [Section("Mana Bars")]
-    [SubSection("Target of Target", 0)]
+    [Section("魔力条")]
+    [SubSection("目标的目标", 0)]
     public class TargetOfTargetPrimaryResourceConfig : UnitFramePrimaryResourceConfig
     {
         public TargetOfTargetPrimaryResourceConfig(Vector2 position, Vector2 size)
@@ -75,8 +75,8 @@ namespace DelvUI.Interface.GeneralElements
     }
 
     [DisableParentSettings("HideWhenInactive", "Label")]
-    [Section("Mana Bars")]
-    [SubSection("Focus Target", 0)]
+    [Section("魔力条")]
+    [SubSection("焦点目标", 0)]
     public class FocusTargetPrimaryResourceConfig : UnitFramePrimaryResourceConfig
     {
         public FocusTargetPrimaryResourceConfig(Vector2 position, Vector2 size)
@@ -99,15 +99,15 @@ namespace DelvUI.Interface.GeneralElements
 
     public abstract class UnitFramePrimaryResourceConfig : PrimaryResourceConfig
     {
-        [Checkbox("Anchor to Unit Frame")]
+        [Checkbox("锚定到单元框架")]
         [Order(16)]
         public bool AnchorToUnitFrame = true;
 
-        [Anchor("Unit Frame Anchor")]
+        [Anchor("单元框架锚")]
         [Order(17, collapseWith = nameof(AnchorToUnitFrame))]
         public DrawAnchor UnitFrameAnchor = DrawAnchor.Bottom;
 
-        [NestedConfig("Visibility", 1200)]
+        [NestedConfig("可见性", 1200)]
         public VisibilityConfig VisibilityConfig = new VisibilityConfig();
 
         public UnitFramePrimaryResourceConfig(Vector2 position, Vector2 size)
@@ -119,15 +119,15 @@ namespace DelvUI.Interface.GeneralElements
 
     public abstract class PrimaryResourceConfig : ProgressBarConfig
     {
-        [Checkbox("Use Job Color", spacing = true)]
+        [Checkbox("使用职业颜色", spacing = true)]
         [Order(19)]
         public bool UseJobColor = false;
 
-        [Checkbox("Hide When Full", spacing = true)]
+        [Checkbox("充满时隐藏", spacing = true)]
         [Order(41)]
         public bool HidePrimaryResourceWhenFull = false;
 
-        [NestedConfig("Label", 1000, separator = false, spacing = true)]
+        [NestedConfig("标签", 1000, separator = false, spacing = true)]
         public EditableLabelConfig ValueLabel = new EditableLabelConfig(Vector2.Zero, "[mana:current]", DrawAnchor.Center, DrawAnchor.Center);
 
         public PrimaryResourceConfig(Vector2 position, Vector2 size)

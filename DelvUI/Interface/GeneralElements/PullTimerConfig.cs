@@ -6,11 +6,11 @@ using System.Numerics;
 
 namespace DelvUI.Interface.GeneralElements
 {
-    [Section("Other Elements")]
-    [SubSection("Pull Timer", 0)]
+    [Section("其他元素")]
+    [SubSection("倒计时", 0)]
     public class PullTimerConfig : ProgressBarConfig
     {
-        [Checkbox("Use Job Color")]
+        [Checkbox("使用职业颜色")]
         [Order(45)]
         public bool UseJobColor = false;
 

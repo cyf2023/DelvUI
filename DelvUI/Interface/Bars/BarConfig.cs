@@ -9,7 +9,7 @@ namespace DelvUI.Interface.Bars
     [Exportable(false)]
     public class BarConfig : AnchorablePluginConfigObject
     {
-        [ColorEdit4("背景颜色")]
+        [ColorEdit4("背景色")]
         [Order(16)]
         public PluginConfigColor BackgroundColor = new PluginConfigColor(new Vector4(0f / 255f, 0f / 255f, 0f / 255f, 50f / 100f));
 

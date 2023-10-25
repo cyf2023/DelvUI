@@ -7,11 +7,11 @@ using System.Numerics;
 
 namespace DelvUI.Interface.GeneralElements
 {
-    [Section("Other Elements")]
-    [SubSection("Limit Break", 0)]
+    [Section("其他元素")]
+    [SubSection("极限技", 0)]
     public class LimitBreakConfig : ChunkedProgressBarConfig
     {
-        [NestedConfig("Visibility", 70)]
+        [NestedConfig("可见性", 70)]
         public VisibilityConfig VisibilityConfig = new VisibilityConfig();
 
         public LimitBreakConfig(Vector2 position, Vector2 size, PluginConfigColor fillColor) : base(position, size, fillColor)

@@ -8,11 +8,11 @@ using System.Numerics;
 namespace DelvUI.Interface.GeneralElements
 {
     [DisableParentSettings("HideWhenInactive", "HideHealthIfPossible", "RangeConfig", "EnemyRangeConfig")]
-    [Section("Unit Frames")]
-    [SubSection("Player", 0)]
+    [Section("单元框架")]
+    [SubSection("玩家", 0)]
     public class PlayerUnitFrameConfig : UnitFrameConfig
     {
-        [NestedConfig("Tank Stance Indicator", 122, spacing = true)]
+        [NestedConfig("盾姿指示器", 122, spacing = true)]
         public TankStanceIndicatorConfig TankStanceIndicatorConfig = new TankStanceIndicatorConfig();
 
         public PlayerUnitFrameConfig(Vector2 position, Vector2 size, EditableLabelConfig leftLabelConfig, EditableLabelConfig rightLabelConfig, EditableLabelConfig optionalLabelConfig)
@@ -46,30 +46,30 @@ namespace DelvUI.Interface.GeneralElements
     [Exportable(false)]
     public class TankStanceIndicatorConfig : PluginConfigObject
     {
-        [Combo("Corner", "Top Left", "Top Right", "Bottom Left", "Bottom Right")]
+        [Combo("角落", "上左", "上右", "下左", "下右")]
         [Order(5)]
         public TankStanceCorner Corner = TankStanceCorner.BottomLeft;
 
-        [DragFloat2("Size", min = 1, max = 500)]
+        [DragFloat2("大小", min = 1, max = 500)]
         [Order(10)]
         public Vector2 Size = new Vector2(HUDConstants.DefaultBigUnitFrameSize.Y - 20, HUDConstants.DefaultBigUnitFrameSize.Y - 20);
 
-        [DragInt("Thickness", min = 2, max = 20)]
+        [DragInt("厚度", min = 2, max = 20)]
         [Order(15)]
         public int Thickess = 4;
 
-        [ColorEdit4("Active Color")]
+        [ColorEdit4("开启颜色")]
         [Order(20)]
         public PluginConfigColor ActiveColor = new PluginConfigColor(new Vector4(0f / 255f, 255f / 255f, 255f / 255f, 100f / 100f));
 
-        [ColorEdit4("Inactive Color")]
+        [ColorEdit4("关闭颜色")]
         [Order(25)]
         public PluginConfigColor InactiveColor = new PluginConfigColor(new Vector4(255f / 255f, 0f / 255f, 0f / 255f, 100f / 100f));
     }
 
     [DisableParentSettings("HideWhenInactive")]
-    [Section("Unit Frames")]
-    [SubSection("Target", 0)]
+    [Section("单元框架")]
+    [SubSection("目标", 0)]
     public class TargetUnitFrameConfig : UnitFrameConfig
     {
         public TargetUnitFrameConfig(Vector2 position, Vector2 size, EditableLabelConfig leftLabelConfig, EditableLabelConfig rightLabelConfig, EditableLabelConfig optionalLabelConfig)
@@ -91,8 +91,8 @@ namespace DelvUI.Interface.GeneralElements
     }
 
     [DisableParentSettings("HideWhenInactive")]
-    [Section("Unit Frames")]
-    [SubSection("Target of Target", 0)]
+    [Section("单元框架")]
+    [SubSection("目标的目标", 0)]
     public class TargetOfTargetUnitFrameConfig : UnitFrameConfig
     {
         public TargetOfTargetUnitFrameConfig(Vector2 position, Vector2 size, EditableLabelConfig leftLabelConfig, EditableLabelConfig rightLabelConfig, EditableLabelConfig optionalLabelConfig)
@@ -117,8 +117,8 @@ namespace DelvUI.Interface.GeneralElements
     }
 
     [DisableParentSettings("HideWhenInactive")]
-    [Section("Unit Frames")]
-    [SubSection("Focus Target", 0)]
+    [Section("单元框架")]
+    [SubSection("焦点目标", 0)]
     public class FocusTargetUnitFrameConfig : UnitFrameConfig
     {
         public FocusTargetUnitFrameConfig(Vector2 position, Vector2 size, EditableLabelConfig leftLabelConfig, EditableLabelConfig rightLabelConfig, EditableLabelConfig optionalLabelConfig)
@@ -145,86 +145,86 @@ namespace DelvUI.Interface.GeneralElements
     [DisableParentSettings("HideWhenInactive")]
     public class UnitFrameConfig : BarConfig
     {
-        [Checkbox("Use Job Color", spacing = true)]
+        [Checkbox("使用职业颜色", spacing = true)]
         [Order(45)]
         public bool UseJobColor = true;
 
-        [Checkbox("Use Role Color")]
+        [Checkbox("使用职能颜色")]
         [Order(46)]
         public bool UseRoleColor = false;
 
-        [NestedConfig("Color Based On Health Value", 50, collapsingHeader = false)]
+        [NestedConfig("基于血量的颜色", 50, collapsingHeader = false)]
         public ColorByHealthValueConfig ColorByHealth = new ColorByHealthValueConfig();
 
-        [Checkbox("Job Color As Background Color", spacing = true)]
+        [Checkbox("职业颜色作为背景色", spacing = true)]
         [Order(50)]
         public bool UseJobColorAsBackgroundColor = false;
 
-        [Checkbox("Role Color As Background Color")]
+        [Checkbox("职能颜色作为背景色")]
         [Order(51)]
         public bool UseRoleColorAsBackgroundColor = false;
 
-        [Checkbox("Missing Health Color")]
+        [Checkbox("缺失血量颜色")]
         [Order(55)]
         public bool UseMissingHealthBar = false;
 
-        [Checkbox("Job Color As Missing Health Color")]
+        [Checkbox("职业颜色作为缺失血量颜色")]
         [Order(56, collapseWith = nameof(UseMissingHealthBar))]
         public bool UseJobColorAsMissingHealthColor = false;
 
-        [Checkbox("Role Color As Missing Health Color")]
+        [Checkbox("职能颜色作为缺失血量颜色")]
         [Order(57, collapseWith = nameof(UseMissingHealthBar))]
         public bool UseRoleColorAsMissingHealthColor = false;
 
-        [ColorEdit4("Color" + "##MissingHealth")]
+        [ColorEdit4("颜色" + "##MissingHealth")]
         [Order(60, collapseWith = nameof(UseMissingHealthBar))]
         public PluginConfigColor HealthMissingColor = new PluginConfigColor(new Vector4(255f / 255f, 0f / 255f, 0f / 255f, 100f / 100f));
 
-        [Checkbox("Death Indicator Background Color", spacing = true)]
+        [Checkbox("死亡指示器背景色", spacing = true)]
         [Order(61)]
         public bool UseDeathIndicatorBackgroundColor = false;
 
-        [ColorEdit4("Color" + "##DeathIndicator")]
+        [ColorEdit4("颜色" + "##DeathIndicator")]
         [Order(62, collapseWith = nameof(UseDeathIndicatorBackgroundColor))]
         public PluginConfigColor DeathIndicatorBackgroundColor = new PluginConfigColor(new Vector4(204f / 255f, 3f / 255f, 3f / 255f, 50f / 100f));
 
-        [Checkbox("Tank Invulnerability", spacing = true)]
+        [Checkbox("坦克无敌", spacing = true)]
         [Order(95)]
         public bool ShowTankInvulnerability = true;
 
-        [Checkbox("Tank Invulnerability Custom Color")]
+        [Checkbox("坦克无敌自定义颜色")]
         [Order(100, collapseWith = nameof(ShowTankInvulnerability))]
         public bool UseCustomInvulnerabilityColor = true;
 
-        [ColorEdit4("Tank Invulnerability Color ##TankInvulnerabilityCustom")]
+        [ColorEdit4("坦克无敌颜色##TankInvulnerabilityCustom")]
         [Order(105, collapseWith = nameof(UseCustomInvulnerabilityColor))]
         public PluginConfigColor CustomInvulnerabilityColor = new PluginConfigColor(new Vector4(211f / 255f, 235f / 255f, 215f / 245f, 50f / 100f));
 
-        [Checkbox("Walking Dead Custom Color")]
+        [Checkbox("行尸走肉自定义颜色")]
         [Order(110, collapseWith = nameof(ShowTankInvulnerability))]
         public bool UseCustomWalkingDeadColor = true;
 
-        [ColorEdit4("Walking Dead Color ##TankWalkingDeadCustom")]
+        [ColorEdit4("行尸走肉颜色##TankWalkingDeadCustom")]
         [Order(115, collapseWith = nameof(UseCustomWalkingDeadColor))]
         public PluginConfigColor CustomWalkingDeadColor = new PluginConfigColor(new Vector4(158f / 255f, 158f / 255f, 158f / 255f, 50f / 100f));
 
-        [NestedConfig("Use Smooth Transitions", 120, collapsingHeader = false)]
+        [NestedConfig("使用平滑过渡", 120, collapsingHeader = false)]
         public SmoothHealthConfig SmoothHealthConfig = new SmoothHealthConfig();
 
-        [Checkbox("Hide Health if Possible", spacing = true, help = "This will hide any label that has a health tag if the character doesn't have health (ie minions, friendly npcs, etc)")]
+        [Checkbox("尽可能隐藏血条", spacing = true, help = "如果角色没有生命值（如宠物，友好NPC等），隐藏任何带有生命值标签的标签。")]
         [Order(121)]
         public bool HideHealthIfPossible = true;
 
-        [NestedConfig("Left Text", 125)]
+        [NestedConfig("左侧文本", 125)]
         public EditableLabelConfig LeftLabelConfig = null!;
 
-        [NestedConfig("Right Text", 130)]
+        [NestedConfig("右侧文本", 130)]
         public EditableLabelConfig RightLabelConfig = null!;
 
-        [NestedConfig("Optional Text", 131)]
+        [NestedConfig("可选文本", 131)]
         public EditableLabelConfig OptionalLabelConfig = null!;
 
-        [NestedConfig("Role/Job Icon", 135)]
+        [NestedConfig("职能/职业图标", 135)]
         public RoleJobIconConfig RoleIconConfig = new RoleJobIconConfig(
             new Vector2(5, 0),
             new Vector2(30, 30),
@@ -232,7 +232,7 @@ namespace DelvUI.Interface.GeneralElements
             DrawAnchor.Left
         );
 
-        [NestedConfig("Sign Icon", 136)]
+        [NestedConfig("标记图标", 136)]
         public SignIconConfig SignIconConfig = new SignIconConfig(
             new Vector2(0, 0),
             new Vector2(30, 30),
@@ -240,19 +240,19 @@ namespace DelvUI.Interface.GeneralElements
             DrawAnchor.Top
         );
 
-        [NestedConfig("Shields", 140)]
+        [NestedConfig("盾牌", 140)]
         public ShieldConfig ShieldConfig = new ShieldConfig();
 
-        [NestedConfig("Change Friendly Alpha Based on Range", 145)]
+        [NestedConfig("根据距离改变友好单位的不透明度", 145)]
         public UnitFramesRangeConfig RangeConfig = new();
 
-        [NestedConfig("Change Enemy Alpha Based on Range", 146)]
+        [NestedConfig("根据距离改变敌对单位的不透明度", 146)]
         public UnitFramesRangeConfig EnemyRangeConfig = new();
 
-        [NestedConfig("Custom Mouseover Area", 150)]
+        [NestedConfig("自定义鼠标悬停区域", 150)]
         public MouseoverAreaConfig MouseoverAreaConfig = new MouseoverAreaConfig();
 
-        [NestedConfig("Visibility", 200)]
+        [NestedConfig("可见性", 200)]
         public VisibilityConfig VisibilityConfig = new VisibilityConfig();
 
         public UnitFrameConfig(Vector2 position, Vector2 size, EditableLabelConfig leftLabelConfig, EditableLabelConfig rightLabelConfig, EditableLabelConfig optionalLabelConfig)
@@ -276,19 +276,19 @@ namespace DelvUI.Interface.GeneralElements
     [Exportable(false)]
     public class ShieldConfig : PluginConfigObject
     {
-        [DragInt("Thickness")]
+        [DragInt("厚度")]
         [Order(5)]
         public int Height = 26; // Should be 'Size' instead of 'Height' but leaving as is to avoid breaking configs
 
-        [Checkbox("Thickness in Pixels")]
+        [Checkbox("厚度（像素）")]
         [Order(10)]
         public bool HeightInPixels = false;
 
-        [Checkbox("Fill Health First")]
+        [Checkbox("优先填充血条")]
         [Order(15)]
         public bool FillHealthFirst = true;
 
-        [ColorEdit4("Color ##Shields")]
+        [ColorEdit4("颜色##Shields")]
         [Order(20)]
         public PluginConfigColor Color = new PluginConfigColor(new Vector4(198f / 255f, 210f / 255f, 255f / 255f, 70f / 100f));
     }
@@ -296,7 +296,7 @@ namespace DelvUI.Interface.GeneralElements
     [Exportable(false)]
     public class SmoothHealthConfig : PluginConfigObject
     {
-        [DragFloat("Velocity", min = 1f, max = 100f)]
+        [DragFloat("速度", min = 1f, max = 100f)]
         [Order(5)]
         public float Velocity = 25f;
     }
@@ -304,19 +304,19 @@ namespace DelvUI.Interface.GeneralElements
     [Exportable(false)]
     public class MouseoverAreaConfig : PluginConfigObject
     {
-        [Checkbox("Preview")]
+        [Checkbox("预览")]
         [Order(5)]
         public bool Preview = false;
 
-        [Checkbox("Ignore Mouseover", help = "Enabling this will make it so this element is ignored by mouseover completely.\nThe area can still be defined for left and right clicks.")]
+        [Checkbox("忽略鼠标悬停", help = "启用此选项将使鼠标悬停完全忽略该元素。\n该区域仍然可以被定义左击和右击。")]
         [Order(6)]
         public bool Ignore = false;
 
-        [DragInt2("Top Left Offset", min = -500, max = 500)]
+        [DragInt2("上左偏移", min = -500, max = 500)]
         [Order(10)]
         public Vector2 TopLeftOffset = Vector2.Zero;
 
-        [DragInt2("Bottom Right Offset", min = -500, max = 500)]
+        [DragInt2("下右偏移", min = -500, max = 500)]
         [Order(11)]
         public Vector2 BottomRightOffset = Vector2.Zero;
 
@@ -358,23 +358,23 @@ namespace DelvUI.Interface.GeneralElements
     [Exportable(false)]
     public class UnitFramesRangeConfig : PluginConfigObject
     {
-        [DragInt("Range (yalms)", min = 1, max = 500)]
+        [DragInt("距离(yalms)", min = 1, max = 500)]
         [Order(5)]
         public int Range = 30;
 
-        [DragFloat("Alpha", min = 1, max = 100)]
+        [DragFloat("不透明度", min = 1, max = 100)]
         [Order(10)]
         public float Alpha = 24;
 
-        [Checkbox("Use Additional Range Check")]
+        [Checkbox("使用额外距离检查")]
         [Order(15)]
         public bool UseAdditionalRangeCheck = false;
 
-        [DragInt("Additional Range (yalms)", min = 1, max = 500)]
+        [DragInt("额外距离(yalms)", min = 1, max = 500)]
         [Order(20, collapseWith = nameof(UseAdditionalRangeCheck))]
         public int AdditionalRange = 15;
 
-        [DragFloat("Additional Alpha", min = 1, max = 100)]
+        [DragFloat("额外不透明度", min = 1, max = 100)]
         [Order(25, collapseWith = nameof(UseAdditionalRangeCheck))]
         public float AdditionalAlpha = 60;
 

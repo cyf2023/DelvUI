@@ -6,30 +6,30 @@ using System.Numerics;
 namespace DelvUI.Interface.GeneralElements
 {
     [DisableParentSettings("Position")]
-    [Section("Other Elements")]
-    [SubSection("MP Ticker", 0)]
+    [Section("其他元素")]
+    [SubSection("跳蓝监控", 0)]
     public class MPTickerConfig : MovablePluginConfigObject
     {
-        [Checkbox("Hide on Full MP", spacing = false)]
+        [Checkbox("满蓝时隐藏", spacing = false)]
         [Order(15)]
         public bool HideOnFullMP = true;
 
-        [Checkbox("Enable Only for BLM")]
+        [Checkbox("仅当为黑魔时启用")]
         [Order(20)]
         public bool EnableOnlyForBLM = false;
 
-        [Checkbox("Show Only During Umbral Ice")]
+        [Checkbox("仅当处于灵极冰时显示")]
         [Order(25, collapseWith = nameof(EnableOnlyForBLM))]
         public bool ShowOnlyDuringUmbralIce = true;
 
-        [NestedConfig("MP Ticker Bar", 30)]
+        [NestedConfig("跳蓝监控条", 30)]
         public MPTickerBarConfig Bar = new MPTickerBarConfig(
             Vector2.Zero,
             new Vector2(254, 8),
             new PluginConfigColor(new(240f / 255f, 92f / 255f, 232f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Visibility", 70)]
+        [NestedConfig("可见性", 70)]
         public VisibilityConfig VisibilityConfig = new VisibilityConfig();
 
         public new static MPTickerConfig DefaultConfig()
@@ -47,7 +47,7 @@ namespace DelvUI.Interface.GeneralElements
     [Exportable(false)]
     public class MPTickerBarConfig : BarConfig
     {
-        [NestedConfig("Fire III Threshold (BLM only)", 50, separator = false, spacing = true)]
+        [NestedConfig("火3阈值（仅黑魔）", 50, separator = false, spacing = true)]
         public MPTickerFire3ThresholdConfig Fire3Threshold = new MPTickerFire3ThresholdConfig();
 
         public MPTickerBarConfig(Vector2 position, Vector2 size, PluginConfigColor fillColor)
@@ -60,7 +60,7 @@ namespace DelvUI.Interface.GeneralElements
     [DisableParentSettings("Value")]
     public class MPTickerFire3ThresholdConfig : ThresholdConfig
     {
-        [DragFloat("Estimated Fire III Cast Time", min = 0f, max = 10)]
+        [DragFloat("估算火3咏唱时间", min = 0f, max = 10)]
         [Order(11)]
         public float Fire3CastTime = 1.5f;
 

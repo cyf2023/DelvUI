@@ -14,8 +14,8 @@ namespace DelvUI.Interface.GeneralElements
 
     [Exportable(false)]
     [Disableable(false)]
-    [Section("Misc")]
-    [SubSection("Window Clipping", 0)]
+    [Section("杂项")]
+    [SubSection("窗口剪切", 0)]
     public class WindowClippingConfig : PluginConfigObject
     {
         public new static WindowClippingConfig DefaultConfig() => new WindowClippingConfig();
@@ -34,7 +34,7 @@ namespace DelvUI.Interface.GeneralElements
         {
             ImGuiHelper.NewLineAndTab();
 
-            if (ImGui.Checkbox("Enabled", ref Enabled))
+            if (ImGui.Checkbox("启用", ref Enabled))
             {
                 if (Enabled)
                 {
@@ -50,8 +50,8 @@ namespace DelvUI.Interface.GeneralElements
             // confirmation dialog
             if (_showConfirmationDialog)
             {
-                string[] lines = new string[] { "THIS FEATURE IS KNOWN TO CAUSE RANDOM", "CRASHES TO A SMALL PORTION OF USERS!!!", "Are you sure you want to enable it?" };
-                var (didConfirm, didClose) = ImGuiHelper.DrawConfirmationModal("WARNING!", lines);
+                string[] lines = new string[] { "众所周知，这个特性会导致随机", "导致一小部分用户崩溃！！", "你确定要启用它吗?" };
+                var (didConfirm, didClose) = ImGuiHelper.DrawConfirmationModal("警告！", lines);
 
                 if (didConfirm)
                 {
@@ -70,22 +70,22 @@ namespace DelvUI.Interface.GeneralElements
             // mode
             ImGuiHelper.NewLineAndTab();
             ImGui.SameLine();
-            ImGui.Text("Mode: ");
+            ImGui.Text("模式：");
 
             ImGui.SameLine();
-            if (ImGui.RadioButton("Full", Mode == WindowClippingMode.Full))
+            if (ImGui.RadioButton("充满", Mode == WindowClippingMode.Full))
             {
                 Mode = WindowClippingMode.Full;
             }
 
             ImGui.SameLine();
-            if (ImGui.RadioButton("Hide", Mode == WindowClippingMode.Hide))
+            if (ImGui.RadioButton("隐藏", Mode == WindowClippingMode.Hide))
             {
                 Mode = WindowClippingMode.Hide;
             }
 
             ImGui.SameLine();
-            if (ImGui.RadioButton("Performance", Mode == WindowClippingMode.Performance))
+            if (ImGui.RadioButton("卓越", Mode == WindowClippingMode.Performance))
             {
                 Mode = WindowClippingMode.Performance;
             }
@@ -93,21 +93,21 @@ namespace DelvUI.Interface.GeneralElements
             // nameplates
             ImGui.NewLine();
             ImGuiHelper.NewLineAndTab();
-            changed |= ImGui.Checkbox("Enable special clipping for Nameplates", ref NameplatesClipRectsEnabled);
-            ImGuiHelper.SetTooltip("When enabled, Nameplates will get covered by game UI elements that wouldn't normally cover DelvUI elements.");
+            changed |= ImGui.Checkbox("为铭牌启用特殊剪切", ref NameplatesClipRectsEnabled);
+            ImGuiHelper.SetTooltip("当启用时，铭牌将被游戏UI元素覆盖，不会像通常那样覆盖DelvUI元素。");
 
             if (NameplatesClipRectsEnabled)
             {
                 ImGuiHelper.Tab(); ImGuiHelper.Tab();
-                changed |= ImGui.Checkbox("Default Target Castbar", ref TargetCastbarClipRectEnabled);
-                ImGuiHelper.SetTooltip("When enabled, the game's target castbar will not be covered by DelvUI Nameplates.\nFor players that prefer to use the default target cast bar over DelvUI's.");
+                changed |= ImGui.Checkbox("默认目标咏唱条", ref TargetCastbarClipRectEnabled);
+                ImGuiHelper.SetTooltip("当启用时，游戏的目标咏唱条将不会被DelvUI铭牌覆盖。\n专门给那些喜欢使用默认目标咏唱条而不是DelvUI的玩家。");
 
                 ImGuiHelper.Tab(); ImGuiHelper.Tab();
-                changed |= ImGui.Checkbox("Hotbars", ref HotbarsClipRectsEnabled);
-                ImGuiHelper.SetTooltip("When enabled, active hotbar will not be covered by DelvUI Nameplates.\nNote that the way this is calculated is not perfect and it might not work well for hotbars that have empty slots.");
+                changed |= ImGui.Checkbox("热键栏", ref HotbarsClipRectsEnabled);
+                ImGuiHelper.SetTooltip("启用后，启用的热键栏将不会被DelvUI铭牌覆盖。\n请注意，这种计算方式并不完美，它可能在有空槽的热键栏上不生效。");
 
                 ImGuiHelper.Tab(); ImGuiHelper.Tab();
-                changed |= ImGui.Checkbox("Chat Bubbles", ref ChatBubblesClipRectsEnabled);
+                changed |= ImGui.Checkbox("聊天气泡", ref ChatBubblesClipRectsEnabled);
             }
 
             // text
@@ -118,20 +118,20 @@ namespace DelvUI.Interface.GeneralElements
             switch (Mode)
             {
                 case WindowClippingMode.Full:
-                    ImGui.Text("DelvUI will attempt to not cover game windows in this mode by clipping around them.");
+                    ImGui.Text("在这个模式DelvUI将尝试窗口剪切来不覆盖游戏窗口。");
                     break;
 
                 case WindowClippingMode.Hide:
-                    ImGui.Text("DelvUI will attempt to not cover game windows in this mode by not drawing an element if its touching a game window.");
+                    ImGui.Text("在这个模式DelvUI将尝试不绘制触及游戏窗口的元素来不覆盖游戏窗口。");
                     break;
 
                 case WindowClippingMode.Performance:
-                    ImGui.Text("Window Clipping functionallity will be reduced in favor of performance.\nOnly one game window will be clipped at a time. This might yield unexpected / ugly results.\n\nNote: This mode won't work well with Nameplates.");
+                    ImGui.Text("为了提高性能，窗口裁剪功能将被减少。\n同一时间只能裁剪一个游戏窗口。这可能会产生意想不到的/丑陋的结果。\n\n注意：此模式不适用于铭牌。");
                     break;
             }
 
             ImGuiHelper.NewLineAndTab();
-            ImGui.Text("If you're exepriencing random crashes or bad performance, we recommend you try a different mode\nor disable Window Clipping alltogether");
+            ImGui.Text("如果您遇到随机崩溃或性能不佳，我们建议您尝试不同的模式\n或者完全禁用窗口剪切");
 
             return false;
         }
