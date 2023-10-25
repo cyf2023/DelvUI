@@ -172,9 +172,9 @@ namespace DelvUI.Interface.Jobs
         }
     }
 
-    [Section("Job Specific Bars")]
-    [SubSection("Ranged", 0)]
-    [SubSection("Machinist", 1)]
+    [Section("职业特殊条")]
+    [SubSection("远敏", 0)]
+    [SubSection("机工士", 1)]
     public class MachinistConfig : JobConfig
     {
         [JsonIgnore] public override uint JobId => JobIDs.MCH;

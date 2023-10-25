@@ -246,7 +246,7 @@ namespace DelvUI.Interface.GeneralElements
                 ImGui.PopFont();
 
                 ImGuiHelper.Tab();
-                ImGui.Combo("大小##size", ref _inputSize, _sizes, _sizes.Length, 10);
+                ImGui.Combo("尺寸##size", ref _inputSize, _sizes, _sizes.Length, 10);
 
                 ImGui.SameLine();
                 ImGui.PushFont(UiBuilder.IconFont);
@@ -260,7 +260,7 @@ namespace DelvUI.Interface.GeneralElements
                 if (ImGui.BeginTable("表格", 3, flags, new Vector2(326, 300)))
                 {
                     ImGui.TableSetupColumn("名字", ImGuiTableColumnFlags.WidthStretch, 0, 0);
-                    ImGui.TableSetupColumn("大小", ImGuiTableColumnFlags.WidthFixed, 0, 1);
+                    ImGui.TableSetupColumn("尺寸", ImGuiTableColumnFlags.WidthFixed, 0, 1);
                     ImGui.TableSetupColumn("动作", ImGuiTableColumnFlags.WidthFixed, 0, 2);
 
                     ImGui.TableSetupScrollFreeze(0, 1);
@@ -335,7 +335,7 @@ namespace DelvUI.Interface.GeneralElements
             // apply confirmation
             if (_applyingIndex >= 0)
             {
-                string[] lines = new string[] { "你确定你想要将这种字体应用到", "使用相同大小字体的所有标签？" };
+                string[] lines = new string[] { "你确定你想要将这种字体应用到", "使用相同尺寸字体的所有标签？" };
                 var (didConfirm, didClose) = ImGuiHelper.DrawConfirmationModal("应用到所有标签？", lines);
 
                 if (didConfirm)

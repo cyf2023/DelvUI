@@ -295,9 +295,9 @@ namespace DelvUI.Interface.Jobs
         }
     }
 
-    [Section("Job Specific Bars")]
-    [SubSection("Melee", 0)]
-    [SubSection("Monk", 1)]
+    [Section("职业特殊条")]
+    [SubSection("近战", 0)]
+    [SubSection("武僧", 1)]
     public class MonkConfig : JobConfig
     {
         [JsonIgnore] public override uint JobId => JobIDs.MNK;

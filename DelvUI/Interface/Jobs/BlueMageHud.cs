@@ -222,9 +222,9 @@ namespace DelvUI.Interface.Jobs
         }
     }
 
-    [Section("Job Specific Bars")]
-    [SubSection("Caster", 0)]
-    [SubSection("Blue Mage", 1)]
+    [Section("职业特殊条")]
+    [SubSection("法系", 0)]
+    [SubSection("青魔法师", 1)]
     public class BlueMageConfig : JobConfig
     {
         [JsonIgnore] public override uint JobId => JobIDs.BLU;

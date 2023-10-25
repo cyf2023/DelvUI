@@ -64,7 +64,7 @@ namespace DelvUI.Interface.Bars
         [Order(5)]
         public PluginConfigColor Color = new PluginConfigColor(new Vector4(255f / 255f, 255f / 255f, 255f / 255f, 50f / 100f));
 
-        [DragInt("大小", min = 1, max = 100)]
+        [DragInt("尺寸", min = 1, max = 100)]
         [Order(25)]
         public int Size = 1;
     }

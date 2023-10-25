@@ -27,15 +27,15 @@ namespace DelvUI.Interface.GeneralElements
         [Order(20)]
 
         public bool ShowAnchorPoints = true;
-        [Checkbox("网格划分", spacing = true)]
+        [Checkbox("显示网格", spacing = true)]
         [Order(25)]
         public bool ShowGrid = true;
 
-        [DragInt("各部分的距离", min = 50, max = 500)]
+        [DragInt("大网格间距", min = 50, max = 500)]
         [Order(30, collapseWith = nameof(ShowGrid))]
         public int GridDivisionsDistance = 50;
 
-        [DragInt("细分计数", min = 1, max = 10)]
+        [DragInt("小网格间距", min = 1, max = 10)]
         [Order(35, collapseWith = nameof(ShowGrid))]
         public int GridSubdivisionCount = 4;
     }

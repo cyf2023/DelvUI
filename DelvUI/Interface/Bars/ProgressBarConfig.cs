@@ -52,7 +52,7 @@ namespace DelvUI.Interface.Bars
         [Order(30)]
         public bool ShowMarker = false;
 
-        [DragInt("阈值标记大小", min = 0, max = 10000)]
+        [DragInt("阈值标记尺寸", min = 0, max = 10000)]
         [Order(35, collapseWith = nameof(ShowMarker))]
         public int MarkerSize = 2;
 

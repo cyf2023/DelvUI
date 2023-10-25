@@ -187,9 +187,9 @@ namespace DelvUI.Interface.Jobs
         }
     }
 
-    [Section("Job Specific Bars")]
-    [SubSection("Melee", 0)]
-    [SubSection("Samurai", 1)]
+    [Section("职业特殊条")]
+    [SubSection("近战", 0)]
+    [SubSection("武士", 1)]
     public class SamuraiConfig : JobConfig
     {
         [JsonIgnore] public override uint JobId => JobIDs.SAM;

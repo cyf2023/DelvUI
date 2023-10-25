@@ -171,9 +171,9 @@ namespace DelvUI.Interface.Jobs
         }
     }
 
-    [Section("Job Specific Bars")]
-    [SubSection("Melee", 0)]
-    [SubSection("Reaper", 1)]
+    [Section("职业特殊条")]
+    [SubSection("近战", 0)]
+    [SubSection("钐镰客", 1)]
     public class ReaperConfig : JobConfig
     {
         [JsonIgnore] public override uint JobId => JobIDs.RPR;
@@ -195,28 +195,28 @@ namespace DelvUI.Interface.Jobs
             return config;
         }
 
-        [NestedConfig("Death's Design Bar", 35)]
+        [NestedConfig("死亡烙印条", 35)]
         public ChunkedProgressBarConfig DeathsDesignBar = new ChunkedProgressBarConfig(
             new(0, -10),
             new(254, 20),
             new PluginConfigColor(new Vector4(145f / 255f, 0f / 255f, 25f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Soul Bar", 40)]
+        [NestedConfig("灵魂条", 40)]
         public ChunkedProgressBarConfig SoulBar = new ChunkedProgressBarConfig(
             new(0, -32),
             new(254, 20),
             new PluginConfigColor(new Vector4(254f / 255f, 21f / 255f, 94f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Shroud Bar", 45)]
+        [NestedConfig("魂衣条", 45)]
         public ChunkedProgressBarConfig ShroudBar = new ChunkedProgressBarConfig(
             new(0, -54),
             new(254, 20),
             new PluginConfigColor(new Vector4(0f / 255f, 176f / 255f, 196f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Death Gauge", 50)]
+        [NestedConfig("夜游魂量谱", 50)]
         public DeathGauge DeathGauge = new DeathGauge(
             new(0, -76),
             new(254, 20),
@@ -227,15 +227,15 @@ namespace DelvUI.Interface.Jobs
     [DisableParentSettings("FillColor")]
     public class DeathGauge : ChunkedBarConfig
     {
-        [ColorEdit4("Lemure Shroud Color")]
+        [ColorEdit4("夜游魂颜色")]
         [Order(21)]
         public PluginConfigColor LemureShroudColor = new PluginConfigColor(new Vector4(0f / 255f, 176f / 255f, 196f / 255f, 100f / 100f));
 
-        [ColorEdit4("Void Shroud Color")]
+        [ColorEdit4("虚无魂颜色")]
         [Order(22)]
         public PluginConfigColor VoidShroudColor = new PluginConfigColor(new Vector4(150f / 255f, 90f / 255f, 144f / 255f, 100f / 100f));
 
-        [NestedConfig("Enshroud Duration Text", 50, spacing = true)]
+        [NestedConfig("夜游魂衣持续时间文本", 50, spacing = true)]
         public NumericLabelConfig EnshroudTimerLabel;
 
         public DeathGauge(Vector2 position, Vector2 size, PluginConfigColor fillColor, int padding = 2) : base(position, size, fillColor, padding)

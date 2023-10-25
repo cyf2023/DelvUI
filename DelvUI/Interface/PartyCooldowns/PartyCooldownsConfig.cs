@@ -91,7 +91,7 @@ namespace DelvUI.Interface.PartyCooldowns
         [Order(74, collapseWith = nameof(ShowBar))]
         public PluginConfigColor RechargingBackgroundColor = new PluginConfigColor(new Vector4(150f / 255f, 0f / 255f, 0f / 255f, 25f / 100f));
 
-        [Checkbox("Use Job Colors")]
+        [Checkbox("使用职业颜色")]
         [Order(75, collapseWith = nameof(ShowBar))]
         public bool UseJobColors = false;
 

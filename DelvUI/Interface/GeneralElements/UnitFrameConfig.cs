@@ -50,7 +50,7 @@ namespace DelvUI.Interface.GeneralElements
         [Order(5)]
         public TankStanceCorner Corner = TankStanceCorner.BottomLeft;
 
-        [DragFloat2("大小", min = 1, max = 500)]
+        [DragFloat2("尺寸", min = 1, max = 500)]
         [Order(10)]
         public Vector2 Size = new Vector2(HUDConstants.DefaultBigUnitFrameSize.Y - 20, HUDConstants.DefaultBigUnitFrameSize.Y - 20);
 
@@ -211,7 +211,7 @@ namespace DelvUI.Interface.GeneralElements
         [NestedConfig("使用平滑过渡", 120, collapsingHeader = false)]
         public SmoothHealthConfig SmoothHealthConfig = new SmoothHealthConfig();
 
-        [Checkbox("尽可能隐藏血条", spacing = true, help = "如果角色没有生命值（如宠物，友好NPC等），隐藏任何带有生命值标签的标签。")]
+        [Checkbox("尽可能隐藏生命条", spacing = true, help = "如果角色没有生命值（如宠物，友好NPC等），隐藏任何带有生命值标签的标签。")]
         [Order(121)]
         public bool HideHealthIfPossible = true;
 
@@ -240,7 +240,7 @@ namespace DelvUI.Interface.GeneralElements
             DrawAnchor.Top
         );
 
-        [NestedConfig("盾牌", 140)]
+        [NestedConfig("盾", 140)]
         public ShieldConfig ShieldConfig = new ShieldConfig();
 
         [NestedConfig("根据距离改变友好单位的不透明度", 145)]
@@ -284,7 +284,7 @@ namespace DelvUI.Interface.GeneralElements
         [Order(10)]
         public bool HeightInPixels = false;
 
-        [Checkbox("优先填充血条")]
+        [Checkbox("优先填充生命条")]
         [Order(15)]
         public bool FillHealthFirst = true;
 

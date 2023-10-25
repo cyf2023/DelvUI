@@ -432,9 +432,9 @@ namespace DelvUI.Interface.Jobs
         }
     }
 
-    [Section("Job Specific Bars")]
-    [SubSection("Healer", 0)]
-    [SubSection("Astrologian", 1)]
+    [Section("职业特殊条")]
+    [SubSection("治疗", 0)]
+    [SubSection("占星术士", 1)]
     public class AstrologianConfig : JobConfig
     {
         [JsonIgnore] public override uint JobId => JobIDs.AST;
@@ -449,47 +449,47 @@ namespace DelvUI.Interface.Jobs
             return config;
         }
 
-        [NestedConfig("Draw Bar", 100)]
+        [NestedConfig("抽卡条", 100)]
         public AstrologianDrawBarConfig DrawBar = new(
             new Vector2(0, -32),
             new Vector2(254, 20),
             new PluginConfigColor(new Vector4(255f / 255f, 255f / 255f, 255f / 255f, 0f / 100f))
         );
 
-        [NestedConfig("Minor Arcana Bar", 150)]
+        [NestedConfig("小奥秘卡条", 150)]
         public AstrologianCrownDrawBarConfig MinorArcanaBar = new(
             new Vector2(64, -71),
             new Vector2(126, 10),
             new PluginConfigColor(new Vector4(255f / 255f, 255f / 255f, 255f / 255f, 0f / 100f))
         );
 
-        [NestedConfig("Astrodyne Bar", 200)]
+        [NestedConfig("星力条", 200)]
         public AstrologianAstrodyneBarConfig AstrodyneBar = new(
             new Vector2(-64, -71),
             new Vector2(126, 10)
         );
 
-        [NestedConfig("Dot Bar", 300)]
+        [NestedConfig("Dot条", 300)]
         public ProgressBarConfig DotBar = new(
             new Vector2(-85, -54),
             new Vector2(84, 20),
             new PluginConfigColor(new Vector4(20f / 255f, 80f / 255f, 168f / 255f, 255f / 100f))
         );
 
-        [NestedConfig("Star Bar", 400)]
+        [NestedConfig("星条", 400)]
         public AstrologianStarBarConfig StarBar = new(
             new Vector2(0, -54),
             new Vector2(84, 20)
         );
 
-        [NestedConfig("Lightspeed Bar", 500)]
+        [NestedConfig("光速条", 500)]
         public ProgressBarConfig LightspeedBar = new(
             new Vector2(85, -54),
             new Vector2(84, 20),
             new PluginConfigColor(new Vector4(255f / 255f, 255f / 255f, 173f / 255f, 100f / 100f))
         );
 
-        [DisableParentSettings("FillColor", "Color")]
+        [DisableParentSettings("填充颜色", "颜色")]
         [Exportable(false)]
         public class AstrologianDrawBarConfig : ProgressBarConfig
         {

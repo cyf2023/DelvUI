@@ -152,9 +152,9 @@ namespace DelvUI.Interface.Jobs
         }
     }
 
-    [Section("Job Specific Bars")]
-    [SubSection("Healer", 0)]
-    [SubSection("Sage", 1)]
+    [Section("职业特殊条")]
+    [SubSection("治疗", 0)]
+    [SubSection("贤者", 1)]
     public class SageConfig : JobConfig
     {
         [JsonIgnore] public override uint JobId => JobIDs.SGE;

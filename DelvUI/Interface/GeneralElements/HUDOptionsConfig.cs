@@ -47,7 +47,7 @@ namespace DelvUI.Interface.GeneralElements
         [Order(40)]
         public bool HideDefaultJobGauges = false;
 
-        [Checkbox("隐藏默认咏唱条", isMonitored = true)]
+        [Checkbox("隐藏默认咏唱栏", isMonitored = true)]
         [Order(45)]
         public bool HideDefaultCastbar = false;
 

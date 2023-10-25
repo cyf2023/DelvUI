@@ -12,11 +12,11 @@ namespace DelvUI.Interface.Jobs
         [JsonIgnore]
         public abstract uint JobId { get; }
 
-        [Checkbox("Show Generic Mana Bar")]
+        [Checkbox("显示通用法力条")]
         [Order(20)]
         public bool UseDefaultPrimaryResourceBar = false;
 
-        [NestedConfig("Visibility", 2000)]
+        [NestedConfig("可见性", 2000)]
         public VisibilityConfig VisibilityConfig = new VisibilityConfig();
 
         [JsonIgnore]

@@ -146,7 +146,7 @@ namespace DelvUI.Config
 
             string changelog = LoadChangelog();
             _changelogWindow = new ChangelogWindow("DelvUI Changelog v" + Plugin.Version, changelog);
-            _gridWindow = new GridWindow("Grid ##DelvUI");
+            _gridWindow = new GridWindow("网格##DelvUI");
 
             _windowSystem = new WindowSystem("DelvUI_Windows");
             _windowSystem.AddWindow(_mainConfigWindow);

@@ -23,25 +23,25 @@ namespace DelvUI.Interface.GeneralElements
     };
 
     [DisableParentSettings("Strata", "Position")]
-    [Section("Nameplates")]
-    [SubSection("General", 0)]
+    [Section("名牌")]
+    [SubSection("通用", 0)]
     public class NameplatesGeneralConfig : MovablePluginConfigObject
     {
         public new static NameplatesGeneralConfig DefaultConfig() => new NameplatesGeneralConfig();
 
-        [Combo("Occlusion Mode", new string[] { "Disabled", "Simple", "Full" }, help = "This controls wheter you'll see nameplates through walls and objects.\n\nDisabled: Nameplates will always be seen for units in range.\nSimple: Uses simple calculations to check if a nameplate is being covered by walls or objects. Use this for better performance.\nFull: Uses more complex calculations to check if a nameplate is being covered by walls or objects. Use this for better results.")]
+        [Combo("遮挡模式", new string[] { "禁用", "简易", "完全" }, help = "这控制你是否能透过墙壁和物体看到名牌。\n\n禁用：在范围内的单位将始显示名牌。\n简易：使用简单的计算来检查名牌是否被墙壁或物体遮挡。使用它可以获得更好的性能。\n完全：使用更复杂的计算来检查名牌是否被墙壁或物体遮挡。使用这个可以获得更好的效果。")]
         [Order(10)]
         public NameplatesOcclusionMode OcclusionMode = NameplatesOcclusionMode.Full;
 
-        [Combo("Occlusion Type", new string[] { "Walls", "Walls and Objects" }, help = "This controls which kind of objects will cover nameplates.\n\n\nWalls: Default setting. Only walls will cover nameplates.\n\nWalls and Objects: Some objects like columns and trees will also cover nameplates.\nThis Occlusion Type can yield some unexpected results like nameplates for NPCs behind counters not being visible.")]
+        [Combo("遮挡种类", new string[] { "墙", "墙与物体" }, help = "这控制哪一种对象将遮挡名牌。\n\n\n墙：默认设置。只有墙壁会遮挡名牌。\n\n墙壁和物体：像柱子和树这样的物体也会遮挡名牌。\n这种遮挡类型可能会产生一些意料之外的结果，比如计数器后面的NPC的名牌不可见。")]
         [Order(11)]
         public NameplatesOcclusionType OcclusionType = NameplatesOcclusionType.Walls;
 
-        [Checkbox("Try to keep nameplates on screen", spacing = true, help = "Disclaimer: DelvUI relies heavily on the the game's default nameplates so this setting won't be a huge improvement.\nThis setting tries to prevent nameplates from being cutoff in the border of the screen, but it won't keep showing nameplates that the game wouldn't.")]
+        [Checkbox("尽量保持名牌在屏幕上", spacing = true, help = "免责声明：DelvUI严重依赖于游戏的默认名牌，所以这个设置不会有很大的提升。\n这个设置试图防止名牌在屏幕边缘被切断，但它不会一直显示游戏不会显示的名牌。")]
         [Order(20)]
         public bool ClampToScreen = true;
 
-        [Checkbox("Always show nameplate for target")]
+        [Checkbox("总是显示目标的名牌")]
         [Order(21)]
         public bool AlwaysShowTargetNameplate = true;
 
@@ -49,8 +49,8 @@ namespace DelvUI.Interface.GeneralElements
     }
 
     [DisableParentSettings("HideWhenInactive")]
-    [Section("Nameplates")]
-    [SubSection("Player", 0)]
+    [Section("名牌")]
+    [SubSection("玩家", 0)]
     public class PlayerNameplateConfig : NameplateWithPlayerBarConfig
     {
         public PlayerNameplateConfig(
@@ -73,8 +73,8 @@ namespace DelvUI.Interface.GeneralElements
     }
 
     [DisableParentSettings("HideWhenInactive", "TitleLabelConfig", "SwapLabelsWhenNeeded")]
-    [Section("Nameplates")]
-    [SubSection("Enemies", 0)]
+    [Section("名牌")]
+    [SubSection("敌人", 0)]
     public class EnemyNameplateConfig : NameplateWithEnemyBarConfig
     {
         public EnemyNameplateConfig(
@@ -162,8 +162,8 @@ namespace DelvUI.Interface.GeneralElements
     }
 
     [DisableParentSettings("HideWhenInactive")]
-    [Section("Nameplates")]
-    [SubSection("Party Members", 0)]
+    [Section("名牌")]
+    [SubSection("小队成员", 0)]
     public class PartyMembersNameplateConfig : NameplateWithPlayerBarConfig
     {
         public PartyMembersNameplateConfig(
@@ -191,8 +191,8 @@ namespace DelvUI.Interface.GeneralElements
     }
 
     [DisableParentSettings("HideWhenInactive")]
-    [Section("Nameplates")]
-    [SubSection("Alliance Members", 0)]
+    [Section("名牌")]
+    [SubSection("团队成员", 0)]
     public class AllianceMembersNameplateConfig : NameplateWithPlayerBarConfig
     {
         public AllianceMembersNameplateConfig(
@@ -215,8 +215,8 @@ namespace DelvUI.Interface.GeneralElements
     }
 
     [DisableParentSettings("HideWhenInactive")]
-    [Section("Nameplates")]
-    [SubSection("Friends", 0)]
+    [Section("名牌")]
+    [SubSection("好友", 0)]
     public class FriendPlayerNameplateConfig : NameplateWithPlayerBarConfig
     {
         public FriendPlayerNameplateConfig(
@@ -239,8 +239,8 @@ namespace DelvUI.Interface.GeneralElements
     }
 
     [DisableParentSettings("HideWhenInactive")]
-    [Section("Nameplates")]
-    [SubSection("Other Players", 0)]
+    [Section("名牌")]
+    [SubSection("其他玩家", 0)]
     public class OtherPlayerNameplateConfig : NameplateWithPlayerBarConfig
     {
         public OtherPlayerNameplateConfig(
@@ -263,8 +263,8 @@ namespace DelvUI.Interface.GeneralElements
     }
 
     [DisableParentSettings("HideWhenInactive")]
-    [Section("Nameplates")]
-    [SubSection("Pets", 0)]
+    [Section("名牌")]
+    [SubSection("宠物", 0)]
     public class PetNameplateConfig : NameplateWithNPCBarConfig
     {
         public PetNameplateConfig(
@@ -294,8 +294,8 @@ namespace DelvUI.Interface.GeneralElements
     }
 
     [DisableParentSettings("HideWhenInactive")]
-    [Section("Nameplates")]
-    [SubSection("NPCs", 0)]
+    [Section("名牌")]
+    [SubSection("NPC", 0)]
     public class NPCNameplateConfig : NameplateWithNPCBarConfig
     {
         public NPCNameplateConfig(
@@ -322,8 +322,8 @@ namespace DelvUI.Interface.GeneralElements
     }
 
     [DisableParentSettings("HideWhenInactive", "SwapLabelsWhenNeeded")]
-    [Section("Nameplates")]
-    [SubSection("Minions", 0)]
+    [Section("名牌")]
+    [SubSection("随从", 0)]
     public class MinionNPCNameplateConfig : NameplateConfig
     {
         public MinionNPCNameplateConfig(
@@ -349,8 +349,8 @@ namespace DelvUI.Interface.GeneralElements
     }
 
     [DisableParentSettings("HideWhenInactive", "SwapLabelsWhenNeeded")]
-    [Section("Nameplates")]
-    [SubSection("Objects", 0)]
+    [Section("名牌")]
+    [SubSection("物体", 0)]
     public class ObjectsNameplateConfig : NameplateConfig
     {
         public ObjectsNameplateConfig(
@@ -372,24 +372,24 @@ namespace DelvUI.Interface.GeneralElements
 
     public class NameplateConfig : MovablePluginConfigObject
     {
-        [Checkbox("Only show when targeted")]
+        [Checkbox("仅在被选中时显示")]
         [Order(1)]
         public bool OnlyShowWhenTargeted = false;
 
-        [Checkbox("Swap Name and Title labels when needed", spacing = true, help = "This will swap the contents of these labels depending on if the title goes before or after the name of a player.")]
+        [Checkbox("当需要时，交换名称和标题标签", spacing = true, help = "这将根据标题在玩家名字之前还是之后来交换这些标签的内容。")]
         [Order(20)]
         public bool SwapLabelsWhenNeeded = true;
 
-        [NestedConfig("Name Label", 21)]
+        [NestedConfig("名字的标签", 21)]
         public EditableLabelConfig NameLabelConfig = null!;
 
-        [NestedConfig("Title Label", 22)]
+        [NestedConfig("标题标签", 22)]
         public EditableNonFormattableLabelConfig TitleLabelConfig = null!;
 
-        [NestedConfig("Change Alpha Based on Range", 145)]
+        [NestedConfig("根据范围改变不透明度", 145)]
         public NameplateRangeConfig RangeConfig = new();
 
-        [NestedConfig("Visibility", 200)]
+        [NestedConfig("可见性", 200)]
         public VisibilityConfig VisibilityConfig = new VisibilityConfig();
 
         public NameplateConfig(Vector2 position, EditableLabelConfig nameLabelConfig, EditableNonFormattableLabelConfig titleLabelConfig)
@@ -410,7 +410,7 @@ namespace DelvUI.Interface.GeneralElements
 
     public class NameplateWithNPCBarConfig : NameplateConfig, NameplateWithBarConfig
     {
-        [NestedConfig("Health Bar", 40)]
+        [NestedConfig("生命条", 40)]
         public NameplateBarConfig BarConfig = null!;
 
         public NameplateBarConfig GetBarConfig() => BarConfig;
@@ -430,10 +430,10 @@ namespace DelvUI.Interface.GeneralElements
 
     public class NameplateWithPlayerBarConfig : NameplateConfig, NameplateWithBarConfig
     {
-        [NestedConfig("Health Bar", 40)]
+        [NestedConfig("生命条", 40)]
         public NameplatePlayerBarConfig BarConfig = null!;
 
-        [NestedConfig("Role/Job Icon", 50)]
+        [NestedConfig("职能/职业图标", 50)]
         public NameplateRoleJobIconConfig RoleIconConfig = new NameplateRoleJobIconConfig(
             new Vector2(-5, 0),
             new Vector2(30, 30),
@@ -442,7 +442,7 @@ namespace DelvUI.Interface.GeneralElements
         )
         { Strata = StrataLevel.LOWEST };
 
-        [NestedConfig("Player State Icon", 55)]
+        [NestedConfig("玩家状态图标", 55)]
         public NameplatePlayerIconConfig StateIconConfig = new NameplatePlayerIconConfig(
             new Vector2(5, 0),
             new Vector2(30, 30),
@@ -468,10 +468,10 @@ namespace DelvUI.Interface.GeneralElements
 
     public class NameplateWithEnemyBarConfig : NameplateConfig, NameplateWithBarConfig
     {
-        [NestedConfig("Health Bar", 40)]
+        [NestedConfig("生命条", 40)]
         public NameplateEnemyBarConfig BarConfig = null!;
 
-        [NestedConfig("Icon", 45)]
+        [NestedConfig("图标", 45)]
         public NameplateIconConfig IconConfig = new NameplateIconConfig(
             new Vector2(0, 0),
             new Vector2(40, 40),
@@ -480,10 +480,10 @@ namespace DelvUI.Interface.GeneralElements
         )
         { PrioritizeHealthBarAnchor = true, Strata = StrataLevel.LOWEST };
 
-        [NestedConfig("Debuffs", 50)]
+        [NestedConfig("减益效果", 50)]
         public EnemyNameplateStatusEffectsListConfig DebuffsConfig = null!;
 
-        [NestedConfig("Castbar", 55)]
+        [NestedConfig("咏唱栏", 55)]
         public NameplateCastbarConfig CastbarConfig = null!;
 
         public NameplateBarConfig GetBarConfig() => BarConfig;
@@ -504,54 +504,54 @@ namespace DelvUI.Interface.GeneralElements
     [DisableParentSettings("HideWhenInactive")]
     public class NameplateBarConfig : BarConfig
     {
-        [Checkbox("Only Show when not at full Health")]
+        [Checkbox("仅在生命值未满时显示")]
         [Order(1)]
         public bool OnlyShowWhenNotFull = true;
 
-        [Checkbox("Hide Health when fully depleted", help = "This will hide the healthbar when the characters HP has been brought to zero")]
+        [Checkbox("生命值耗尽时隐藏生命条", help = "当角色生命值降为0时，这将隐藏生命条")]
         [Order(2)]
         public bool HideHealthAtZero = true;
 
-        [Checkbox("Disable Interaction")]
+        [Checkbox("禁用交互")]
         [Order(3)]
         public bool DisableInteraction = false;
 
-        [Checkbox("Use Different Size when targeted", spacing = true)]
+        [Checkbox("被选中后使用不同尺寸", spacing = true)]
         [Order(31)]
         public bool UseDifferentSizeWhenTargeted = false;
 
-        [DragInt2("Size When Targeted", min = 1, max = 4000)]
+        [DragInt2("被选中时的尺寸", min = 1, max = 4000)]
         [Order(32, collapseWith = nameof(UseDifferentSizeWhenTargeted))]
         public Vector2 SizeWhenTargeted;
 
-        [ColorEdit4("Targeted Border Color")]
+        [ColorEdit4("被选中边框颜色")]
         [Order(38, collapseWith = nameof(DrawBorder))]
         public PluginConfigColor TargetedBorderColor = PluginConfigColor.FromHex(0xFFFFFFFF);
 
-        [DragInt("Targeted Border Thickness", min = 1, max = 10)]
+        [DragInt("被选中边框厚度", min = 1, max = 10)]
         [Order(39, collapseWith = nameof(DrawBorder))]
         public int TargetedBorderThickness = 2;
 
-        [NestedConfig("Color Based On Health Value", 50, collapsingHeader = false)]
+        [NestedConfig("基于生命值的颜色", 50, collapsingHeader = false)]
         public ColorByHealthValueConfig ColorByHealth = new ColorByHealthValueConfig();
 
-        [Checkbox("Hide Health if Possible", spacing = true, help = "This will hide any label that has a health tag if the character doesn't have health (ie minions, friendly npcs, etc)")]
+        [Checkbox("尽可能隐藏生命值", spacing = true, help = "如果角色没有生命值，这将隐藏任何带有生命值标签的标签(如随从，友好npc等)。")]
         [Order(121)]
         public bool HideHealthIfPossible = true;
 
-        [NestedConfig("Left Text", 125)]
+        [NestedConfig("左侧文本", 125)]
         public EditableLabelConfig LeftLabelConfig = null!;
 
-        [NestedConfig("Right Text", 130)]
+        [NestedConfig("右侧文本", 130)]
         public EditableLabelConfig RightLabelConfig = null!;
 
-        [NestedConfig("Optional Text", 131)]
+        [NestedConfig("可选文本", 131)]
         public EditableLabelConfig OptionalLabelConfig = null!;
 
-        [NestedConfig("Shields", 140)]
+        [NestedConfig("盾", 140)]
         public ShieldConfig ShieldConfig = new ShieldConfig();
 
-        [NestedConfig("Custom Mouseover Area", 150)]
+        [NestedConfig("自定义鼠标悬停区域", 150)]
         public MouseoverAreaConfig MouseoverAreaConfig = new MouseoverAreaConfig();
 
         public NameplateBarConfig(Vector2 position, Vector2 size, EditableLabelConfig leftLabelConfig, EditableLabelConfig rightLabelConfig, EditableLabelConfig optionalLabelConfig)
@@ -582,19 +582,19 @@ namespace DelvUI.Interface.GeneralElements
 
     public class NameplatePlayerBarConfig : NameplateBarConfig
     {
-        [Checkbox("Use Job Color", spacing = true)]
+        [Checkbox("使用职业颜色", spacing = true)]
         [Order(45)]
         public bool UseJobColor = false;
 
-        [Checkbox("Use Role Color")]
+        [Checkbox("使用职能颜色")]
         [Order(46)]
         public bool UseRoleColor = false;
 
-        [Checkbox("Job Color As Background Color", spacing = true)]
+        [Checkbox("使用职业颜色作为背景色", spacing = true)]
         [Order(50)]
         public bool UseJobColorAsBackgroundColor = false;
 
-        [Checkbox("Role Color As Background Color")]
+        [Checkbox("使用职能颜色作为背景色")]
         [Order(51)]
         public bool UseRoleColorAsBackgroundColor = false;
 
@@ -606,31 +606,31 @@ namespace DelvUI.Interface.GeneralElements
 
     public class NameplateEnemyBarConfig : NameplateBarConfig
     {
-        [Checkbox("Use State Colors", spacing = true)]
+        [Checkbox("使用状态颜色", spacing = true)]
         [Order(45)]
         public bool UseStateColor = true;
 
-        [ColorEdit4("Out of Combat")]
+        [ColorEdit4("脱战")]
         [Order(46, collapseWith = nameof(UseStateColor))]
         public PluginConfigColor OutOfCombatColor = PluginConfigColor.FromHex(0xFFDA9D2E);
 
-        [ColorEdit4("Out of Combat (Hostile)")]
+        [ColorEdit4("脱战（敌对）")]
         [Order(47, collapseWith = nameof(UseStateColor))]
         public PluginConfigColor OutOfCombatHostileColor = PluginConfigColor.FromHex(0xFF994B35);
 
-        [ColorEdit4("In Combat")]
+        [ColorEdit4("战斗中")]
         [Order(48, collapseWith = nameof(UseStateColor))]
         public PluginConfigColor InCombatColor = PluginConfigColor.FromHex(0xFF993535);
 
-        [Checkbox("Use Custom Color when being targeted", spacing = true, help = "This will change the color of the bar when the enemy is targeting the player.")]
+        [Checkbox("当被选中时使用自定义颜色", spacing = true, help = "当敌人选中玩家时，这将改变条的颜色。")]
         [Order(49)]
         public bool UseCustomColorWhenBeingTargeted = false;
 
-        [ColorEdit4("Custom Color when being targeted")]
+        [ColorEdit4("当被选中时使用自定义颜色")]
         [Order(50, collapseWith = nameof(UseCustomColorWhenBeingTargeted))]
         public PluginConfigColor CustomColorWhenBeingTargeted = PluginConfigColor.FromHex(0xFFC4216D);
 
-        [NestedConfig("Order Label", 132)]
+        [NestedConfig("目标标签", 132)]
         public DefaultFontLabelConfig OrderLabelConfig = new DefaultFontLabelConfig(new Vector2(5, 0), "", DrawAnchor.Right, DrawAnchor.Left)
         {
             Strata = StrataLevel.LOWEST
@@ -646,11 +646,11 @@ namespace DelvUI.Interface.GeneralElements
     [Exportable(false)]
     public class NameplateRangeConfig : PluginConfigObject
     {
-        [DragInt("Fade start range (yalms)", min = 1, max = 500)]
+        [DragInt("淡出起始距离(yalms)", min = 1, max = 500)]
         [Order(5)]
         public int StartRange = 50;
 
-        [DragInt("Fade end range (yalms)", min = 1, max = 500)]
+        [DragInt("淡出结束距离(yalms)", min = 1, max = 500)]
         [Order(10)]
         public int EndRange = 64;
 
@@ -669,7 +669,7 @@ namespace DelvUI.Interface.GeneralElements
 
     public class EnemyNameplateStatusEffectsListConfig : StatusEffectsListConfig
     {
-        [Anchor("Health Bar Anchor")]
+        [Anchor("生命条锚")]
         [Order(4)]
         public DrawAnchor HealthBarAnchor = DrawAnchor.BottomLeft;
 
@@ -684,15 +684,15 @@ namespace DelvUI.Interface.GeneralElements
     [DisableParentSettings("AnchorToUnitFrame", "UnitFrameAnchor", "HideWhenInactive", "FillDirection")]
     public class NameplateCastbarConfig : TargetCastbarConfig
     {
-        [Checkbox("Match Width with Health Bar")]
+        [Checkbox("宽度与生命条匹配")]
         [Order(11)]
         public bool MatchWidth = false;
 
-        [Checkbox("Match Height with Health Bar")]
+        [Checkbox("高度与生命条匹配")]
         [Order(12)]
         public bool MatchHeight = false;
 
-        [Anchor("Health Bar Anchor")]
+        [Anchor("生命条锚")]
         [Order(16)]
         public DrawAnchor HealthBarAnchor = DrawAnchor.BottomLeft;
 

@@ -287,9 +287,9 @@ namespace DelvUI.Interface.Jobs
         }
     }
 
-    [Section("Job Specific Bars")]
-    [SubSection("Ranged", 0)]
-    [SubSection("Bard", 1)]
+    [Section("职业特殊条")]
+    [SubSection("远敏", 0)]
+    [SubSection("诗人", 1)]
     public class BardConfig : JobConfig
     {
         [JsonIgnore] public override uint JobId => JobIDs.BRD;

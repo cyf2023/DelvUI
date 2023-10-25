@@ -154,7 +154,7 @@ namespace DelvUI.Interface.GeneralElements
 
     [Disableable(false)]
     [Section("颜色")]
-    [SubSection("坦克", 0)]
+    [SubSection("防护", 0)]
     public class TanksColorConfig : PluginConfigObject
     {
         public new static TanksColorConfig DefaultConfig() { return new TanksColorConfig(); }
@@ -315,7 +315,7 @@ namespace DelvUI.Interface.GeneralElements
     {
         public new static RolesColorConfig DefaultConfig() { return new RolesColorConfig(); }
 
-        [ColorEdit4("坦克")]
+        [ColorEdit4("防护")]
         [Order(10)]
         public PluginConfigColor TankRoleColor = new PluginConfigColor(new(21f / 255f, 28f / 255f, 100f / 255f, 100f / 100f));
 

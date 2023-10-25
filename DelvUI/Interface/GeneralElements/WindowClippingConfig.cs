@@ -93,18 +93,18 @@ namespace DelvUI.Interface.GeneralElements
             // nameplates
             ImGui.NewLine();
             ImGuiHelper.NewLineAndTab();
-            changed |= ImGui.Checkbox("为铭牌启用特殊剪切", ref NameplatesClipRectsEnabled);
-            ImGuiHelper.SetTooltip("当启用时，铭牌将被游戏UI元素覆盖，不会像通常那样覆盖DelvUI元素。");
+            changed |= ImGui.Checkbox("为名牌启用特殊剪切", ref NameplatesClipRectsEnabled);
+            ImGuiHelper.SetTooltip("当启用时，名牌将被游戏UI元素覆盖，不会像通常那样覆盖DelvUI元素。");
 
             if (NameplatesClipRectsEnabled)
             {
                 ImGuiHelper.Tab(); ImGuiHelper.Tab();
-                changed |= ImGui.Checkbox("默认目标咏唱条", ref TargetCastbarClipRectEnabled);
-                ImGuiHelper.SetTooltip("当启用时，游戏的目标咏唱条将不会被DelvUI铭牌覆盖。\n专门给那些喜欢使用默认目标咏唱条而不是DelvUI的玩家。");
+                changed |= ImGui.Checkbox("默认目标咏唱栏", ref TargetCastbarClipRectEnabled);
+                ImGuiHelper.SetTooltip("当启用时，游戏的目标咏唱栏将不会被DelvUI名牌覆盖。\n专门给那些喜欢使用默认目标咏唱栏而不是DelvUI的玩家。");
 
                 ImGuiHelper.Tab(); ImGuiHelper.Tab();
                 changed |= ImGui.Checkbox("热键栏", ref HotbarsClipRectsEnabled);
-                ImGuiHelper.SetTooltip("启用后，启用的热键栏将不会被DelvUI铭牌覆盖。\n请注意，这种计算方式并不完美，它可能在有空槽的热键栏上不生效。");
+                ImGuiHelper.SetTooltip("启用后，启用的热键栏将不会被DelvUI名牌覆盖。\n请注意，这种计算方式并不完美，它可能在有空槽的热键栏上不生效。");
 
                 ImGuiHelper.Tab(); ImGuiHelper.Tab();
                 changed |= ImGui.Checkbox("聊天气泡", ref ChatBubblesClipRectsEnabled);
@@ -126,7 +126,7 @@ namespace DelvUI.Interface.GeneralElements
                     break;
 
                 case WindowClippingMode.Performance:
-                    ImGui.Text("为了提高性能，窗口裁剪功能将被减少。\n同一时间只能裁剪一个游戏窗口。这可能会产生意想不到的/丑陋的结果。\n\n注意：此模式不适用于铭牌。");
+                    ImGui.Text("为了提高性能，窗口裁剪功能将被减少。\n同一时间只能裁剪一个游戏窗口。这可能会产生意想不到的/丑陋的结果。\n\n注意：此模式不适用于名牌。");
                     break;
             }
 

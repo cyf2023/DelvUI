@@ -133,7 +133,7 @@ namespace DelvUI.Interface.GeneralElements
     [Exportable(false)]
     public class DefaultFontLabelConfig : LabelConfig
     {
-        [DragFloat("大小", min = 1, max = 5, velocity = 0.05f)]
+        [DragFloat("尺寸", min = 1, max = 5, velocity = 0.05f)]
         [Order(11)]
         public float FontScale = 1;
 

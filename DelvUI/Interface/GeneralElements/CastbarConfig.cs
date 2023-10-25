@@ -7,7 +7,7 @@ using System.Numerics;
 
 namespace DelvUI.Interface.GeneralElements
 {
-    [Section("咏唱条")]
+    [Section("咏唱栏")]
     [SubSection("玩家", 0)]
     public class PlayerCastbarConfig : UnitFrameCastbarConfig
     {
@@ -46,7 +46,7 @@ namespace DelvUI.Interface.GeneralElements
         }
     }
 
-    [Section("咏唱条")]
+    [Section("咏唱栏")]
     [SubSection("目标", 0)]
     public class TargetCastbarConfig : UnitFrameCastbarConfig
     {
@@ -92,7 +92,7 @@ namespace DelvUI.Interface.GeneralElements
         }
     }
 
-    [Section("咏唱条")]
+    [Section("咏唱栏")]
     [SubSection("目标的目标", 0)]
     public class TargetOfTargetCastbarConfig : TargetCastbarConfig
     {
@@ -120,7 +120,7 @@ namespace DelvUI.Interface.GeneralElements
         }
     }
 
-    [Section("咏唱条")]
+    [Section("咏唱栏")]
     [SubSection("焦点目标", 0)]
     public class FocusTargetCastbarConfig : TargetCastbarConfig
     {
@@ -192,7 +192,7 @@ namespace DelvUI.Interface.GeneralElements
         [Order(101, collapseWith = nameof(SeparateIcon))]
         public Vector2 CustomIconPosition = Vector2.Zero;
 
-        [DragInt2("自定义图标大小", min = 1, max = 500)]
+        [DragInt2("自定义图标尺寸", min = 1, max = 500)]
         [Order(101, collapseWith = nameof(SeparateIcon))]
         public Vector2 CustomIconSize = new Vector2(40);
 

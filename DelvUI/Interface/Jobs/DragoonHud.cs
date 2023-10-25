@@ -157,43 +157,43 @@ namespace DelvUI.Interface.Jobs
         }
     }
 
-    [Section("Job Specific Bars")]
-    [SubSection("Melee", 0)]
-    [SubSection("Dragoon", 1)]
+    [Section("职业特殊条")]
+    [SubSection("近战", 0)]
+    [SubSection("龙骑士", 1)]
     public class DragoonConfig : JobConfig
     {
         [JsonIgnore] public override uint JobId => JobIDs.DRG;
         public new static DragoonConfig DefaultConfig() { return new DragoonConfig(); }
 
-        [NestedConfig("Chaos Thrust", 30)]
+        [NestedConfig("樱花怒放", 30)]
         public ProgressBarConfig ChaosThrustBar = new ProgressBarConfig(
             new(0, -76),
             new(254, 20),
             new(new Vector4(217f / 255f, 145f / 255f, 232f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Power Surge", 35)]
+        [NestedConfig("龙枪", 35)]
         public ProgressBarConfig PowerSurgeBar = new ProgressBarConfig(
             new(0, -54),
             new(254, 20),
             new(new Vector4(244f / 255f, 206f / 255f, 191f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Eye of the Dragon", 40)]
+        [NestedConfig("巨龙视线", 40)]
         public ChunkedBarConfig EyeOfTheDragonBar = new ChunkedBarConfig(
             new(-64, -32),
             new(126, 20),
             new(new Vector4(255f / 255f, 125f / 255f, 125f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Firstminds' Focus", 40)]
+        [NestedConfig("天龙眼", 40)]
         public ChunkedBarConfig FirstmindsFocusBar = new ChunkedBarConfig(
             new(64, -32),
             new(126, 20),
             new PluginConfigColor(new(134f / 255f, 120f / 255f, 255f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Life of the Dragon", 45)]
+        [NestedConfig("红莲龙血", 45)]
         public ProgressBarConfig LifeOfTheDragonBar = new ProgressBarConfig(
             new(0, -10),
             new(254, 20),

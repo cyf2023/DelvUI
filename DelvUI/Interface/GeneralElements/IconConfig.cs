@@ -98,11 +98,11 @@ namespace DelvUI.Interface.GeneralElements
         {
         }
 
-        [Combo("铭牌标签", new string[] { "Name", "Title", "Highest", "Lowest" }, spacing = true)]
+        [Combo("名牌标签", new string[] { "Name", "Title", "Highest", "Lowest" }, spacing = true)]
         [Order(17)]
         public NameplateLabelAnchor NameplateLabelAnchor = NameplateLabelAnchor.Name;
 
-        [Checkbox("当血条可见时优先作为锚", help = "启用后，如果血条可见，图标将锚定在血条上。\n如果血条消失，它将锚定回所需的标签。")]
+        [Checkbox("当生命条可见时优先作为锚", help = "启用后，如果生命条可见，图标将锚定在生命条上。\n如果生命条消失，它将锚定回所需的标签。")]
         [Order(18)]
         public bool PrioritizeHealthBarAnchor = false;
     }
@@ -138,11 +138,11 @@ namespace DelvUI.Interface.GeneralElements
         {
         }
 
-        [Combo("铭牌标签", new string[] { "名字", "标题", "最高", "最低" }, spacing = true)]
+        [Combo("名牌标签", new string[] { "名字", "标题", "最高", "最低" }, spacing = true)]
         [Order(17)]
         public NameplateLabelAnchor NameplateLabelAnchor = NameplateLabelAnchor.Name;
 
-        [Checkbox("当血条可见时优先作为锚", help = "启用后，如果血条可见，图标将锚定在血条上。\n如果血条消失，它将锚定回所需的标签。")]
+        [Checkbox("当生命条可见时优先作为锚", help = "启用后，如果生命条可见，图标将锚定在生命条上。\n如果生命条消失，它将锚定回所需的标签。")]
         [Order(18)]
         public bool PrioritizeHealthBarAnchor = false;
     }

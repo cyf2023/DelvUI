@@ -266,9 +266,9 @@ namespace DelvUI.Interface.Jobs
         }
     }
 
-    [Section("Job Specific Bars")]
-    [SubSection("Caster", 0)]
-    [SubSection("Summoner", 1)]
+    [Section("职业特殊条")]
+    [SubSection("法系", 0)]
+    [SubSection("召唤师", 1)]
     public class SummonerConfig : JobConfig
     {
         [JsonIgnore] public override uint JobId => JobIDs.SMN;

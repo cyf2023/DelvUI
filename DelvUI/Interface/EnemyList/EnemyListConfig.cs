@@ -18,7 +18,7 @@ namespace DelvUI.Interface.EnemyList
 
     [Exportable(false)]
     [Section("敌对列表", true)]
-    [SubSection("通常", 0)]
+    [SubSection("通用", 0)]
     public class EnemyListConfig : MovablePluginConfigObject
     {
         public new static EnemyListConfig DefaultConfig()
@@ -46,7 +46,7 @@ namespace DelvUI.Interface.EnemyList
     [Exportable(false)]
     [DisableParentSettings("Position", "Anchor", "HideWhenInactive")]
     [Section("敌对列表", true)]
-    [SubSection("血条", 0)]
+    [SubSection("生命条", 0)]
     public class EnemyListHealthBarConfig : BarConfig
     {
         [NestedConfig("名字标签", 70)]
@@ -164,7 +164,7 @@ namespace DelvUI.Interface.EnemyList
     [SubSection("仇恨图标", 0)]
     public class EnemyListEnmityIconConfig : IconConfig
     {
-        [Anchor("血条锚")]
+        [Anchor("生命条锚")]
         [Order(16)]
         public DrawAnchor HealthBarAnchor = DrawAnchor.TopLeft;
 
@@ -184,7 +184,7 @@ namespace DelvUI.Interface.EnemyList
     [SubSection("标记图标", 0)]
     public class EnemyListSignIconConfig : SignIconConfig
     {
-        [Anchor("血条锚")]
+        [Anchor("生命条锚")]
         [Order(16)]
         public DrawAnchor HealthBarAnchor = DrawAnchor.TopLeft;
 
@@ -205,7 +205,7 @@ namespace DelvUI.Interface.EnemyList
     [DisableParentSettings("AnchorToUnitFrame", "UnitFrameAnchor", "HideWhenInactive", "FillDirection")]
     [Exportable(false)]
     [Section("敌人列表", true)]
-    [SubSection("咏唱条", 0)]
+    [SubSection("咏唱栏", 0)]
     public class EnemyListCastbarConfig : TargetCastbarConfig
     {
         public new static EnemyListCastbarConfig DefaultConfig()
@@ -227,7 +227,7 @@ namespace DelvUI.Interface.EnemyList
             return config;
         }
 
-        [Anchor("血条锚")]
+        [Anchor("生命条锚")]
         [Order(16)]
         public DrawAnchor HealthBarAnchor = DrawAnchor.BottomLeft;
 
@@ -307,7 +307,7 @@ namespace DelvUI.Interface.EnemyList
 
     public class EnemyListStatusEffectsListConfig : StatusEffectsListConfig
     {
-        [Anchor("血条锚")]
+        [Anchor("生命条锚")]
         [Order(4)]
         public DrawAnchor HealthBarAnchor = DrawAnchor.BottomLeft;
 

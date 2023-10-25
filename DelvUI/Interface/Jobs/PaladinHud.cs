@@ -144,9 +144,9 @@ namespace DelvUI.Interface.Jobs
         }
     }
 
-    [Section("Job Specific Bars")]
-    [SubSection("Tank", 0)]
-    [SubSection("Paladin", 1)]
+    [Section("职业特殊条")]
+    [SubSection("防护", 0)]
+    [SubSection("骑士", 1)]
     public class PaladinConfig : JobConfig
     {
         [JsonIgnore] public override uint JobId => JobIDs.PLD;

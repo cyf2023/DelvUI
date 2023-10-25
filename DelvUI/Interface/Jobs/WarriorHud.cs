@@ -194,9 +194,9 @@ namespace DelvUI.Interface.Jobs
         }
     }
 
-    [Section("Job Specific Bars")]
-    [SubSection("Tank", 0)]
-    [SubSection("Warrior", 1)]
+    [Section("职业特殊条")]
+    [SubSection("防护", 0)]
+    [SubSection("战士", 1)]
     public class WarriorConfig : JobConfig
     {
         [JsonIgnore] public override uint JobId => JobIDs.WAR;

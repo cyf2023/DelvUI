@@ -195,9 +195,9 @@ namespace DelvUI.Interface.Jobs
         }
     }
 
-    [Section("Job Specific Bars")]
-    [SubSection("Healer", 0)]
-    [SubSection("White Mage", 1)]
+    [Section("职业特殊条")]
+    [SubSection("治疗", 0)]
+    [SubSection("白魔法师", 1)]
     public class WhiteMageConfig : JobConfig
     {
         [JsonIgnore] public override uint JobId => JobIDs.WHM;

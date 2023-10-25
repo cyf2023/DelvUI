@@ -293,9 +293,9 @@ namespace DelvUI.Interface.Jobs
         Pirouette = 16002
     }
 
-    [Section("Job Specific Bars")]
-    [SubSection("Ranged", 0)]
-    [SubSection("Dancer", 1)]
+    [Section("职业特殊条")]
+    [SubSection("远敏", 0)]
+    [SubSection("舞者", 1)]
     public class DancerConfig : JobConfig
     {
         [JsonIgnore] public override uint JobId => JobIDs.DNC;

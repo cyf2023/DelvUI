@@ -229,9 +229,9 @@ namespace DelvUI.Interface.Jobs
         }
     }
 
-    [Section("Job Specific Bars")]
-    [SubSection("Tank", 0)]
-    [SubSection("Dark Knight", 1)]
+    [Section("职业特殊条")]
+    [SubSection("防护", 0)]
+    [SubSection("暗黑骑士", 1)]
     public class DarkKnightConfig : JobConfig
     {
         [JsonIgnore] public override uint JobId => JobIDs.DRK;
