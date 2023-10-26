@@ -164,15 +164,15 @@ namespace DelvUI.Interface.GeneralElements
         [Order(51)]
         public bool UseRoleColorAsBackgroundColor = false;
 
-        [Checkbox("缺失血量颜色")]
+        [Checkbox("缺失生命值颜色")]
         [Order(55)]
         public bool UseMissingHealthBar = false;
 
-        [Checkbox("职业颜色作为缺失血量颜色")]
+        [Checkbox("职业颜色作为缺失生命值颜色")]
         [Order(56, collapseWith = nameof(UseMissingHealthBar))]
         public bool UseJobColorAsMissingHealthColor = false;
 
-        [Checkbox("职能颜色作为缺失血量颜色")]
+        [Checkbox("职能颜色作为缺失生命值颜色")]
         [Order(57, collapseWith = nameof(UseMissingHealthBar))]
         public bool UseRoleColorAsMissingHealthColor = false;
 

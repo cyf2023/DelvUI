@@ -27,7 +27,7 @@ namespace DelvUI.Interface.GeneralElements
         [Order(17)]
         public PluginConfigColor FillColor = new PluginConfigColor(new(220f / 255f, 220f / 255f, 220f / 255f, 100f / 100f));
 
-        [Checkbox("显示边界")]
+        [Checkbox("显示边框")]
         [Order(18)]
         public bool ShowBorder = true;
 

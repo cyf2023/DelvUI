@@ -408,7 +408,7 @@ namespace DelvUI.Helpers
 
         public static bool IsHealthLabel(LabelConfig config)
         {
-            return config.GetText().Contains("[health");
+            return config.GetText().Contains("[health]");
         }
     }
 }

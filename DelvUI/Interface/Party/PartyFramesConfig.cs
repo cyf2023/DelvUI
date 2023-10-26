@@ -13,8 +13,8 @@ using System.Numerics;
 namespace DelvUI.Interface.Party
 {
     [Exportable(false)]
-    [Section("Party Frames", true)]
-    [SubSection("General", 0)]
+    [Section("小队框架", true)]
+    [SubSection("通用", 0)]
     public class PartyFramesConfig : MovablePluginConfigObject
     {
         public new static PartyFramesConfig DefaultConfig()
@@ -25,46 +25,46 @@ namespace DelvUI.Interface.Party
             return config;
         }
 
-        [Checkbox("Preview", isMonitored = true)]
+        [Checkbox("预览", isMonitored = true)]
         [Order(4)]
         public bool Preview = false;
 
-        [DragInt("Rows", spacing = true, isMonitored = true, min = 1, max = 8, velocity = 0.2f)]
+        [DragInt("行", spacing = true, isMonitored = true, min = 1, max = 8, velocity = 0.2f)]
         [Order(10)]
         public int Rows = 4;
 
-        [DragInt("Columns", isMonitored = true, min = 1, max = 8, velocity = 0.2f)]
+        [DragInt("列", isMonitored = true, min = 1, max = 8, velocity = 0.2f)]
         [Order(11)]
         public int Columns = 2;
 
-        [Anchor("Bars Anchor", isMonitored = true, spacing = true)]
+        [Anchor("条的锚", isMonitored = true, spacing = true)]
         [Order(15)]
         public DrawAnchor BarsAnchor = DrawAnchor.TopLeft;
 
-        [Checkbox("Fill Rows First", isMonitored = true)]
+        [Checkbox("优先填充行", isMonitored = true)]
         [Order(20)]
         public bool FillRowsFirst = true;
 
-        [Checkbox("Player Order Override Enabled (Tip: Ctrl+Alt+Shift Click on a bar to set your desired spot in the frames)", spacing = true)]
+        [Checkbox("玩家顺序覆盖启用（提示：Ctrl+Alt+Shift点击一个条来设置你想要的点位置）", spacing = true)]
         [Order(25)]
         public bool PlayerOrderOverrideEnabled = false;
 
-        [Combo("Player Position", "1", "2", "3", "4", "5", "6", "7", "8", "First of my role", isMonitored = true)]
+        [Combo("玩家位置", "1", "2", "3", "4", "5", "6", "7", "8", "我的职能优先", isMonitored = true)]
         [Order(25, collapseWith = nameof(PlayerOrderOverrideEnabled))]
         public int PlayerOrder = 1;
 
-        [Checkbox("Show When Solo", spacing = true)]
+        [Checkbox("单人时显示", spacing = true)]
         [Order(50)]
         public bool ShowWhenSolo = false;
 
-        [Checkbox("Show Chocobo", isMonitored = true)]
+        [Checkbox("显示陆行鸟", isMonitored = true)]
         [Order(55)]
         public bool ShowChocobo = true;
 
-        [NestedConfig("Party Title Label", 60)]
+        [NestedConfig("小队标题标签", 60)]
         public PartyFramesTitleLabel ShowPartyTitleConfig = new PartyFramesTitleLabel(Vector2.Zero, "", DrawAnchor.Left, DrawAnchor.Left);
 
-        [NestedConfig("Visibility", 200)]
+        [NestedConfig("可见性", 200)]
         public VisibilityConfig VisibilityConfig = new VisibilityConfig();
     }
 
@@ -80,8 +80,8 @@ namespace DelvUI.Interface.Party
     [Exportable(false)]
     [Disableable(false)]
     [DisableParentSettings("Position", "Anchor", "BackgroundColor", "FillColor", "HideWhenInactive", "DrawBorder", "BorderColor", "BorderThickness")]
-    [Section("Party Frames", true)]
-    [SubSection("Health Bar", 0)]
+    [Section("小队框架", true)]
+    [SubSection("生命条", 0)]
     public class PartyFramesHealthBarsConfig : BarConfig
     {
         public new static PartyFramesHealthBarsConfig DefaultConfig()
@@ -92,32 +92,32 @@ namespace DelvUI.Interface.Party
             return config;
         }
 
-        [DragInt2("Padding", isMonitored = true, min = 0)]
+        [DragInt2("填充", isMonitored = true, min = 0)]
         [Order(31)]
         public Vector2 Padding = new Vector2(0, 0);
 
-        [NestedConfig("Name Label", 44)]
+        [NestedConfig("名字标签", 44)]
         public EditableLabelConfig NameLabelConfig = new EditableLabelConfig(Vector2.Zero, "[name:initials].", DrawAnchor.Center, DrawAnchor.Center);
 
-        [NestedConfig("Health Label", 45)]
+        [NestedConfig("声明标签", 45)]
         public EditableLabelConfig HealthLabelConfig = new EditableLabelConfig(Vector2.Zero, "[health:current-short]", DrawAnchor.Right, DrawAnchor.Right);
 
-        [NestedConfig("Order Label", 50)]
+        [NestedConfig("目标标签", 50)]
         public DefaultFontLabelConfig OrderNumberConfig = new DefaultFontLabelConfig(new Vector2(2, 4), "", DrawAnchor.TopLeft, DrawAnchor.TopLeft);
 
-        [NestedConfig("Colors", 55)]
+        [NestedConfig("颜色", 55)]
         public PartyFramesColorsConfig ColorsConfig = new PartyFramesColorsConfig();
 
-        [NestedConfig("Shield", 60)]
+        [NestedConfig("盾", 60)]
         public ShieldConfig ShieldConfig = new ShieldConfig();
 
-        [NestedConfig("Change Alpha Based on Range", 65)]
+        [NestedConfig("根据距离改变不透明度", 65)]
         public PartyFramesRangeConfig RangeConfig = new PartyFramesRangeConfig();
 
-        [NestedConfig("Use Smooth Transitions", 70)]
+        [NestedConfig("使用平滑过渡", 70)]
         public SmoothHealthConfig SmoothHealthConfig = new SmoothHealthConfig();
 
-        [NestedConfig("Custom Mouseover Area", 75)]
+        [NestedConfig("自定义鼠标悬停区域", 75)]
         public MouseoverAreaConfig MouseoverAreaConfig = new MouseoverAreaConfig();
 
         public PartyFramesHealthBarsConfig(Vector2 position, Vector2 size, PluginConfigColor fillColor, BarDirection fillDirection = BarDirection.Right)
@@ -130,99 +130,99 @@ namespace DelvUI.Interface.Party
     [Exportable(false)]
     public class PartyFramesColorsConfig : PluginConfigObject
     {
-        [Checkbox("Show Border")]
+        [Checkbox("显示边框")]
         [Order(4)]
         public bool ShowBorder = true;
 
-        [ColorEdit4("Border Color")]
+        [ColorEdit4("边框颜色")]
         [Order(5, collapseWith = nameof(ShowBorder))]
         public PluginConfigColor BorderColor = new PluginConfigColor(new Vector4(0f / 255f, 0f / 255f, 0f / 255f, 100f / 100f));
 
-        [ColorEdit4("Target Border Color")]
+        [ColorEdit4("目标边框颜色")]
         [Order(6, collapseWith = nameof(ShowBorder))]
         public PluginConfigColor TargetBordercolor = new PluginConfigColor(new Vector4(255f / 255f, 255f / 255f, 255f / 255f, 100f / 100f));
 
-        [DragInt("Inactive Border Thickness", min = 1, max = 10, help = "This is the border thickness that will be used when the border is in the default state (aka not targetted, not showing enmity, etc).")]
+        [DragInt("非活跃边框厚度", min = 1, max = 10, help = "这是边框在默认状态（即不被选中，不显示仇恨等）时使用的边框厚度。")]
         [Order(6, collapseWith = nameof(ShowBorder))]
         public int InactiveBorderThickness = 1;
 
-        [DragInt("Active Border Thickness", min = 1, max = 10, help = "This is the border thickness that will be used when the border active (aka targetted, showing enmity, etc).")]
+        [DragInt("活跃边框厚度", min = 1, max = 10, help = "这是边框活跃时（即被选中，显示仇恨等）使用的边框厚度。")]
         [Order(7, collapseWith = nameof(ShowBorder))]
         public int ActiveBorderThickness = 1;
 
-        [ColorEdit4("Background Color", spacing = true)]
+        [ColorEdit4("背景色", spacing = true)]
         [Order(15)]
         public PluginConfigColor BackgroundColor = new PluginConfigColor(new Vector4(0f / 255f, 0f / 255f, 0f / 255f, 70f / 100f));
 
-        [ColorEdit4("Out of Reach Background Color", help = "This background color will be used when the player's data couldn't be retreived (i.e. player is disconnected)")]
+        [ColorEdit4("无法检索的背景色", help = "当玩家的数据无法被检索时（即玩家断开连接）使用的背景色。")]
         [Order(15)]
         public PluginConfigColor OutOfReachBackgroundColor = new PluginConfigColor(new Vector4(50f / 255f, 50f / 255f, 50f / 255f, 70f / 100f));
 
-        [Checkbox("Use Death Indicator Background Color", isMonitored = true, spacing = true)]
+        [Checkbox("使用死亡指示器背景色", isMonitored = true, spacing = true)]
         [Order(18)]
         public bool UseDeathIndicatorBackgroundColor = false;
 
-        [ColorEdit4("Death Indicator Background Color")]
+        [ColorEdit4("死亡指示器背景色")]
         [Order(19, collapseWith = nameof(UseDeathIndicatorBackgroundColor))]
         public PluginConfigColor DeathIndicatorBackgroundColor = new PluginConfigColor(new Vector4(204f / 255f, 3f / 255f, 3f / 255f, 80f / 100f));
 
-        [Checkbox("Use Role Colors", isMonitored = true, spacing = true)]
+        [Checkbox("使用职能颜色", isMonitored = true, spacing = true)]
         [Order(20)]
         public bool UseRoleColors = false;
 
-        [NestedConfig("Color Based On Health Value", 30, collapsingHeader = false)]
+        [NestedConfig("基于生命值的颜色", 30, collapsingHeader = false)]
         public ColorByHealthValueConfig ColorByHealth = new ColorByHealthValueConfig();
 
-        [Checkbox("Highlight When Hovering With Cursor Or Soft Targeting", spacing = true)]
+        [Checkbox("用光标悬停或软选中时高亮显示", spacing = true)]
         [Order(40)]
         public bool ShowHighlight = true;
 
-        [ColorEdit4("Highlight Color")]
+        [ColorEdit4("高亮颜色")]
         [Order(45, collapseWith = nameof(ShowHighlight))]
         public PluginConfigColor HighlightColor = new PluginConfigColor(new Vector4(255f / 255f, 255f / 255f, 255f / 255f, 5f / 100f));
 
 
-        [Checkbox("Missing Health Color", spacing = true)]
+        [Checkbox("缺失生命值颜色", spacing = true)]
         [Order(46)]
         public bool UseMissingHealthBar = false;
 
-        [Checkbox("Job Color As Missing Health Color")]
+        [Checkbox("职业颜色作为缺失生命值颜色")]
         [Order(47, collapseWith = nameof(UseMissingHealthBar))]
         public bool UseJobColorAsMissingHealthColor = false;
 
-        [Checkbox("Role Color As Missing Health Color")]
+        [Checkbox("职能颜色作为缺失生命值颜色")]
         [Order(48, collapseWith = nameof(UseMissingHealthBar))]
         public bool UseRoleColorAsMissingHealthColor = false;
 
-        [ColorEdit4("Color" + "##MissingHealth")]
+        [ColorEdit4("颜色" + "##MissingHealth")]
         [Order(49, collapseWith = nameof(UseMissingHealthBar))]
         public PluginConfigColor HealthMissingColor = new(new Vector4(255f / 255f, 0f / 255f, 0f / 255f, 100f / 100f));
 
-        [Checkbox("Job Color As Background Color")]
+        [Checkbox("职业颜色作为背景色")]
         [Order(50)]
         public bool UseJobColorAsBackgroundColor = false;
 
-        [Checkbox("Role Color As Background Color")]
+        [Checkbox("职能颜色作为背景色")]
         [Order(51)]
         public bool UseRoleColorAsBackgroundColor = false;
 
-        [Checkbox("Show Enmity Border Colors", spacing = true)]
+        [Checkbox("显示一仇颜色", spacing = true)]
         [Order(54)]
         public bool ShowEnmityBorderColors = true;
 
-        [ColorEdit4("Enmity Leader Color")]
+        [ColorEdit4("一仇颜色")]
         [Order(55, collapseWith = nameof(ShowEnmityBorderColors))]
         public PluginConfigColor EnmityLeaderBordercolor = new PluginConfigColor(new Vector4(255f / 255f, 40f / 255f, 40f / 255f, 100f / 100f));
 
-        [Checkbox("Show Second Enmity")]
+        [Checkbox("显示二仇")]
         [Order(60, collapseWith = nameof(ShowEnmityBorderColors))]
         public bool ShowSecondEnmity = true;
 
-        [Checkbox("Hide Second Enmity in Light Parties")]
+        [Checkbox("在轻锐小队隐藏二仇")]
         [Order(65, collapseWith = nameof(ShowSecondEnmity))]
         public bool HideSecondEnmityInLightParties = true;
 
-        [ColorEdit4("Enmity Second Color")]
+        [ColorEdit4("二仇颜色")]
         [Order(70, collapseWith = nameof(ShowSecondEnmity))]
         public PluginConfigColor EnmitySecondBordercolor = new PluginConfigColor(new Vector4(255f / 255f, 175f / 255f, 40f / 255f, 100f / 100f));
     }
@@ -230,23 +230,23 @@ namespace DelvUI.Interface.Party
     [Exportable(false)]
     public class PartyFramesRangeConfig : PluginConfigObject
     {
-        [DragInt("Range (yalms)", min = 1, max = 500)]
+        [DragInt("距离(yalms)", min = 1, max = 500)]
         [Order(5)]
         public int Range = 30;
 
-        [DragFloat("Alpha", min = 1, max = 100)]
+        [DragFloat("不透明度", min = 1, max = 100)]
         [Order(10)]
         public float Alpha = 25;
 
-        [Checkbox("Use Additional Range Check")]
+        [Checkbox("使用额外距离检查")]
         [Order(15)]
         public bool UseAdditionalRangeCheck = false;
 
-        [DragInt("Additional Range (yalms)", min = 1, max = 500)]
+        [DragInt("额外距离(yalms)", min = 1, max = 500)]
         [Order(20, collapseWith = nameof(UseAdditionalRangeCheck))]
         public int AdditionalRange = 15;
 
-        [DragFloat("Additional Alpha", min = 1, max = 100)]
+        [DragFloat("额外透明度", min = 1, max = 100)]
         [Order(25, collapseWith = nameof(UseAdditionalRangeCheck))]
         public float AdditionalAlpha = 60;
 
@@ -302,8 +302,8 @@ namespace DelvUI.Interface.Party
 
     [DisableParentSettings("HideWhenInactive", "Label")]
     [Exportable(false)]
-    [Section("Party Frames", true)]
-    [SubSection("Mana Bar", 0)]
+    [Section("小队框架", true)]
+    [SubSection("魔力条", 0)]
     public class PartyFramesManaBarConfig : PrimaryResourceConfig
     {
         public new static PartyFramesManaBarConfig DefaultConfig()
@@ -315,11 +315,11 @@ namespace DelvUI.Interface.Party
             return config;
         }
 
-        [Anchor("Health Bar Anchor")]
+        [Anchor("生命条锚")]
         [Order(14)]
         public DrawAnchor HealthBarAnchor = DrawAnchor.BottomLeft;
 
-        [RadioSelector("Show For All Jobs With Raise", "Show Only For Healers", "Show For All Jobs")]
+        [RadioSelector("为 所有 有复活的职业显示", "只为治疗职业显示", "为 所有 职业显示")]
         [Order(42)]
         public PartyFramesManaBarDisplayMode ManaBarDisplayMode = PartyFramesManaBarDisplayMode.HealersOnly;
 
@@ -330,8 +330,8 @@ namespace DelvUI.Interface.Party
     }
 
     [Exportable(false)]
-    [Section("Party Frames", true)]
-    [SubSection("Castbar", 0)]
+    [Section("小队锚", true)]
+    [SubSection("咏唱栏", 0)]
     public class PartyFramesCastbarConfig : CastbarConfig
     {
         public new static PartyFramesCastbarConfig DefaultConfig()
@@ -353,11 +353,11 @@ namespace DelvUI.Interface.Party
             return config;
         }
 
-        [Checkbox("Hide Name When Casting")]
+        [Checkbox("咏唱时隐藏名称")]
         [Order(6)]
         public bool HideNameWhenCasting = false;
 
-        [Anchor("Health Bar Anchor")]
+        [Anchor("生命条锚")]
         [Order(16)]
         public DrawAnchor HealthBarAnchor = DrawAnchor.BottomLeft;
 
@@ -370,13 +370,13 @@ namespace DelvUI.Interface.Party
 
     [Disableable(false)]
     [Exportable(false)]
-    [Section("Party Frames", true)]
-    [SubSection("Icons", 0)]
+    [Section("小队框架", true)]
+    [SubSection("图标", 0)]
     public class PartyFramesIconsConfig : PluginConfigObject
     {
         public new static PartyFramesIconsConfig DefaultConfig() { return new PartyFramesIconsConfig(); }
 
-        [NestedConfig("Role / Job", 10, separator = false)]
+        [NestedConfig("职能/职业", 10, separator = false)]
         public PartyFramesRoleIconConfig Role = new PartyFramesRoleIconConfig(
             new Vector2(20, 0),
             new Vector2(20, 20),
@@ -384,7 +384,7 @@ namespace DelvUI.Interface.Party
             DrawAnchor.TopLeft
         );
 
-        [NestedConfig("Sign", 11)]
+        [NestedConfig("标记", 11)]
         public SignIconConfig Sign = new SignIconConfig(
             new Vector2(0, -10),
             new Vector2(30, 30),
@@ -392,7 +392,7 @@ namespace DelvUI.Interface.Party
             DrawAnchor.Top
         );
 
-        [NestedConfig("Leader", 12)]
+        [NestedConfig("领袖", 12)]
         public PartyFramesLeaderIconConfig Leader = new PartyFramesLeaderIconConfig(
             new Vector2(-12, -12),
             new Vector2(24, 24),
@@ -400,13 +400,13 @@ namespace DelvUI.Interface.Party
             DrawAnchor.TopLeft
         );
 
-        [NestedConfig("Player Status", 13)]
+        [NestedConfig("玩家状态", 13)]
         public PartyFramesPlayerStatusConfig PlayerStatus = new PartyFramesPlayerStatusConfig();
 
-        [NestedConfig("Ready Check Status", 14)]
+        [NestedConfig("准备缺人状态", 14)]
         public PartyFramesReadyCheckStatusConfig ReadyCheckStatus = new PartyFramesReadyCheckStatusConfig();
 
-        [NestedConfig("Who's Talking", 15)]
+        [NestedConfig("谁的发言", 15)]
         public PartyFramesWhosTalkingConfig WhosTalking = new PartyFramesWhosTalkingConfig();
     }
 
@@ -443,11 +443,11 @@ namespace DelvUI.Interface.Party
             return config;
         }
 
-        [Checkbox("Hide Name When Showing Status")]
+        [Checkbox("显示状态时隐藏名称")]
         [Order(5)]
         public bool HideName = false;
 
-        [NestedConfig("Icon", 10)]
+        [NestedConfig("图标", 10)]
         public IconConfig Icon = new IconConfig(
             new Vector2(0, 5),
             new Vector2(16, 16),
@@ -455,7 +455,7 @@ namespace DelvUI.Interface.Party
             DrawAnchor.Top
         );
 
-        [NestedConfig("Label", 15)]
+        [NestedConfig("标签", 15)]
         public LabelConfig Label = new LabelConfig(Vector2.Zero, "", DrawAnchor.Center, DrawAnchor.Center);
     }
 
@@ -464,15 +464,15 @@ namespace DelvUI.Interface.Party
     {
         public new static PartyFramesReadyCheckStatusConfig DefaultConfig() => new PartyFramesReadyCheckStatusConfig();
 
-        [Checkbox("Hide Name When Showing Status")]
+        [Checkbox("显示状态时隐藏名称")]
         [Order(5)]
         public bool HideName = false;
 
-        [DragInt("Duration (seconds)", min = 1, max = 60, help = "Determines for how long the icons will show after a ready check is finished.")]
+        [DragInt("持续时间（秒）", min = 1, max = 60, help = "准备确认完成后图标将显示多长时间。")]
         [Order(6)]
         public int Duration = 10;
 
-        [NestedConfig("Icon", 10)]
+        [NestedConfig("图标", 10)]
         public IconConfig Icon = new IconConfig(
             new Vector2(0, 0),
             new Vector2(24, 24),
@@ -486,23 +486,23 @@ namespace DelvUI.Interface.Party
     {
         public new static PartyFramesWhosTalkingConfig DefaultConfig() => new PartyFramesWhosTalkingConfig();
 
-        [Checkbox("Replace Role/Job Icon when active")]
+        [Checkbox("活跃时替换职能/职业图标")]
         [Order(5)]
         public bool ReplaceRoleJobIcon = false;
 
-        [Checkbox("Show Speaking State", spacing = true)]
+        [Checkbox("显示发言状态", spacing = true)]
         [Order(10)]
         public bool ShowSpeaking = true;
 
-        [Checkbox("Show Muted State")]
+        [Checkbox("显示静音状态")]
         [Order(10)]
         public bool ShowMuted = true;
 
-        [Checkbox("Show Deafened State")]
+        [Checkbox("显示屏蔽状态")]
         [Order(10)]
         public bool ShowDeafened = true;
 
-        [NestedConfig("Icon", 20)]
+        [NestedConfig("图标", 20)]
         public IconConfig Icon = new IconConfig(
             new Vector2(0, 0),
             new Vector2(24, 24),
@@ -510,23 +510,23 @@ namespace DelvUI.Interface.Party
             DrawAnchor.TopRight
         );
 
-        [Checkbox("Change Health Bar Border when active", spacing = true, help = "Enabling this will override other border settings!")]
+        [Checkbox("活跃时改变生命条边框", spacing = true, help = "启用此选项将覆盖其他边框设置!")]
         [Order(30)]
         public bool ChangeBorders = false;
 
-        [DragInt("Border Thickness", min = 1, max = 10)]
+        [DragInt("边框厚度", min = 1, max = 10)]
         [Order(31, collapseWith = nameof(ChangeBorders))]
         public int BorderThickness = 1;
 
-        [ColorEdit4("Speaking Border Color")]
+        [ColorEdit4("发言边框颜色")]
         [Order(32, collapseWith = nameof(ChangeBorders))]
         public PluginConfigColor SpeakingBorderColor = PluginConfigColor.FromHex(0xFF40BB40);
 
-        [ColorEdit4("Muted Border Color")]
+        [ColorEdit4("静音边框颜色")]
         [Order(33, collapseWith = nameof(ChangeBorders))]
         public PluginConfigColor MutedBorderColor = PluginConfigColor.FromHex(0xFF008080);
 
-        [ColorEdit4("Deafened Border Color")]
+        [ColorEdit4("屏蔽边框颜色")]
         [Order(34, collapseWith = nameof(ChangeBorders))]
         public PluginConfigColor DeafenedBorderColor = PluginConfigColor.FromHex(0xFFFF4444);
 
@@ -553,8 +553,8 @@ namespace DelvUI.Interface.Party
     }
 
     [Exportable(false)]
-    [Section("Party Frames", true)]
-    [SubSection("Buffs", 0)]
+    [Section("小队框架", true)]
+    [SubSection("增益状态", 0)]
     public class PartyFramesBuffsConfig : PartyFramesStatusEffectsListConfig
     {
         public new static PartyFramesBuffsConfig DefaultConfig()
@@ -585,8 +585,8 @@ namespace DelvUI.Interface.Party
     }
 
     [Exportable(false)]
-    [Section("Party Frames", true)]
-    [SubSection("Debuffs", 0)]
+    [Section("小队框架", true)]
+    [SubSection("减益状态", 0)]
     public class PartyFramesDebuffsConfig : PartyFramesStatusEffectsListConfig
     {
         public new static PartyFramesDebuffsConfig DefaultConfig()
@@ -617,7 +617,7 @@ namespace DelvUI.Interface.Party
 
     public class PartyFramesStatusEffectsListConfig : StatusEffectsListConfig
     {
-        [Anchor("Health Bar Anchor")]
+        [Anchor("生命条锚")]
         [Order(4)]
         public DrawAnchor HealthBarAnchor = DrawAnchor.BottomLeft;
 
@@ -631,19 +631,19 @@ namespace DelvUI.Interface.Party
 
     [Disableable(false)]
     [Exportable(false)]
-    [Section("Party Frames", true)]
-    [SubSection("Trackers", 0)]
+    [Section("小队框架", true)]
+    [SubSection("监控器", 0)]
     public class PartyFramesTrackersConfig : PluginConfigObject
     {
         public new static PartyFramesTrackersConfig DefaultConfig() { return new PartyFramesTrackersConfig(); }
 
-        [NestedConfig("Raise Tracker", 10, separator = false)]
+        [NestedConfig("复活监控器", 10, separator = false)]
         public PartyFramesRaiseTrackerConfig Raise = new PartyFramesRaiseTrackerConfig();
 
-        [NestedConfig("Invulnerabilities Tracker", 15)]
+        [NestedConfig("无敌监控器", 15)]
         public PartyFramesInvulnTrackerConfig Invuln = new PartyFramesInvulnTrackerConfig();
 
-        [NestedConfig("Cleanse Tracker", 15)]
+        [NestedConfig("康复监控器", 15)]
         public PartyFramesCleanseTrackerConfig Cleanse = new PartyFramesCleanseTrackerConfig();
     }
 
@@ -652,31 +652,31 @@ namespace DelvUI.Interface.Party
     {
         public new static PartyFramesRaiseTrackerConfig DefaultConfig() { return new PartyFramesRaiseTrackerConfig(); }
 
-        [Checkbox("Hide Name When Raised")]
+        [Checkbox("被复活时隐藏名字")]
         [Order(10)]
         public bool HideNameWhenRaised = true;
 
-        [Checkbox("Keep Icon After Cast Finishes")]
+        [Checkbox("咏唱完毕后仍保持图标")]
         [Order(15)]
         public bool KeepIconAfterCastFinishes = true;
 
-        [Checkbox("Change Background Color When Raised", spacing = true)]
+        [Checkbox("被复活时改变背景色", spacing = true)]
         [Order(20)]
         public bool ChangeBackgroundColorWhenRaised = true;
 
-        [ColorEdit4("Raise Background Color")]
+        [ColorEdit4("复活背景色")]
         [Order(25, collapseWith = nameof(ChangeBackgroundColorWhenRaised))]
         public PluginConfigColor BackgroundColor = new(new Vector4(211f / 255f, 235f / 255f, 215f / 245f, 50f / 100f));
 
-        [Checkbox("Change Border Color When Raised", spacing = true)]
+        [Checkbox("被复活时改变边框颜色", spacing = true)]
         [Order(30)]
         public bool ChangeBorderColorWhenRaised = true;
 
-        [ColorEdit4("Raise Border Color")]
+        [ColorEdit4("复活边框颜色")]
         [Order(35, collapseWith = nameof(ChangeBorderColorWhenRaised))]
         public PluginConfigColor BorderColor = new(new Vector4(47f / 255f, 169f / 255f, 215f / 255f, 100f / 100f));
 
-        [NestedConfig("Icon", 50)]
+        [NestedConfig("图标", 50)]
         public IconWithLabelConfig Icon = new IconWithLabelConfig(
             new Vector2(0, 0),
             new Vector2(50, 50),
@@ -690,27 +690,27 @@ namespace DelvUI.Interface.Party
     {
         public new static PartyFramesInvulnTrackerConfig DefaultConfig() { return new PartyFramesInvulnTrackerConfig(); }
 
-        [Checkbox("Hide Name When Invuln is Up")]
+        [Checkbox("无敌时隐藏名字")]
         [Order(10)]
         public bool HideNameWhenInvuln = true;
 
-        [Checkbox("Change Background Color When Invuln is Up", spacing = true)]
+        [Checkbox("无敌时改变背景色", spacing = true)]
         [Order(15)]
         public bool ChangeBackgroundColorWhenInvuln = true;
 
-        [ColorEdit4("Invuln Background Color")]
+        [ColorEdit4("无敌背景色")]
         [Order(20, collapseWith = nameof(ChangeBackgroundColorWhenInvuln))]
         public PluginConfigColor BackgroundColor = new(new Vector4(211f / 255f, 235f / 255f, 215f / 245f, 50f / 100f));
 
-        [Checkbox("Walking Dead Custom Color")]
+        [Checkbox("行尸走肉自定义颜色")]
         [Order(25, collapseWith = nameof(ChangeBackgroundColorWhenInvuln))]
         public bool UseCustomWalkingDeadColor = true;
 
-        [ColorEdit4("Walking Dead Background Color")]
+        [ColorEdit4("行尸走肉背景色")]
         [Order(30, collapseWith = nameof(UseCustomWalkingDeadColor))]
         public PluginConfigColor WalkingDeadBackgroundColor = new(new Vector4(158f / 255f, 158f / 255f, 158f / 255f, 50f / 100f));
 
-        [NestedConfig("Icon", 50)]
+        [NestedConfig("图标", 50)]
         public IconWithLabelConfig Icon = new IconWithLabelConfig(
             new Vector2(0, 0),
             new Vector2(50, 50),
@@ -749,31 +749,31 @@ namespace DelvUI.Interface.Party
     {
         public new static PartyFramesCleanseTrackerConfig DefaultConfig() { return new PartyFramesCleanseTrackerConfig(); }
 
-        [Checkbox("Show only on jobs with cleanses", spacing = true)]
+        [Checkbox("仅在有康复的职业时展示", spacing = true)]
         [Order(10)]
         public bool CleanseJobsOnly = true;
 
-        [Checkbox("Change Health Bar Color ", spacing = true)]
+        [Checkbox("改变生命条颜色", spacing = true)]
         [Order(15)]
         public bool ChangeHealthBarCleanseColor = true;
 
-        [ColorEdit4("Health Bar Color")]
+        [ColorEdit4("生命条颜色")]
         [Order(20, collapseWith = nameof(ChangeHealthBarCleanseColor))]
         public PluginConfigColor HealthBarColor = new(new Vector4(255f / 255f, 0f / 255f, 104f / 255f, 100f / 100f));
 
-        [Checkbox("Change Border Color", spacing = true)]
+        [Checkbox("改变边框颜色", spacing = true)]
         [Order(25)]
         public bool ChangeBorderCleanseColor = true;
 
-        [ColorEdit4("Border Color")]
+        [ColorEdit4("边框颜色")]
         [Order(30, collapseWith = nameof(ChangeBorderCleanseColor))]
         public PluginConfigColor BorderColor = new(new Vector4(255f / 255f, 0f / 255f, 104f / 255f, 100f / 100f));
     }
 
     [Exportable(false)]
     [DisableParentSettings("Anchor")]
-    [Section("Party Frames", true)]
-    [SubSection("Cooldowns", 0)]
+    [Section("小队框架", true)]
+    [SubSection("冷却时间", 0)]
     public class PartyFramesCooldownListConfig : AnchorablePluginConfigObject
     {
         public new static PartyFramesCooldownListConfig DefaultConfig()
@@ -785,76 +785,76 @@ namespace DelvUI.Interface.Party
             return config;
         }
 
-        [Anchor("Health Bar Anchor")]
+        [Anchor("生命条锚")]
         [Order(3)]
         public DrawAnchor HealthBarAnchor = DrawAnchor.Left;
 
-        [Checkbox("Tooltips", spacing = true)]
+        [Checkbox("提示框", spacing = true)]
         [Order(20)]
         public bool ShowTooltips = true;
 
-        [Checkbox("Preview", isMonitored = true)]
+        [Checkbox("预览", isMonitored = true)]
         [Order(21)]
         public bool Preview;
 
-        [DragInt2("Icon Size", min = 1, max = 4000, spacing = true)]
+        [DragInt2("图标尺寸", min = 1, max = 4000, spacing = true)]
         [Order(30)]
         public Vector2 IconSize = new Vector2(40, 40);
 
-        [DragInt2("Icon Padding", min = 0, max = 500)]
+        [DragInt2("图标填充", min = 0, max = 500)]
         [Order(31)]
         public Vector2 IconPadding = new(4, 4);
 
-        [Checkbox("Fill Rows First")]
+        [Checkbox("优先填充行")]
         [Order(32)]
         public bool FillRowsFirst = true;
 
-        [Combo("Icons Growth Direction",
-            "Right and Down",
-            "Right and Up",
-            "Left and Down",
-            "Left and Up",
-            "Centered and Up",
-            "Centered and Down",
-            "Centered and Left",
-            "Centered and Right"
+        [Combo("图标增长方向",
+            "右下",
+            "右上",
+            "左下",
+            "左上",
+            "中上",
+            "中下",
+            "中左",
+            "中右"
         )]
         [Order(33)]
         public int Directions = 3; // left & up
 
-        [Checkbox("Show Border", spacing = true)]
+        [Checkbox("显示边框", spacing = true)]
         [Order(35)]
         public bool DrawBorder = true;
 
-        [ColorEdit4("Border Color")]
+        [ColorEdit4("边框颜色")]
         [Order(36, collapseWith = nameof(DrawBorder))]
         public PluginConfigColor BorderColor = new PluginConfigColor(new Vector4(0f / 255f, 0f / 255f, 0f / 255f, 100f / 100f));
 
-        [DragInt("Border Thickness", min = 1, max = 10)]
+        [DragInt("边框厚度", min = 1, max = 10)]
         [Order(37, collapseWith = nameof(DrawBorder))]
         public int BorderThickness = 1;
 
-        [Checkbox("Change Icon Border When Active")]
+        [Checkbox("活跃时改变图标边框")]
         [Order(45, collapseWith = nameof(DrawBorder))]
         public bool ChangeIconBorderWhenActive = true;
 
-        [ColorEdit4("Icon Active Border Color")]
+        [ColorEdit4("图标活跃边框颜色")]
         [Order(46, collapseWith = nameof(ChangeIconBorderWhenActive))]
         public PluginConfigColor IconActiveBorderColor = new PluginConfigColor(new Vector4(255f / 255f, 200f / 255f, 35f / 255f, 100f / 100f));
 
-        [DragInt("Icon Active Border Thickness", min = 1, max = 10)]
+        [DragInt("图标活跃边框厚度", min = 1, max = 10)]
         [Order(47, collapseWith = nameof(ChangeIconBorderWhenActive))]
         public int IconActiveBorderThickness = 3;
 
-        [Checkbox("Change Label Color When Active", spacing = true)]
+        [Checkbox("活跃时改变标签颜色", spacing = true)]
         [Order(50)]
         public bool ChangeLabelsColorWhenActive = false;
 
-        [ColorEdit4("Label Active Color")]
+        [ColorEdit4("标签活跃颜色")]
         [Order(51, collapseWith = nameof(ChangeLabelsColorWhenActive))]
         public PluginConfigColor LabelsActiveColor = new PluginConfigColor(new Vector4(255f / 255f, 200f / 255f, 35f / 255f, 100f / 100f));
 
-        [NestedConfig("Time Label", 80)]
+        [NestedConfig("时间标签", 80)]
         public PartyCooldownTimeLabelConfig TimeLabel = new PartyCooldownTimeLabelConfig(new Vector2(0, 0), "", DrawAnchor.Center, DrawAnchor.Center) { NumberFormat = 1 };
     }
 }

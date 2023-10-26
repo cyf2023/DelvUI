@@ -106,7 +106,7 @@ namespace DelvUI.Interface.EnemyList
         [Order(41, collapseWith = nameof(ShowHighlight))]
         public PluginConfigColor HighlightColor = new PluginConfigColor(new Vector4(255f / 255f, 255f / 255f, 255f / 255f, 5f / 100f));
 
-        [Checkbox("缺失血量颜色", spacing = true)]
+        [Checkbox("缺失生命值颜色", spacing = true)]
         [Order(45)]
         public bool UseMissingHealthBar = false;
 
