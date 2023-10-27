@@ -126,7 +126,7 @@ namespace DelvUI.Config
             InitializeBaseNode(_configBaseNode);
             _configBaseNode.ConfigObjectResetEvent += OnConfigObjectReset;
 
-            _mainConfigWindow = new MainConfigWindow("DelvUI Settings");
+            _mainConfigWindow = new MainConfigWindow("DelvUI设置");
             _mainConfigWindow.node = _configBaseNode;
             _mainConfigWindow.CloseAction = () =>
             {
@@ -145,8 +145,8 @@ namespace DelvUI.Config
             };
 
             string changelog = LoadChangelog();
-            _changelogWindow = new ChangelogWindow("DelvUI Changelog v" + Plugin.Version, changelog);
-            _gridWindow = new GridWindow("网格##DelvUI");
+            _changelogWindow = new ChangelogWindow("DelvUI更新日志v" + Plugin.Version, changelog);
+            _gridWindow = new GridWindow("Grid ##DelvUI");
 
             _windowSystem = new WindowSystem("DelvUI_Windows");
             _windowSystem.AddWindow(_mainConfigWindow);

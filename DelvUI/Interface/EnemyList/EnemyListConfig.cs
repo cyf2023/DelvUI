@@ -110,7 +110,7 @@ namespace DelvUI.Interface.EnemyList
         [Order(45)]
         public bool UseMissingHealthBar = false;
 
-        [ColorEdit4("颜色" + "##MissingHealth")]
+        [ColorEdit4("Color" + "##MissingHealth")]
         [Order(46, collapseWith = nameof(UseMissingHealthBar))]
         public PluginConfigColor HealthMissingColor = new PluginConfigColor(new Vector4(255f / 255f, 0f / 255f, 0f / 255f, 100f / 100f));
 

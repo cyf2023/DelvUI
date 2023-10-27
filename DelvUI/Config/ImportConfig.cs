@@ -17,8 +17,8 @@ namespace DelvUI.Interface
     [Exportable(false)]
     [Shareable(false)]
     [Resettable(false)]
-    [Section("Import")]
-    [SubSection("General", 0)]
+    [Section("导入")]
+    [SubSection("通用", 0)]
     public class ImportConfig : PluginConfigObject
     {
         private string _importString = "";
@@ -33,19 +33,19 @@ namespace DelvUI.Interface
         [ManualDraw]
         public bool Draw(ref bool changed)
         {
-            ImGui.Text("Import string:");
+            ImGui.Text("导入的字符串：");
 
             ImGui.InputText("", ref _importString, 999999);
 
-            ImGui.Text("Here you can import specific parts of a profile.\nIf the string contains more than one part you will be able to select which parts you wish to import.");
+            ImGui.Text("你可以在这里导入文件的特定部分。\n如果字符串包含多个部分，你将能够选择想要导入的部分。");
 
-            if (ImGui.Button("Import", new Vector2(560, 24)))
+            if (ImGui.Button("导入", new Vector2(560, 24)))
             {
                 _importing = _importString.Length > 0;
             }
 
             ImGuiHelper.DrawSeparator(1, 1);
-            ImGui.Text("To browse presets made by users of the DelvUI community, click the button below.");
+            ImGui.Text("单击下方按钮浏览DelvUI社区用户预设。");
 
             if (ImGui.Button("DelvUI on wago.io", new Vector2(560, 24)))
             {
@@ -119,7 +119,7 @@ namespace DelvUI.Interface
                 PluginConfigObject? config = importData.GetObject();
                 if (config == null)
                 {
-                    return "Couldn't import \"" + importData.Name + "\"";
+                    return "无法导入\"" + importData.Name + "\"";
                 }
 
                 configObjects.Add(config);
@@ -157,7 +157,7 @@ namespace DelvUI.Interface
                     _importDataList = null;
                     _importDataEnabled = null;
 
-                    return e is ArgumentException ? e.Message : "Invalid import string!";
+                    return e is ArgumentException ? e.Message : "无效的导入字符串!";
                 }
             }
 

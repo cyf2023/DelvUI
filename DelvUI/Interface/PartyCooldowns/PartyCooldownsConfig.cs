@@ -417,7 +417,7 @@ namespace DelvUI.Interface.PartyCooldowns
 
             if (_needsPopupOpen)
             {
-                ImGui.OpenPopup("排除的职业##DelvUI");
+                ImGui.OpenPopup("Exclude Jobs##DelvUI");
                 _needsPopupOpen = false;
             }
 
@@ -453,7 +453,7 @@ namespace DelvUI.Interface.PartyCooldowns
             float width = Math.Max(100, ImGui.CalcTextSize(title).X + 10);
             ImGui.SetNextWindowSize(new(width, jobIds.Count * 30 + 32));
 
-            if (ImGui.BeginPopup("排除的职业##DelvUI", ImGuiWindowFlags.NoMove))
+            if (ImGui.BeginPopup("Exclude Jobs##DelvUI", ImGuiWindowFlags.NoMove))
             {
                 ImGui.Text(title);
 

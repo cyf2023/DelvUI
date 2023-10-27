@@ -89,7 +89,7 @@ namespace DelvUI.Interface.GeneralElements
                 ImGuiHelper.NewLineAndTab();
                 ImGui.Text("预览");
                 ImGuiHelper.Tab();
-                ImGui.Combo("条纹理##bar texture", ref _inputBarTexture, textureNames, textureNames.Length, 10);
+                ImGui.Combo("Bar Texture ##bar texture", ref _inputBarTexture, textureNames, textureNames.Length, 10);
 
                 ImGuiHelper.Tab();
                 ImGui.Combo("绘制模式", ref _drawModeIndex, drawModes, drawModes.Length, 4);

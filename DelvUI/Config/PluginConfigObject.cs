@@ -14,7 +14,7 @@ namespace DelvUI.Config
     {
         public string Version => Plugin.Version;
 
-        [Checkbox("Enabled")]
+        [Checkbox("启用")]
         [Order(0, collapseWith = null)]
         public bool Enabled = true;
 
@@ -173,13 +173,13 @@ namespace DelvUI.Config
         [JsonIgnore]
         public string ID;
 
-        [StrataLevel("Strata Level")]
+        [StrataLevel("层级")]
         [Order(2)]
         public StrataLevel? Strata;
 
         public StrataLevel StrataLevel => Strata ?? StrataLevel.LOWEST;
 
-        [DragInt2("Position", min = -4000, max = 4000)]
+        [DragInt2("位置", min = -4000, max = 4000)]
         [Order(5)]
         public Vector2 Position = Vector2.Zero;
 
@@ -191,11 +191,11 @@ namespace DelvUI.Config
 
     public abstract class AnchorablePluginConfigObject : MovablePluginConfigObject
     {
-        [DragInt2("Size", min = 1, max = 4000, isMonitored = true)]
+        [DragInt2("尺寸", min = 1, max = 4000, isMonitored = true)]
         [Order(10)]
         public Vector2 Size;
 
-        [Anchor("Anchor")]
+        [Anchor("锚")]
         [Order(15)]
         public DrawAnchor Anchor = DrawAnchor.Center;
     }

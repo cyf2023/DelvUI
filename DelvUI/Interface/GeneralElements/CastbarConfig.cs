@@ -23,7 +23,7 @@ namespace DelvUI.Interface.GeneralElements
         [Order(61, collapseWith = nameof(ShowSlideCast))]
         public int SlideCastTime = 500;
 
-        [ColorEdit4("颜色##SlidecastColor")]
+        [ColorEdit4("Color ##SlidecastColor")]
         [Order(62, collapseWith = nameof(ShowSlideCast))]
         public PluginConfigColor SlideCastColor = new PluginConfigColor(new(190f / 255f, 28f / 255f, 57f / 255f, 100f / 100f));
 
@@ -202,7 +202,7 @@ namespace DelvUI.Interface.GeneralElements
         [NestedConfig("咏唱时间", 505)]
         public NumericLabelConfig CastTimeLabel;
 
-        [ColorEdit4("颜色" + "##ReverseFill")]
+        [ColorEdit4("Color" + "##ReverseFill")]
         [Order(515, collapseWith = nameof(UseReverseFill))]
         public PluginConfigColor ReverseFillColor = new(new Vector4(255f / 255f, 0f / 255f, 0f / 255f, 100f / 100f));
 

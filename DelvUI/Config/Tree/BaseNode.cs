@@ -189,7 +189,7 @@ namespace DelvUI.Config.Tree
                     ImGui.Text($"v{Plugin.Version}");
 
                     // section list
-                    ImGui.BeginChild("left pane", new Vector2(150 * _scale, -10), true, ImGuiWindowFlags.NoScrollbar);
+                    ImGui.BeginChild("左窗格", new Vector2(150 * _scale, -10), true, ImGuiWindowFlags.NoScrollbar);
 
                     // if no section is selected, select the first
                     if (_nodes.Any() && _nodes.Find(o => o is SectionNode sectionNode && sectionNode.Selected) == null)
@@ -235,7 +235,7 @@ namespace DelvUI.Config.Tree
                     }
                     ImGui.PopStyleColor();
                     ImGui.PopFont();
-                    ImGuiHelper.SetTooltip("Changelog");
+                    ImGuiHelper.SetTooltip("更新日志");
 
                     // browse button
                     ImGui.PushFont(UiBuilder.IconFont);
@@ -247,7 +247,7 @@ namespace DelvUI.Config.Tree
                     }
                     ImGui.PopStyleColor();
                     ImGui.PopFont();
-                    ImGuiHelper.SetTooltip("Browse presets on wago.io");
+                    ImGuiHelper.SetTooltip("在wago.io浏览预设");
 
                     // discord button
                     ImGui.PushFont(UiBuilder.IconFont);
@@ -273,7 +273,7 @@ namespace DelvUI.Config.Tree
                     }
                     ImGui.PopStyleColor(2);
                     ImGui.PopFont();
-                    ImGuiHelper.SetTooltip("Tip the developer at ko-fi.com");
+                    ImGuiHelper.SetTooltip("在ko-fi.com支持开发者");
 
                     ImGui.EndChild();
                 }
@@ -307,7 +307,7 @@ namespace DelvUI.Config.Tree
             }
             ImGui.PopStyleColor();
             ImGui.PopFont();
-            ImGuiHelper.SetTooltip("Close");
+            ImGuiHelper.SetTooltip("关闭");
 
             // unlock button
             ImGui.PushFont(UiBuilder.IconFont);
@@ -320,7 +320,7 @@ namespace DelvUI.Config.Tree
             }
             ImGui.PopStyleColor();
             ImGui.PopFont();
-            ImGuiHelper.SetTooltip("Unlock HUD");
+            ImGuiHelper.SetTooltip("解锁HUD");
 
             // hide button
             ImGui.PushFont(UiBuilder.IconFont);
@@ -333,7 +333,7 @@ namespace DelvUI.Config.Tree
             }
             ImGui.PopStyleColor();
             ImGui.PopFont();
-            ImGuiHelper.SetTooltip(ConfigurationManager.Instance.ShowHUD ? "Hide HUD" : "Show HUD");
+            ImGuiHelper.SetTooltip(ConfigurationManager.Instance.ShowHUD ? "隐藏HUD" : "显示HUD");
 
 
 

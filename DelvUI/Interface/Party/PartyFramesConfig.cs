@@ -194,7 +194,7 @@ namespace DelvUI.Interface.Party
         [Order(48, collapseWith = nameof(UseMissingHealthBar))]
         public bool UseRoleColorAsMissingHealthColor = false;
 
-        [ColorEdit4("颜色" + "##MissingHealth")]
+        [ColorEdit4("Color" + "##MissingHealth")]
         [Order(49, collapseWith = nameof(UseMissingHealthBar))]
         public PluginConfigColor HealthMissingColor = new(new Vector4(255f / 255f, 0f / 255f, 0f / 255f, 100f / 100f));
 
