@@ -187,14 +187,14 @@ namespace DelvUI.Interface.Jobs
             return config;
         }
 
-        [NestedConfig("Overheat Gauge", 30)]
+        [NestedConfig("过热量谱", 30)]
         public MachinistOverheatBarConfig OverheatChunkedGauge = new MachinistOverheatBarConfig(
             new Vector2(0, -54),
             new Vector2(254, 20),
             new PluginConfigColor(new Vector4(255f / 255f, 239f / 255f, 14f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Heat Gauge", 35)]
+        [NestedConfig("枪管热度量谱", 35)]
         public ChunkedProgressBarConfig HeatGauge = new ChunkedProgressBarConfig(
             new Vector2(0, -32),
             new Vector2(254, 20),
@@ -203,21 +203,21 @@ namespace DelvUI.Interface.Jobs
             new PluginConfigColor(new Vector4(180f / 255f, 180f / 255f, 180f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Battery Gauge", 40)]
+        [NestedConfig("电能量谱", 40)]
         public MachinistBatteryGaugeConfig BatteryGauge = new MachinistBatteryGaugeConfig(
             new Vector2(-31, -10),
             new Vector2(192, 20),
             new PluginConfigColor(new Vector4(0, 0, 0, 0))
         );
 
-        [NestedConfig("Automaton Queen Bar", 45)]
+        [NestedConfig("后式自走人偶条", 45)]
         public ProgressBarConfig AutomatonBar = new ProgressBarConfig(
             new Vector2(97, -10),
             new Vector2(60, 20),
             new PluginConfigColor(new Vector4(153f / 255f, 0f / 255f, 255f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Wildfire Bar", 50)]
+        [NestedConfig("野火条", 50)]
         public ProgressBarConfig WildfireBar = new ProgressBarConfig(
             new Vector2(0, -76),
             new Vector2(254, 20),
@@ -232,7 +232,7 @@ namespace DelvUI.Interface.Jobs
     [Exportable(false)]
     public class MachinistBatteryGaugeConfig : ProgressBarConfig
     {
-        [ColorEdit4("Battery Color", spacing = true)]
+        [ColorEdit4("电能颜色", spacing = true)]
         [Order(55)]
         public PluginConfigColor BatteryColor = new(new Vector4(106f / 255f, 255f / 255f, 255f / 255f, 100f / 100f));
 
@@ -244,7 +244,7 @@ namespace DelvUI.Interface.Jobs
     [Exportable(false)]
     public class MachinistOverheatBarConfig : ChunkedBarConfig
     {
-        [NestedConfig("Duration Text", 1000)]
+        [NestedConfig("持续时间文本", 1000)]
         public NumericLabelConfig DurationLabel;
 
         public MachinistOverheatBarConfig(Vector2 position, Vector2 size, PluginConfigColor fillColor)

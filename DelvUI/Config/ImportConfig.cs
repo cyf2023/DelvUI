@@ -176,21 +176,21 @@ namespace DelvUI.Interface
             bool didConfirm = false;
             bool didClose = false;
 
-            ImGui.OpenPopup("Import ##DelvUI");
+            ImGui.OpenPopup("导入 ##DelvUI");
 
             Vector2 center = ImGui.GetMainViewport().GetCenter();
             ImGui.SetNextWindowPos(center, ImGuiCond.Appearing, new Vector2(0.5f, 0.5f));
 
             bool p_open = true; // i've no idea what this is used for
 
-            if (ImGui.BeginPopupModal("Import ##DelvUI", ref p_open, ImGuiWindowFlags.NoSavedSettings | ImGuiWindowFlags.AlwaysAutoResize | ImGuiWindowFlags.NoMove))
+            if (ImGui.BeginPopupModal("导入 ##DelvUI", ref p_open, ImGuiWindowFlags.NoSavedSettings | ImGuiWindowFlags.AlwaysAutoResize | ImGuiWindowFlags.NoMove))
             {
                 float width = 300;
 
-                ImGui.Text("Select which parts to import:");
+                ImGui.Text("选择哪一部分导入：");
 
                 ImGui.NewLine();
-                if (ImGui.Button("Select All", new Vector2(width / 2f - 5, 24)))
+                if (ImGui.Button("选择所有", new Vector2(width / 2f - 5, 24)))
                 {
                     for (int i = 0; i < _importDataEnabled.Count; i++)
                     {
@@ -199,7 +199,7 @@ namespace DelvUI.Interface
                 }
 
                 ImGui.SameLine();
-                if (ImGui.Button("Deselect All", new Vector2(width / 2f - 5, 24)))
+                if (ImGui.Button("取消选择所有", new Vector2(width / 2f - 5, 24)))
                 {
                     for (int i = 0; i < _importDataEnabled.Count; i++)
                     {

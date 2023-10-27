@@ -140,13 +140,13 @@ namespace DelvUI.Helpers
             ConfigurationManager.Instance.ShowingModalWindow = true;
 
             bool didClose = false;
-            ImGui.OpenPopup("Error ##Delvui");
+            ImGui.OpenPopup("错误 ##Delvui");
 
             Vector2 center = ImGui.GetMainViewport().GetCenter();
             ImGui.SetNextWindowPos(center, ImGuiCond.Appearing, new Vector2(0.5f, 0.5f));
 
             bool p_open = true; // i've no idea what this is used for
-            if (ImGui.BeginPopupModal("Error ##Delvui", ref p_open, ImGuiWindowFlags.NoSavedSettings | ImGuiWindowFlags.AlwaysAutoResize | ImGuiWindowFlags.NoMove))
+            if (ImGui.BeginPopupModal("错误 ##Delvui", ref p_open, ImGuiWindowFlags.NoSavedSettings | ImGuiWindowFlags.AlwaysAutoResize | ImGuiWindowFlags.NoMove))
             {
                 ImGui.Text(message);
                 ImGui.NewLine();

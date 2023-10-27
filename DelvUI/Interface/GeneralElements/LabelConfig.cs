@@ -163,7 +163,7 @@ namespace DelvUI.Interface.GeneralElements
         [Order(25)]
         public DrawAnchor TextAnchor = DrawAnchor.TopLeft;
 
-        [ColorEdit4("Color ##Text")]
+        [ColorEdit4("颜色 ##Text")]
         [Order(30)]
         public PluginConfigColor Color = new PluginConfigColor(Vector4.One);
 
@@ -171,7 +171,7 @@ namespace DelvUI.Interface.GeneralElements
         [Order(35)]
         public bool ShowOutline = true;
 
-        [ColorEdit4("Color ##Outline")]
+        [ColorEdit4("颜色 ##Outline")]
         [Order(40, collapseWith = nameof(ShowOutline))]
         public PluginConfigColor OutlineColor = new PluginConfigColor(Vector4.UnitW);
 

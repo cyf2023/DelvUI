@@ -262,14 +262,14 @@ namespace DelvUI.Interface.Jobs
             return config;
         }
 
-        [NestedConfig("Balance Bar", 30)]
+        [NestedConfig("平衡条", 30)]
         public BarConfig BalanceBar = new BarConfig(
             new(0, -10),
             new(20, 20),
             new PluginConfigColor(new(195f / 255f, 35f / 255f, 35f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("White Mana Bar", 35)]
+        [NestedConfig("白魔元条", 35)]
         public ProgressBarConfig WhiteManaBar = new ProgressBarConfig(
             new(-69.5f, -10),
             new(115, 20),
@@ -279,7 +279,7 @@ namespace DelvUI.Interface.Jobs
             80
         );
 
-        [NestedConfig("Black Mana Bar", 40)]
+        [NestedConfig("黑魔元条", 40)]
         public ProgressBarConfig BlackManaBar = new ProgressBarConfig(
             new(69.5f, -10),
             new(115, 20),
@@ -287,21 +287,21 @@ namespace DelvUI.Interface.Jobs
             threshold: 80
         );
 
-        [NestedConfig("Mana Stacks Bar", 45)]
+        [NestedConfig("魔元集条", 45)]
         public ChunkedBarConfig ManaStacksBar = new ChunkedBarConfig(
             new(0, -27),
             new(254, 10),
             new PluginConfigColor(new(200f / 255f, 45f / 255f, 40f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Dualcast Bar", 50)]
+        [NestedConfig("连续咏唱条", 50)]
         public ProgressBarConfig DualcastBar = new ProgressBarConfig(
             new(0, -41),
             new(16, 14),
             new PluginConfigColor(new(204f / 255f, 17f / 255f, 255f / 95f, 100f / 100f))
         );
 
-        [NestedConfig("Verstone Ready Bar", 55)]
+        [NestedConfig("赤飞石预备条", 55)]
         public ProgressBarConfig VerstoneBar = new ProgressBarConfig(
             new(-68.5f, -41),
             new(117, 14),
@@ -309,7 +309,7 @@ namespace DelvUI.Interface.Jobs
             BarDirection.Left
         );
 
-        [NestedConfig("Verfire Ready Bar", 60)]
+        [NestedConfig("赤火炎预备条", 60)]
         public ProgressBarConfig VerfireBar = new ProgressBarConfig(
             new(68.5f, -41),
             new(117, 14),

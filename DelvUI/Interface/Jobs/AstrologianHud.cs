@@ -210,37 +210,37 @@ namespace DelvUI.Interface.Jobs
             {
                 case CardType.BALANCE:
                     cardColor = Config.AstrodyneBar.SealSunColor;
-                    cardJob = "MELEE";
+                    cardJob = "近战";
                     Config.DrawBar.DrawGlowConfig.Color = new PluginConfigColor(Config.DrawBar.DrawMeleeGlowColor.Vector);
                     break;
 
                 case CardType.BOLE:
                     cardColor = Config.AstrodyneBar.SealSunColor;
-                    cardJob = "RANGED";
+                    cardJob = "远程";
                     Config.DrawBar.DrawGlowConfig.Color = new PluginConfigColor(Config.DrawBar.DrawRangedGlowColor.Vector);
                     break;
 
                 case CardType.ARROW:
                     cardColor = Config.AstrodyneBar.SealLunarColor;
-                    cardJob = "MELEE";
+                    cardJob = "近战";
                     Config.DrawBar.DrawGlowConfig.Color = new PluginConfigColor(Config.DrawBar.DrawMeleeGlowColor.Vector);
                     break;
 
                 case CardType.EWER:
                     cardColor = Config.AstrodyneBar.SealLunarColor;
-                    cardJob = "RANGED";
+                    cardJob = "远程";
                     Config.DrawBar.DrawGlowConfig.Color = new PluginConfigColor(Config.DrawBar.DrawRangedGlowColor.Vector);
                     break;
 
                 case CardType.SPEAR:
                     cardColor = Config.AstrodyneBar.SealCelestialColor;
-                    cardJob = "MELEE";
+                    cardJob = "近战";
                     Config.DrawBar.DrawGlowConfig.Color = new PluginConfigColor(Config.DrawBar.DrawMeleeGlowColor.Vector);
                     break;
 
                 case CardType.SPIRE:
                     cardColor = Config.AstrodyneBar.SealCelestialColor;
-                    cardJob = "RANGED";
+                    cardJob = "远程";
                     Config.DrawBar.DrawGlowConfig.Color = new PluginConfigColor(Config.DrawBar.DrawRangedGlowColor.Vector);
                     break;
 
@@ -269,11 +269,11 @@ namespace DelvUI.Interface.Jobs
                     }
                     else if (drawCastInfo > 0 && drawCharges > 0)
                     {
-                        Config.DrawBar.DrawDrawLabel.SetText("READY (" + current.ToString("0") + ")");
+                        Config.DrawBar.DrawDrawLabel.SetText("准备完毕（" + current.ToString("0") + "）");
                     }
                     else
                     {
-                        Config.DrawBar.DrawDrawLabel.SetText("READY");
+                        Config.DrawBar.DrawDrawLabel.SetText("准备完毕");
                     }
                 }
                 else
@@ -291,10 +291,10 @@ namespace DelvUI.Interface.Jobs
                         Config.DrawBar.Label.SetValue(current);
                         break;
                     case > 0 when drawCharges > 0:
-                        Config.DrawBar.Label.SetText("READY (" + current.ToString("0") + ")");
+                        Config.DrawBar.Label.SetText("准备完毕（" + current.ToString("0") + "）");
                         break;
                     default:
-                        Config.DrawBar.Label.SetText("READY");
+                        Config.DrawBar.Label.SetText("准备完毕");
                         break;
                 }
 
@@ -327,12 +327,12 @@ namespace DelvUI.Interface.Jobs
             {
                 case CardType.LADY:
                     crownCardColor = Config.MinorArcanaBar.LadyDrawnColor;
-                    crownCardDrawn = "LADY";
+                    crownCardDrawn = "贵妇";
                     break;
 
                 case CardType.LORD:
                     crownCardColor = Config.MinorArcanaBar.LordDrawnColor;
-                    crownCardDrawn = "LORD";
+                    crownCardDrawn = "领主";
                     break;
             }
 
@@ -354,7 +354,7 @@ namespace DelvUI.Interface.Jobs
                             Config.MinorArcanaBar.CrownDrawTimerLabel.SetValue(cooldown);
                             break;
                         default:
-                            Config.MinorArcanaBar.CrownDrawTimerLabel.SetText("READY");
+                            Config.MinorArcanaBar.CrownDrawTimerLabel.SetText("准备完毕");
                             break;
                     }
                 }
@@ -373,7 +373,7 @@ namespace DelvUI.Interface.Jobs
                 }
                 else
                 {
-                    Config.MinorArcanaBar.Label.SetText("READY");
+                    Config.MinorArcanaBar.Label.SetText("准备完毕");
                 }
 
                 Config.MinorArcanaBar.CrownDrawTimerLabel.SetText("");
@@ -489,7 +489,7 @@ namespace DelvUI.Interface.Jobs
             new PluginConfigColor(new Vector4(255f / 255f, 255f / 255f, 173f / 255f, 100f / 100f))
         );
 
-        [DisableParentSettings("填充颜色", "颜色")]
+        [DisableParentSettings("填充色", "颜色")]
         [Exportable(false)]
         public class AstrologianDrawBarConfig : ProgressBarConfig
         {
@@ -500,25 +500,25 @@ namespace DelvUI.Interface.Jobs
             [NestedConfig("绘制充能标签" + "##Draw", 104, separator = false, spacing = true)]
             public NumericLabelConfig DrawDrawChargesLabel = new(new Vector2(0, 0), "", DrawAnchor.Right, DrawAnchor.Right);
 
-            [ColorEdit4("Draw on CD" + "##Draw")]
+            [ColorEdit4("处于冷却绘制" + "##Draw")]
             [Order(109)]
             public PluginConfigColor DrawCdColor = new(new Vector4(26f / 255f, 167f / 255f, 109f / 255f, 100f / 100f));
 
-            [ColorEdit4("Draw Ready" + "##Draw")]
+            [ColorEdit4("准备完毕绘制" + "##Draw")]
             [Order(110)]
             public PluginConfigColor DrawCdReadyColor = new(new Vector4(137f / 255f, 26f / 255f, 42f / 255f, 100f / 100f));
 
 
-            [NestedConfig("Card Preferred Target with Glow" + "##Astrodyne", 111, separator = false, spacing = true)]
+            [NestedConfig("卡片适合的目标闪光" + "##Astrodyne", 111, separator = false, spacing = true)]
             //[DisableParentSettings("Color")]
             //TODO: Remove Color from GlowConfig
             public BarGlowConfig DrawGlowConfig = new();
 
-            [ColorEdit4("Melee Glow" + "##Draw")]
+            [ColorEdit4("近战闪光" + "##Draw")]
             [Order(112)]
             public PluginConfigColor DrawMeleeGlowColor = new(new Vector4(83f / 255f, 34f / 255f, 120f / 255f, 100f / 100f));
 
-            [ColorEdit4("Ranged Glow" + "##Draw")]
+            [ColorEdit4("远程闪光" + "##Draw")]
             [Order(113)]
             public PluginConfigColor DrawRangedGlowColor = new(new Vector4(124f / 255f, 34f / 255f, 120f / 255f, 100f / 100f));
 
@@ -532,22 +532,22 @@ namespace DelvUI.Interface.Jobs
         [Exportable(false)]
         public class AstrologianCrownDrawBarConfig : ProgressBarConfig
         {
-            [NestedConfig("Minor Arcana Side Timer Label" + "##CrownDraw", 119, separator = false, spacing = true)]
+            [NestedConfig("小奥秘卡旁计时器标签" + "##CrownDraw", 119, separator = false, spacing = true)]
             public NumericLabelConfig CrownDrawTimerLabel = new(new Vector2(0, 0), "", DrawAnchor.Left, DrawAnchor.Left);
 
-            [ColorEdit4("Minor Arcana on CD" + "##CrownDraw")]
+            [ColorEdit4("小奥秘卡处于冷却" + "##CrownDraw")]
             [Order(120)]
             public PluginConfigColor CrownDrawCdColor = new(new Vector4(26f / 255f, 167f / 255f, 109f / 255f, 100f / 100f));
 
-            [ColorEdit4("Minor Arcana Ready" + "##CrownDraw")]
+            [ColorEdit4("小奥秘卡准备完毕" + "##CrownDraw")]
             [Order(121)]
             public PluginConfigColor CrownDrawCdReadyColor = new(new Vector4(65f / 255f, 100f / 255f, 205f / 255f, 100f / 100f));
 
-            [ColorEdit4("Lord Color" + "##CrownDraw")]
+            [ColorEdit4("领主颜色" + "##CrownDraw")]
             [Order(112)]
             public PluginConfigColor LordDrawnColor = new(new Vector4(182f / 255f, 92f / 255f, 72f / 255f, 100f / 100f));
 
-            [ColorEdit4("Lady Color" + "##CrownDraw")]
+            [ColorEdit4("贵妇颜色" + "##CrownDraw")]
             [Order(113)]
             public PluginConfigColor LadyDrawnColor = new(new Vector4(252f / 255f, 209f / 255f, 239f / 255f, 100f / 100f));
 
@@ -562,19 +562,19 @@ namespace DelvUI.Interface.Jobs
         public class AstrologianAstrodyneBarConfig : ChunkedProgressBarConfig
         {
 
-            [ColorEdit4("Sun" + "##Astrodyne")]
+            [ColorEdit4("日" + "##Astrodyne")]
             [Order(201)]
             public PluginConfigColor SealSunColor = new(new Vector4(213f / 255f, 124f / 255f, 97f / 255f, 100f / 100f));
 
-            [ColorEdit4("Lunar" + "##Astrodyne")]
+            [ColorEdit4("月" + "##Astrodyne")]
             [Order(202)]
             public PluginConfigColor SealLunarColor = new(new Vector4(241f / 255f, 217f / 255f, 125f / 255f, 100f / 100f));
 
-            [ColorEdit4("Celestial" + "##Astrodyne")]
+            [ColorEdit4("星" + "##Astrodyne")]
             [Order(203)]
             public PluginConfigColor SealCelestialColor = new(new Vector4(100f / 255f, 207f / 255f, 211f / 255f, 100f / 100f));
 
-            [NestedConfig("Glow" + "##Astrodyne", 205, separator = false, spacing = true)]
+            [NestedConfig("闪光" + "##Astrodyne", 205, separator = false, spacing = true)]
             public BarGlowConfig AstrodyneGlowConfig = new();
 
             public AstrologianAstrodyneBarConfig(Vector2 position, Vector2 size)
@@ -587,15 +587,15 @@ namespace DelvUI.Interface.Jobs
         [DisableParentSettings("FillColor")]
         public class AstrologianStarBarConfig : ProgressBarConfig
         {
-            [ColorEdit4("Earthly" + "##Star")]
+            [ColorEdit4("地星" + "##Star")]
             [Order(402)]
             public PluginConfigColor StarEarthlyColor = new(new Vector4(37f / 255f, 181f / 255f, 177f / 255f, 100f / 100f));
 
-            [ColorEdit4("Giant" + "##Star")]
+            [ColorEdit4("巨星" + "##Star")]
             [Order(403)]
             public PluginConfigColor StarGiantColor = new(new Vector4(198f / 255f, 154f / 255f, 199f / 255f, 100f / 100f));
 
-            [NestedConfig("Giant Dominance Glow" + "##Star", 404, separator = false, spacing = true)]
+            [NestedConfig("巨星主宰闪光" + "##Star", 404, separator = false, spacing = true)]
             public BarGlowConfig StarGlowConfig = new();
             public AstrologianStarBarConfig(Vector2 position, Vector2 size)
                 : base(position, size, new PluginConfigColor(Vector4.Zero))

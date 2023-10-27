@@ -314,49 +314,49 @@ namespace DelvUI.Interface.Jobs
             return config;
         }
 
-        [NestedConfig("Demolish", 30)]
+        [NestedConfig("破碎拳", 30)]
         public ProgressBarConfig DemolishBar = new ProgressBarConfig(
             new(71, -10),
             new(111, 20),
             new(new Vector4(246f / 255f, 169f / 255f, 255f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Leaden Fist", 31)]
+        [NestedConfig("连击效果提高", 31)]
         public ProgressBarConfig LeadenFistBar = new ProgressBarConfig(
             new(0, -10),
             new(28, 20),
             new(new Vector4(255f / 255f, 0f, 0f, 100f / 100f))
         );
 
-        [NestedConfig("Twin Snakes", 32)]
+        [NestedConfig("双掌打", 32)]
         public ProgressBarConfig TwinSnakesBar = new ProgressBarConfig(
             new(-71, -10),
             new(111, 20),
             new(new Vector4(227f / 255f, 255f / 255f, 64f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Chakra", 35)]
+        [NestedConfig("斗气", 35)]
         public ChunkedBarConfig ChakraBar = new ChunkedBarConfig(
             new(0, -32),
             new(254, 20),
             new(new Vector4(204f / 255f, 115f / 255f, 0f, 100f / 100f))
         );
 
-        [NestedConfig("Masterful Blitz Gauge", 40)]
+        [NestedConfig("必杀技量谱", 40)]
         public MastersGauge MastersGauge = new MastersGauge(
             new(0, -54),
             new(254, 20),
             new(new Vector4(204f / 255f, 115f / 255f, 0f, 100f / 100f))
         );
 
-        [NestedConfig("Forms", 45)]
+        [NestedConfig("身形", 45)]
         public MonkStancesBarConfig StancesBar = new MonkStancesBarConfig(
             new(0, -98),
             new(254, 20),
             new(new Vector4(36f / 255f, 131f / 255f, 255f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Perfect Balance", 50)]
+        [NestedConfig("震脚", 50)]
         public PerfectBalanceBar PerfectBalanceBar = new PerfectBalanceBar(
             new(0, -76),
             new(254, 20),
@@ -366,7 +366,7 @@ namespace DelvUI.Interface.Jobs
 
     public class PerfectBalanceBar : ChunkedBarConfig
     {
-        [NestedConfig("Perfect Balance Duration Text", 50, spacing = true)]
+        [NestedConfig("震脚持续时间文本", 50, spacing = true)]
         public NumericLabelConfig PerfectBalanceLabel;
 
         public PerfectBalanceBar(Vector2 position, Vector2 size, PluginConfigColor fillColor, int padding = 2) : base(position, size, fillColor, padding)
@@ -378,31 +378,31 @@ namespace DelvUI.Interface.Jobs
     [DisableParentSettings("FillColor", "FillDirection")]
     public class MastersGauge : ChunkedBarConfig
     {
-        [ColorEdit4("Lunar Nadi Color")]
+        [ColorEdit4("太阴斗气颜色")]
         [Order(19)]
         public PluginConfigColor LunarNadiColor = new PluginConfigColor(new Vector4(240f / 255f, 227f / 255f, 246f / 255f, 100f / 100f));
 
-        [ColorEdit4("Solar Nadi Color")]
+        [ColorEdit4("太阳斗气颜色")]
         [Order(20)]
         public PluginConfigColor SolarNadiColor = new PluginConfigColor(new Vector4(255f / 255f, 248f / 255f, 141f / 255f, 100f / 100f));
 
-        [ColorEdit4("Raptor Chakra Color")]
+        [ColorEdit4("盗龙身形颜色")]
         [Order(21)]
         public PluginConfigColor RaptorChakraColor = new PluginConfigColor(new Vector4(92f / 255f, 123f / 255f, 200f / 255f, 100f / 100f));
 
-        [ColorEdit4("Coeurl Chakra Color")]
+        [ColorEdit4("猛豹身形颜色")]
         [Order(22)]
         public PluginConfigColor CoeurlChakraColor = new PluginConfigColor(new Vector4(142f / 255f, 216f / 255f, 116f / 255f, 100f / 100f));
 
-        [ColorEdit4("Opo-opo Chakra Color")]
+        [ColorEdit4("魔猿身形颜色")]
         [Order(23)]
         public PluginConfigColor OpoopoChakraColor = new PluginConfigColor(new Vector4(184f / 255f, 107f / 255f, 124f / 255f, 100f / 100f));
 
-        [DragDropHorizontal("Chakra Order", "Lunar Nadi", "Chakra 1", "Chakra 2", "Chakra 3", "Solar Nadi")]
+        [DragDropHorizontal("脉轮顺序", "太阴斗气", "脉轮1", "脉轮2", "脉轮3", "太阳斗气")]
         [Order(24)]
         public int[] ChakraOrder = new int[] { 0, 1, 2, 3, 4 };
 
-        [NestedConfig("Blitz Timer Text", 50, spacing = true)]
+        [NestedConfig("必杀时间文本", 50, spacing = true)]
         public NumericLabelConfig BlitzTimerLabel;
 
         public MastersGauge(Vector2 position, Vector2 size, PluginConfigColor fillColor, int padding = 2) : base(position, size, fillColor, padding)
@@ -414,26 +414,26 @@ namespace DelvUI.Interface.Jobs
     [DisableParentSettings("FillColor")]
     public class MonkStancesBarConfig : ChunkedBarConfig
     {
-        [ColorEdit4("Opo-opo Color")]
+        [ColorEdit4("魔猿颜色")]
         [Order(19)]
         public PluginConfigColor OpoOpoColor = new PluginConfigColor(new Vector4(184f / 255f, 107f / 255f, 124f / 255f, 100f / 100f));
 
-        [ColorEdit4("Raptor Color")]
+        [ColorEdit4("盗龙颜色")]
         [Order(20)]
         public PluginConfigColor RaptorColor = new PluginConfigColor(new Vector4(92f / 255f, 123f / 255f, 200f / 255f, 100f / 100f));
 
-        [ColorEdit4("Coeurl Color")]
+        [ColorEdit4("猛豹颜色")]
         [Order(21)]
         public PluginConfigColor CoeurlColor = new PluginConfigColor(new Vector4(199f / 255f, 123f / 255f, 78f / 255f, 100f / 100f));
 
-        [ColorEdit4("Formless Fist Color")]
+        [ColorEdit4("无相身形颜色")]
         [Order(22)]
         public PluginConfigColor FormlessFistColor = new PluginConfigColor(new Vector4(106f / 255f, 92f / 255f, 191f / 255f, 100f / 100f));
 
-        [NestedConfig("Form Number Text", 500, spacing = true)]
+        [NestedConfig("身形数字文本", 500, spacing = true)]
         public LabelConfig FormLabel;
 
-        [NestedConfig("Formless Fist Duration Text", 1000, separator = false, spacing = true)]
+        [NestedConfig("无相身形持续时间文本", 1000, separator = false, spacing = true)]
         public NumericLabelConfig FormlessFistLabel;
 
         public MonkStancesBarConfig(Vector2 position, Vector2 size, PluginConfigColor fillColor, int padding = 2) : base(position, size, fillColor, padding)

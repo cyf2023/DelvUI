@@ -169,39 +169,39 @@ namespace DelvUI.Interface.Jobs
             return config;
         }
 
-        [Checkbox("Enable Eukrasia Glow", spacing = true)]
+        [Checkbox("启用均衡闪光", spacing = true)]
         [Order(30)]
         public bool EukrasiaGlow = true;
 
-        [NestedConfig("Addersgall Bar", 35)]
+        [NestedConfig("蛇胆条", 35)]
         public AddersgallBarConfig AddersgallBar = new AddersgallBarConfig(
             new(-64, -32),
             new(126, 20),
             new PluginConfigColor(new(197f / 255f, 247f / 255f, 255f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Addersting Bar", 40)]
+        [NestedConfig("蛇刺条", 40)]
         public AdderstingBarConfig AdderstingBar = new AdderstingBarConfig(
             new(64, -32),
             new(126, 20),
             new PluginConfigColor(new(255f / 255f, 232f / 255f, 255f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Eukrasian Dosis Bar", 45)]
+        [NestedConfig("均衡注药条", 45)]
         public ProgressBarConfig DotBar = new ProgressBarConfig(
             new(0, -10),
             new(254, 20),
             new PluginConfigColor(new(41f / 255f, 142f / 255f, 144f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Kerachole / Holos Bar", 50)]
+        [NestedConfig("坚角清汁/整体论条", 50)]
         public ProgressBarConfig KeracholeBar = new ProgressBarConfig(
             new(64, -52),
             new(126, 15),
             new PluginConfigColor(new(100f / 255f, 207f / 255f, 211f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Physis Bar", 55)]
+        [NestedConfig("自生条", 55)]
         public ProgressBarConfig PhysisBar = new ProgressBarConfig(
             new(-64, -52),
             new(126, 15),
@@ -212,14 +212,14 @@ namespace DelvUI.Interface.Jobs
     [Exportable(false)]
     public class AddersgallBarConfig : ChunkedBarConfig
     {
-        [NestedConfig("Glow Color (when Eukrasia active)", 60, separator = false, spacing = true)]
+        [NestedConfig("闪光颜色（当处于均衡时）", 60, separator = false, spacing = true)]
         public BarGlowConfig GlowConfig = new();
 
-        [Checkbox("Use Partial Fill Color", spacing = true)]
+        [Checkbox("使用部分填充色", spacing = true)]
         [Order(65)]
         public bool UsePartialFillColor = false;
 
-        [ColorEdit4("Partial Fill Color")]
+        [ColorEdit4("部分填充色")]
         [Order(66, collapseWith = nameof(UsePartialFillColor))]
         public PluginConfigColor PartialFillColor;
 
@@ -234,7 +234,7 @@ namespace DelvUI.Interface.Jobs
     [Exportable(false)]
     public class AdderstingBarConfig : ChunkedBarConfig
     {
-        [NestedConfig("Glow Color (when Eukrasia active)", 60, separator = false, spacing = true)]
+        [NestedConfig("闪光颜色（当处于均衡时）", 60, separator = false, spacing = true)]
         public BarGlowConfig GlowConfig = new();
 
         public AdderstingBarConfig(Vector2 position, Vector2 size, PluginConfigColor fillColor)

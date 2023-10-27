@@ -357,7 +357,7 @@ namespace DelvUI.Config.Attributes
                 }
                 ImGui.PopFont();
 
-                ImGuiHelper.SetTooltip("文本标签");
+                ImGuiHelper.SetTooltip("文本标识符");
             }
 
             var selectedTag = ImGuiHelper.DrawTextTagsList(popupId, ref _searchText);

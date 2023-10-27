@@ -399,7 +399,7 @@ namespace DelvUI.Interface.Jobs
     [Exportable(false)]
     public class DancerStepsBarConfig : ChunkedBarConfig
     {
-        [Checkbox("Hide Procs When Active")]
+        [Checkbox("激活后隐藏舞步")] // Hide Procs When Active
         [Order(50)]
         public bool HideProcs = true;
 

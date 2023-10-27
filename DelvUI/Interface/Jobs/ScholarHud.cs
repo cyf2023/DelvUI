@@ -166,28 +166,28 @@ namespace DelvUI.Interface.Jobs
             return config;
         }
 
-        [NestedConfig("Bio Bar", 30)]
+        [NestedConfig("毒条", 30)]
         public ProgressBarConfig BioBar = new ProgressBarConfig(
             new(0, -10),
             new(254, 20),
             new(new Vector4(50f / 255f, 93f / 255f, 37f / 255f, 1f))
         );
 
-        [NestedConfig("Fairy Gauge", 35)]
+        [NestedConfig("异想量谱", 35)]
         public ScholarFairyGaugeBarConfig FairyGaugeBar = new ScholarFairyGaugeBarConfig(
             new(0, -32),
             new(254, 20),
             new(new Vector4(69f / 255f, 199 / 255f, 164f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Aetherflow Bar", 40)]
+        [NestedConfig("以太超流条", 40)]
         public ChunkedBarConfig AetherflowBar = new ChunkedBarConfig(
             new(0, -54),
             new(254, 20),
             new(new Vector4(0f / 255f, 255f / 255f, 0f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Sacred Soil Bar", 45)]
+        [NestedConfig("野战治疗阵条", 45)]
         public ProgressBarConfig SacredSoilBar = new ProgressBarConfig(
             new(-0, -76),
             new(254, 20),
@@ -198,11 +198,11 @@ namespace DelvUI.Interface.Jobs
     [Exportable(false)]
     public class ScholarFairyGaugeBarConfig : ProgressBarConfig
     {
-        [Checkbox("Show Seraph", spacing = true)]
+        [Checkbox("显示炽天使", spacing = true)]
         [Order(50)]
         public bool ShowSeraph = true;
 
-        [ColorEdit4("Color" + "##SeraphColor")]
+        [ColorEdit4("颜色" + "##SeraphColor")]
         [Order(55)]
         public PluginConfigColor SeraphColor = new(new Vector4(232f / 255f, 255f / 255f, 255f / 255f, 100f / 100f));
 

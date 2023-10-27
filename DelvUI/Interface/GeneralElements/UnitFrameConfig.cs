@@ -184,7 +184,7 @@ namespace DelvUI.Interface.GeneralElements
         [Order(61)]
         public bool UseDeathIndicatorBackgroundColor = false;
 
-        [ColorEdit4("Color " + "##DeathIndicator")]
+        [ColorEdit4("颜色 " + "##DeathIndicator")]
         [Order(62, collapseWith = nameof(UseDeathIndicatorBackgroundColor))]
         public PluginConfigColor DeathIndicatorBackgroundColor = new PluginConfigColor(new Vector4(204f / 255f, 3f / 255f, 3f / 255f, 50f / 100f));
 
@@ -196,7 +196,7 @@ namespace DelvUI.Interface.GeneralElements
         [Order(100, collapseWith = nameof(ShowTankInvulnerability))]
         public bool UseCustomInvulnerabilityColor = true;
 
-        [ColorEdit4("Tank Invulnerability Color ##TankInvulnerabilityCustom")]
+        [ColorEdit4("坦克无敌颜色 ##TankInvulnerabilityCustom")]
         [Order(105, collapseWith = nameof(UseCustomInvulnerabilityColor))]
         public PluginConfigColor CustomInvulnerabilityColor = new PluginConfigColor(new Vector4(211f / 255f, 235f / 255f, 215f / 245f, 50f / 100f));
 
@@ -204,7 +204,7 @@ namespace DelvUI.Interface.GeneralElements
         [Order(110, collapseWith = nameof(ShowTankInvulnerability))]
         public bool UseCustomWalkingDeadColor = true;
 
-        [ColorEdit4("Walking Dead Color ##TankWalkingDeadCustom")]
+        [ColorEdit4("行尸走肉颜色 ##TankWalkingDeadCustom")]
         [Order(115, collapseWith = nameof(UseCustomWalkingDeadColor))]
         public PluginConfigColor CustomWalkingDeadColor = new PluginConfigColor(new Vector4(158f / 255f, 158f / 255f, 158f / 255f, 50f / 100f));
 
@@ -288,7 +288,7 @@ namespace DelvUI.Interface.GeneralElements
         [Order(15)]
         public bool FillHealthFirst = true;
 
-        [ColorEdit4("Color ##Shields")]
+        [ColorEdit4("颜色 ##Shields")]
         [Order(20)]
         public PluginConfigColor Color = new PluginConfigColor(new Vector4(198f / 255f, 210f / 255f, 255f / 255f, 70f / 100f));
     }

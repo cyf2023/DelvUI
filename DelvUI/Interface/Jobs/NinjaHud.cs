@@ -276,14 +276,14 @@ namespace DelvUI.Interface.Jobs
             return config;
         }
 
-        [NestedConfig("Mudra Bar", 30)]
+        [NestedConfig("印条", 30)]
         public NinjaMudraBarConfig MudraBar = new NinjaMudraBarConfig(
             new(0, -50),
             new(254, 10),
             new PluginConfigColor(new Vector4(211f / 255f, 166f / 255f, 75f / 242f, 100f / 100f))
         );
 
-        [NestedConfig("Huton Bar", 35)]
+        [NestedConfig("风遁条", 35)]
         public ProgressBarConfig HutonBar = new ProgressBarConfig(
             new(0, -10),
             new(254, 20),
@@ -293,21 +293,21 @@ namespace DelvUI.Interface.Jobs
             40f
         );
 
-        [NestedConfig("Ninki Bar", 40)]
+        [NestedConfig("忍气条", 40)]
         public ChunkedProgressBarConfig NinkiBar = new ChunkedProgressBarConfig(
             new(0, -32),
             new(254, 20),
             new PluginConfigColor(new Vector4(137f / 255f, 82f / 255f, 236f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Trick Attack Bar", 45)]
+        [NestedConfig("攻其不备条", 45)]
         public ProgressBarConfig TrickAttackBar = new ProgressBarConfig(
             new(0, -63),
             new(254, 10),
             new PluginConfigColor(new Vector4(191f / 255f, 40f / 255f, 0f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Suiton Bar", 50)]
+        [NestedConfig("水遁条", 50)]
         public ProgressBarConfig SuitonBar = new ProgressBarConfig(
             new(0, -75),
             new(254, 10),
@@ -318,11 +318,11 @@ namespace DelvUI.Interface.Jobs
     [Exportable(false)]
     public class NinjaMudraBarConfig : ChunkedProgressBarConfig
     {
-        [ColorEdit4("Kassatsu Color", spacing = true)]
+        [ColorEdit4("生杀予夺颜色", spacing = true)]
         [Order(60)]
         public PluginConfigColor KassatsuBarColor = new(new Vector4(239 / 255f, 123 / 255f, 222 / 242f, 100f / 100f));
 
-        [ColorEdit4("Ten Chi Jin Color")]
+        [ColorEdit4("天地人颜色")]
         [Order(65)]
         public PluginConfigColor TCJBarColor = new(new Vector4(181 / 255f, 33 / 255f, 41 / 242f, 100f / 100f));
 

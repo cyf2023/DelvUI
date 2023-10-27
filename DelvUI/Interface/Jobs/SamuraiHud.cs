@@ -203,35 +203,35 @@ namespace DelvUI.Interface.Jobs
             return config;
         }
 
-        [NestedConfig("Sen Bar", 40)]
+        [NestedConfig("闪条", 40)]
         public SamuraiSenBarConfig SenBar = new SamuraiSenBarConfig(
             new(0, -17),
             new(254, 10),
             new PluginConfigColor(new Vector4(0, 0, 0, 0))
         );
 
-        [NestedConfig("Fuka Bar", 45)]
+        [NestedConfig("风花条", 45)]
         public ProgressBarConfig ShifuBar = new ProgressBarConfig(
             new(-64, -56),
             new(126, 20),
             new PluginConfigColor(new(219f / 255f, 211f / 255f, 136f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Fugetsu Bar", 50)]
+        [NestedConfig("风月条", 50)]
         public ProgressBarConfig JinpuBar = new ProgressBarConfig(
             new(64, -56),
             new(126, 20),
             new PluginConfigColor(new(136f / 255f, 146f / 255f, 219f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Kenki Bar", 55)]
+        [NestedConfig("剑气条", 55)]
         public ProgressBarConfig KenkiBar = new ProgressBarConfig(
             new(0, -34),
             new(254, 20),
             new PluginConfigColor(new(255f / 255f, 82f / 255f, 82f / 255f, 53f / 100f))
         );
 
-        [NestedConfig("Higanbana Bar", 60)]
+        [NestedConfig("彼岸花条", 60)]
         public ProgressBarConfig HiganbanaBar = new ProgressBarConfig(
             new(0, -78),
             new(254, 20),
@@ -241,7 +241,7 @@ namespace DelvUI.Interface.Jobs
             15f
         );
 
-        [NestedConfig("Meditation Bar", 65)]
+        [NestedConfig("剑压条", 65)]
         public ChunkedBarConfig MeditationBar = new ChunkedBarConfig(
             new(0, -5),
             new(254, 10),
@@ -253,19 +253,19 @@ namespace DelvUI.Interface.Jobs
     [Exportable(false)]
     public class SamuraiSenBarConfig : ChunkedBarConfig
     {
-        [ColorEdit4("Setsu", spacing = true)]
+        [ColorEdit4("雪", spacing = true)]
         [Order(60)]
         public PluginConfigColor SetsuColor = new PluginConfigColor(new(89f / 255f, 234f / 255f, 247f / 255f, 100f / 100f));
 
-        [ColorEdit4("Getsu")]
+        [ColorEdit4("月")]
         [Order(65)]
         public PluginConfigColor GetsuColor = new PluginConfigColor(new(89f / 255f, 126f / 255f, 247f / 255f, 100f / 100f));
 
-        [ColorEdit4("Ka")]
+        [ColorEdit4("花")]
         [Order(70)]
         public PluginConfigColor KaColor = new PluginConfigColor(new(247f / 255f, 89f / 255f, 89f / 255f, 100f / 100f));
 
-        [DragDropHorizontal("Order", "Setsu", "Getsu", "Ka")]
+        [DragDropHorizontal("顺序", "雪", "月", "花")]
         [Order(75)]
         public int[] SenOrder = new int[] { 0, 1, 2 };
 
