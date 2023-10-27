@@ -215,49 +215,49 @@ namespace DelvUI.Interface.Jobs
             return config;
         }
 
-        [NestedConfig("Lily Bar", 30)]
+        [NestedConfig("治疗百合条", 30)]
         public LilyBarConfig LilyBar = new LilyBarConfig(
             new(-64, -32),
             new(126, 20),
             new PluginConfigColor(new(0f / 255f, 64f / 255f, 255f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Blood Lily Bar", 35)]
+        [NestedConfig("血百合条", 35)]
         public BloodLilyBarConfig BloodLilyBar = new BloodLilyBarConfig(
             new(64, -32),
             new(126, 20),
             new PluginConfigColor(new(199f / 255f, 40f / 255f, 9f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Dia Bar", 40)]
+        [NestedConfig("天辉条", 40)]
         public ProgressBarConfig DiaBar = new ProgressBarConfig(
             new(0, -10),
             new(254, 20),
             new PluginConfigColor(new(0f / 255f, 64f / 255f, 255f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Asylum Bar", 45)]
+        [NestedConfig("庇护所条", 45)]
         public ProgressBarConfig AsylumBar = new ProgressBarConfig(
             new(-96, -52),
             new(62, 15),
             new PluginConfigColor(new(241f / 255f, 217f / 255f, 125f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Presence of Mind Bar", 50)]
+        [NestedConfig("神速咏唱条", 50)]
         public ProgressBarConfig PresenceOfMindBar = new ProgressBarConfig(
             new(-32, -52),
             new(62, 15),
             new PluginConfigColor(new(213f / 255f, 124f / 255f, 97f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Plenary Bar", 55)]
+        [NestedConfig("全大赦条", 55)]
         public ProgressBarConfig PlenaryBar = new ProgressBarConfig(
             new(32, -52),
             new(62, 15),
             new PluginConfigColor(new(26f / 255f, 167f / 255f, 109f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Temperance Bar", 60)]
+        [NestedConfig("节制条", 60)]
         public ProgressBarConfig TemperanceBar = new ProgressBarConfig(
             new(96, -52),
             new(62, 15),
@@ -268,11 +268,11 @@ namespace DelvUI.Interface.Jobs
     [Exportable(false)]
     public class LilyBarConfig : ChunkedBarConfig
     {
-        [Checkbox("Use Partial Fill Color", spacing = true)]
+        [Checkbox("使用部分填充色", spacing = true)]
         [Order(65)]
         public bool UsePartialFillColor = false;
 
-        [ColorEdit4("Partial Fill Color")]
+        [ColorEdit4("部分填充色")]
         [Order(66, collapseWith = nameof(UsePartialFillColor))]
         public PluginConfigColor PartialFillColor;
 
@@ -286,7 +286,7 @@ namespace DelvUI.Interface.Jobs
     [Exportable(false)]
     public class BloodLilyBarConfig : ChunkedBarConfig
     {
-        [NestedConfig("Glow Color (when Misery ready)", 60, separator = false, spacing = true)]
+        [NestedConfig("闪光颜色（苦难之心准备完毕）", 60, separator = false, spacing = true)]
         public BarGlowConfig GlowConfig = new();
 
         public BloodLilyBarConfig(Vector2 position, Vector2 size, PluginConfigColor fillColor)

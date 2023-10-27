@@ -162,7 +162,7 @@ namespace DelvUI.Interface.Jobs
             return config;
         }
 
-        [NestedConfig("Oath Gauge", 35)]
+        [NestedConfig("忠义量谱", 35)]
         public ChunkedProgressBarConfig OathGauge = new ChunkedProgressBarConfig(
             new Vector2(0, -54),
             new Vector2(254, 20),
@@ -171,21 +171,21 @@ namespace DelvUI.Interface.Jobs
             new PluginConfigColor(new Vector4(180f / 255f, 180f / 255f, 180f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Fight or Flight Bar", 40)]
+        [NestedConfig("战逃反应条", 40)]
         public ProgressBarConfig FightOrFlightBar = new ProgressBarConfig(
             new Vector2(-64, -32),
             new Vector2(126, 20),
             new PluginConfigColor(new Vector4(240f / 255f, 50f / 255f, 0f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Requiescat Bar", 45)]
+        [NestedConfig("安魂祈祷条", 45)]
         public ChunkedProgressBarConfig RequiescatStacksBar = new ChunkedProgressBarConfig(
             new Vector2(64, -32),
             new Vector2(126, 20),
             new PluginConfigColor(new Vector4(61f / 255f, 61f / 255f, 255f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Atonement Bar", 50)]
+        [NestedConfig("赎罪剑条", 50)]
         public ChunkedBarConfig AtonementBar = new ChunkedBarConfig(
             new Vector2(0, -10),
             new Vector2(254, 20),

@@ -489,7 +489,7 @@ namespace DelvUI.Interface.Jobs
             new PluginConfigColor(new Vector4(255f / 255f, 255f / 255f, 173f / 255f, 100f / 100f))
         );
 
-        [DisableParentSettings("填充颜色", "颜色")]
+        [DisableParentSettings("填充色", "颜色")]
         [Exportable(false)]
         public class AstrologianDrawBarConfig : ProgressBarConfig
         {

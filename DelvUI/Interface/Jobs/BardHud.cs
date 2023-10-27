@@ -415,7 +415,7 @@ namespace DelvUI.Interface.Jobs
     [Exportable(false)]
     public class BardSoulVoiceBarConfig : ProgressBarConfig
     {
-        [NestedConfig("显示增长", 39, separator = false, spacing = true)]
+        [NestedConfig("闪光显示", 39, separator = false, spacing = true)]
         public BarGlowConfig GlowConfig = new BarGlowConfig();
 
         public BardSoulVoiceBarConfig(Vector2 position, Vector2 size, PluginConfigColor fillColor)
@@ -432,14 +432,14 @@ namespace DelvUI.Interface.Jobs
         [Order(51)]
         public bool ShowWMStacks = true;
 
-        [NestedConfig("放浪神的小步舞曲诗心增长", 52, separator = false, spacing = true)]
+        [NestedConfig("放浪神的小步舞曲诗心闪光", 52, separator = false, spacing = true)]
         public BarGlowConfig WMGlowConfig = new BarGlowConfig();
 
         [Checkbox("贤者的叙事谣触发" + "##Stacks")]
         [Order(53)]
         public bool ShowMBProc = true;
 
-        [NestedConfig("贤者的叙事谣触发增长", 54, separator = false, spacing = true)]
+        [NestedConfig("贤者的叙事谣触发闪光", 54, separator = false, spacing = true)]
         public BarGlowConfig MBGlowConfig = new BarGlowConfig();
 
         [Checkbox("军神的赞美歌诗心" + "##Stacks")]
@@ -480,7 +480,7 @@ namespace DelvUI.Interface.Jobs
         [Order(73)]
         public PluginConfigColor APColor = new(new Vector4(207f / 255f, 205f / 255f, 52f / 255f, 100f / 100f));
 
-        [DragDropHorizontal("次序", "放浪神的小步舞曲", "贤者的叙事谣", "军神的赞美歌")]
+        [DragDropHorizontal("顺序", "放浪神的小步舞曲", "贤者的叙事谣", "军神的赞美歌")]
         [Order(74)]
         public int[] CodaOrder = new int[] { 0, 1, 2 };
 

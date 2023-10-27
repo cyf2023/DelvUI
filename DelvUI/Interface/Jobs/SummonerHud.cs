@@ -282,42 +282,42 @@ namespace DelvUI.Interface.Jobs
             return config;
         }
 
-        [NestedConfig("Aetherflow Bar", 40)]
+        [NestedConfig("以太超流条", 40)]
         public ChunkedBarConfig AetherflowBar = new ChunkedBarConfig(
             new(-0, -7),
             new(254, 14),
             new(new Vector4(255f / 255f, 177f / 255f, 255f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Trance Bar", 45)]
+        [NestedConfig("附体条", 45)]
         public SummonerTranceBarConfig TranceBar = new SummonerTranceBarConfig(
             new(0, -23),
             new(254, 14),
             new(new Vector4(128f / 255f, 255f / 255f, 255f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Ifrit Bar", 50)]
+        [NestedConfig("伊弗利特条", 50)]
         public ChunkedBarConfig IfritBar = new ChunkedBarConfig(
             new(-85, -39),
             new(84, 14),
             new(new Vector4(200f / 255f, 40f / 255f, 0f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Titan Bar", 55)]
+        [NestedConfig("泰坦条", 55)]
         public ChunkedBarConfig TitanBar = new ChunkedBarConfig(
             new(0, -39),
             new(84, 14),
             new(new Vector4(210f / 255f, 150f / 255f, 26f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Garuda Bar", 60)]
+        [NestedConfig("迦楼罗条", 60)]
         public ChunkedBarConfig GarudaBar = new ChunkedBarConfig(
             new(85, -39),
             new(84, 14),
             new(new Vector4(60f / 255f, 160f / 255f, 100f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Attunement Stacks Bar", 65)]
+        [NestedConfig("以太档数条", 65)]
         public SummonerStacksBarConfig StacksBar = new SummonerStacksBarConfig(
             new(0, -55),
             new(254, 14),
@@ -330,27 +330,27 @@ namespace DelvUI.Interface.Jobs
     [Exportable(false)]
     public class SummonerTranceBarConfig : ProgressBarConfig
     {
-        [ColorEdit4("Bahamut Color")]
+        [ColorEdit4("巴哈姆特颜色")]
         [Order(26)]
         public PluginConfigColor BahamutColor = new(new Vector4(128f / 255f, 255f / 255f, 255f / 255f, 100f / 100f));
 
-        [ColorEdit4("Phoenix Color")]
+        [ColorEdit4("不死鸟颜色")]
         [Order(27)]
         public PluginConfigColor PhoenixColor = new(new Vector4(240f / 255f, 100f / 255f, 10f / 255f, 100f / 100f));
 
-        [ColorEdit4("Ifrit Color")]
+        [ColorEdit4("伊弗利特颜色")]
         [Order(28)]
         public PluginConfigColor IfritColor = new(new Vector4(200f / 255f, 40f / 255f, 0f / 255f, 100f / 100f));
 
-        [ColorEdit4("Titan Color")]
+        [ColorEdit4("泰坦颜色")]
         [Order(29)]
         public PluginConfigColor TitanColor = new(new Vector4(210f / 255f, 150f / 255f, 26f / 255f, 100f / 100f));
 
-        [ColorEdit4("Garuda Color")]
+        [ColorEdit4("迦楼罗颜色")]
         [Order(30)]
         public PluginConfigColor GarudaColor = new(new Vector4(60f / 255f, 160f / 255f, 100f / 255f, 100f / 100f));
 
-        [Checkbox("Hide Primals")]
+        [Checkbox("隐藏蛮神")]
         [Order(45)]
         public bool HidePrimals = false;
 
@@ -363,27 +363,27 @@ namespace DelvUI.Interface.Jobs
     [Exportable(false)]
     public class SummonerStacksBarConfig : ChunkedBarConfig
     {
-        [Checkbox("Ifrit Stacks", separator = false, spacing = false)]
+        [Checkbox("伊弗利特档数", separator = false, spacing = false)]
         [Order(51)]
         public bool ShowIfritStacks = true;
 
-        [Checkbox("Titan Stacks", separator = false, spacing = false)]
+        [Checkbox("泰坦档数", separator = false, spacing = false)]
         [Order(53)]
         public bool ShowTitanStacks = true;
 
-        [Checkbox("Garuda Stacks", separator = false, spacing = false)]
+        [Checkbox("迦楼罗", separator = false, spacing = false)]
         [Order(55)]
         public bool ShowGarudaStacks = true;
 
-        [ColorEdit4("Ifrit Stacks Color")]
+        [ColorEdit4("伊弗利特档数颜色")]
         [Order(56)]
         public PluginConfigColor IfritStackColor = new(new Vector4(200f / 255f, 40f / 255f, 0f / 255f, 100f / 100f));
 
-        [ColorEdit4("Titan Stacks Color")]
+        [ColorEdit4("泰坦档数颜色")]
         [Order(57)]
         public PluginConfigColor TitanStackColor = new(new Vector4(210f / 255f, 150f / 255f, 26f / 255f, 100f / 100f));
 
-        [ColorEdit4("Garuda Stacks Color")]
+        [ColorEdit4("迦楼罗颜色")]
         [Order(58)]
         public PluginConfigColor GarudaStackColor = new(new Vector4(60f / 255f, 160f / 255f, 100f / 255f, 100f / 100f));
 

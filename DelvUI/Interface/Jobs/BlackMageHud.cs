@@ -533,7 +533,7 @@ namespace DelvUI.Interface.Jobs
     [Exportable(false)]
     public class BlackMagePolyglotBarConfig : ChunkedBarConfig
     {
-        [NestedConfig("显示增长", 60, separator = false, spacing = true)]
+        [NestedConfig("闪光显示", 60, separator = false, spacing = true)]
         public BarGlowConfig GlowConfig = new BarGlowConfig();
 
         public BlackMagePolyglotBarConfig(Vector2 position, Vector2 size, PluginConfigColor fillColor)
@@ -557,7 +557,7 @@ namespace DelvUI.Interface.Jobs
         [Order(52, collapseWith = nameof(UseElementColor))]
         public PluginConfigColor FireColor = new PluginConfigColor(new Vector4(204f / 255f, 40f / 255f, 40f / 255f, 100f / 100f));
 
-        [NestedConfig("显示增长", 60, separator = false, spacing = true)]
+        [NestedConfig("闪光显示", 60, separator = false, spacing = true)]
         public BarGlowConfig GlowConfig = new BarGlowConfig();
 
         public BlackMageParadoxBarConfig(Vector2 position, Vector2 size, PluginConfigColor fillColor)

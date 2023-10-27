@@ -211,21 +211,21 @@ namespace DelvUI.Interface.Jobs
             return config;
         }
 
-        [NestedConfig("Surging Tempest Bar", 30)]
+        [NestedConfig("战场风暴条", 30)]
         public ProgressBarConfig SurgingTempestBar = new ProgressBarConfig(
             new(0, -32),
             new(254, 20),
             new PluginConfigColor(new Vector4(255f / 255f, 136f / 255f, 146f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Beast Gauge", 35)]
+        [NestedConfig("兽魂量谱", 35)]
         public WarriorBeastGaugeConfig BeastGauge = new WarriorBeastGaugeConfig(
             new(0, -10),
             new(254, 20),
             new PluginConfigColor(new Vector4(0, 0, 0, 0))
         );
 
-        [NestedConfig("Inner Release Bar", 40)]
+        [NestedConfig("原初的解放条", 40)]
         public WarriorInnerReleaseBarConfig InnerReleaseBar = new WarriorInnerReleaseBarConfig(
             new(0, -54),
             new(254, 20),
@@ -237,11 +237,11 @@ namespace DelvUI.Interface.Jobs
     [Exportable(false)]
     public class WarriorBeastGaugeConfig : ChunkedProgressBarConfig
     {
-        [ColorEdit4("Beast Gauge Color", spacing = true)]
+        [ColorEdit4("兽魂量谱颜色", spacing = true)]
         [Order(65)]
         public PluginConfigColor BeastGaugeColor = new(new Vector4(201f / 255f, 13f / 255f, 13f / 255f, 100f / 100f));
 
-        [ColorEdit4("Nascent Chaos Color")]
+        [ColorEdit4("原初的混沌颜色")]
         [Order(70)]
         public PluginConfigColor NascentChaosColor = new(new Vector4(240f / 255f, 176f / 255f, 0f / 255f, 100f / 100f));
 
@@ -253,23 +253,23 @@ namespace DelvUI.Interface.Jobs
     [Exportable(false)]
     public class WarriorInnerReleaseBarConfig : ChunkedProgressBarConfig
     {
-        [Checkbox("Show Buff Timer On Active Chunk", spacing = true)]
+        [Checkbox("在活跃区块显示增益效果计时器", spacing = true)]
         [Order(80)]
         public bool ShowBuffTimerOnActiveChunk;
 
-        [Checkbox("Show Inner Release Cooldown", spacing = true)]
+        [Checkbox("显示原初的解放冷却时间", spacing = true)]
         [Order(85)]
         public bool ShowCooldown;
 
-        [ColorEdit4("Inner Release On Cooldown Color")]
+        [ColorEdit4("原初的解放在冷却时间的颜色")]
         [Order(90)]
         public PluginConfigColor CooldownInProgressColor = new(new Vector4(240f / 255f, 176f / 255f, 0f / 255f, 100f / 100f));
 
-        [ColorEdit4("Inner Release Ready Color")]
+        [ColorEdit4("原初的解放已准备颜色")]
         [Order(95)]
         public PluginConfigColor CooldownFinishedColor = new(new Vector4(38f / 255f, 192f / 255f, 94f / 255f, 100f / 100f));
 
-        [NestedConfig("Glow Color (when Primal Rend is ready)", 100, separator = false, spacing = true)]
+        [NestedConfig("闪光颜色（蛮荒崩裂准备完毕）", 100, separator = false, spacing = true)]
         public BarGlowConfig PrimalRendReadyGlowConfig = new();
 
         public WarriorInnerReleaseBarConfig(Vector2 position, Vector2 size, PluginConfigColor fillColor) : base(position, size, fillColor)

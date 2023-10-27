@@ -13,7 +13,7 @@ namespace DelvUI.Interface.Bars
         [Order(16)]
         public PluginConfigColor BackgroundColor = new PluginConfigColor(new Vector4(0f / 255f, 0f / 255f, 0f / 255f, 50f / 100f));
 
-        [ColorEdit4("填充颜色")]
+        [ColorEdit4("填充色")]
         [Order(25)]
         public PluginConfigColor FillColor;
 
