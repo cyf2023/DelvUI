@@ -357,7 +357,7 @@ namespace DelvUI.Config.Attributes
                 }
                 ImGui.PopFont();
 
-                ImGuiHelper.SetTooltip("Text Tags");
+                ImGuiHelper.SetTooltip("文本标签");
             }
 
             var selectedTag = ImGuiHelper.DrawTextTagsList(popupId, ref _searchText);
@@ -495,7 +495,7 @@ namespace DelvUI.Config.Attributes
     [AttributeUsage(AttributeTargets.Field)]
     public class FontAttribute : ConfigAttribute
     {
-        public FontAttribute(string friendlyName = "Font and Size") : base(friendlyName) { }
+        public FontAttribute(string friendlyName = "字体与尺寸") : base(friendlyName) { }
 
         public override bool DrawField(FieldInfo field, PluginConfigObject config, string? ID, bool collapsingHeader)
         {
@@ -541,7 +541,7 @@ namespace DelvUI.Config.Attributes
     [AttributeUsage(AttributeTargets.Field)]
     public class BarTextureAttribute : ConfigAttribute
     {
-        public BarTextureAttribute(string friendlyName = "Bar Texture") : base(friendlyName) { }
+        public BarTextureAttribute(string friendlyName = "条的纹理") : base(friendlyName) { }
 
         public override bool DrawField(FieldInfo field, PluginConfigObject config, string? ID, bool collapsingHeader)
         {
@@ -579,7 +579,7 @@ namespace DelvUI.Config.Attributes
     public class AnchorAttribute : ComboAttribute
     {
         public AnchorAttribute(string friendlyName)
-            : base(friendlyName, new string[] { "Center", "Left", "Right", "Top", "TopLeft", "TopRight", "Bottom", "BottomLeft", "BottomRight" })
+            : base(friendlyName, new string[] { "中心", "左", "右", "上", "上左", "上右", "下", "下左", "下右" })
         {
         }
     }
@@ -588,7 +588,7 @@ namespace DelvUI.Config.Attributes
     public class BarTextureDrawModeAttribute : ComboAttribute
     {
         public BarTextureDrawModeAttribute(string friendlyName)
-            : base(friendlyName, new string[] { "Stretch", "Repeat Horizontal", "Repeat Vertical", "Repeat" })
+            : base(friendlyName, new string[] { "拉伸", "水平重复", "垂直重复", "重复" })
         {
         }
     }
@@ -596,7 +596,7 @@ namespace DelvUI.Config.Attributes
     [AttributeUsage(AttributeTargets.Field)]
     public class StrataLevelAttribute : ConfigAttribute
     {
-        private string[] options = { "Lowest", "Low", "Mid-Low", "Mid", "Mid-High", "High", "Highest" };
+        private string[] options = { "最低", "低", "中低", "中", "中高", "高", "最高" };
 
         public StrataLevelAttribute(string friendlyName) : base(friendlyName)
         {

@@ -84,14 +84,14 @@ namespace DelvUI.Interface.Jobs
         [JsonIgnore] public override uint JobId => JobIDs.GNB;
         public new static GunbreakerConfig DefaultConfig() { return new GunbreakerConfig(); }
 
-        [NestedConfig("Powder Gauge", 30)]
+        [NestedConfig("晶壤量谱", 30)]
         public ChunkedBarConfig PowderGauge = new ChunkedBarConfig(
             new(0, -32),
             new(254, 20),
             new(new Vector4(0f / 255f, 162f / 255f, 252f / 255f, 1f))
         );
 
-        [NestedConfig("No Mercy", 35)]
+        [NestedConfig("无情", 35)]
         public ProgressBarConfig NoMercy = new ProgressBarConfig(
             new(0, -10),
             new(254, 20),

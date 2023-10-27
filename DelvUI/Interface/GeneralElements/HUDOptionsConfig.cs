@@ -36,9 +36,9 @@ namespace DelvUI.Interface.GeneralElements
         public bool MouseoverEnabled = true;
 
         [Checkbox("自动模式", help =
-            "启用时：当你的光标在一个单元框架上时，你的所有动作都将自动被认为是悬停。\n" +
+            "启用时：当你的光标在一个单元界面上时，你的所有动作都将自动被认为是悬停。\n" +
             "鼠标悬停宏或其他鼠标悬停插件是不必要的，且不会在此模式下工作！\n\n" +
-            "禁用时：DelvUI单元框架将表现得像游戏中的一样。\n" +
+            "禁用时：DelvUI单元界面将表现得像游戏中的一样。\n" +
             "在这种模式下，你需要使用鼠标悬停宏或其他鼠标悬停相关插件。")]
         [Order(16, collapseWith = nameof(MouseoverEnabled))]
         public bool MouseoverAutomaticMode = true;

@@ -313,56 +313,56 @@ namespace DelvUI.Interface.Jobs
         }
 
 
-        [NestedConfig("Standard Finish Bar", 30)]
+        [NestedConfig("标准舞步结束条", 30)]
         public ProgressBarConfig StandardFinishBar = new ProgressBarConfig(
             new(0, -10),
             new(254, 20),
             new PluginConfigColor(new Vector4(0f / 255f, 193f / 255f, 95f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Technical Finish Bar", 35)]
+        [NestedConfig("技巧舞步结束条", 35)]
         public ProgressBarConfig TechnicalFinishBar = new ProgressBarConfig(
             new(-64, -32),
             new(126, 20),
             new PluginConfigColor(new Vector4(255f / 255f, 9f / 255f, 102f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Devilment Bar", 40)]
+        [NestedConfig("进攻之探戈条", 40)]
         public ProgressBarConfig DevilmentBar = new ProgressBarConfig(
             new(64, -32),
             new(126, 20),
             new PluginConfigColor(new Vector4(52f / 255f, 78f / 255f, 29f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Esprit Gauge", 45)]
+        [NestedConfig("伶俐量谱", 45)]
         public ChunkedProgressBarConfig EspritGauge = new ChunkedProgressBarConfig(
             new(0, -54),
             new(254, 20),
             new PluginConfigColor(new Vector4(72f / 255f, 20f / 255f, 99f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Feathers Gauge", 50)]
+        [NestedConfig("幻扇量谱", 50)]
         public DancerFeatherGaugeConfig FeatherGauge = new DancerFeatherGaugeConfig(
             new(0, -71),
             new(254, 10),
             new PluginConfigColor(new Vector4(175f / 255f, 229f / 255f, 29f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Flourishing Symmetry Bar", 60)]
+        [NestedConfig("投掷·百花争艳条", 60)]
         public DancerProcBarConfig CascadeBar = new DancerProcBarConfig(
             new(-96, -83),
             new(62, 10),
             new(new Vector4(0f / 255f, 255f / 255f, 0f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Flourishing Flow Bar", 65)]
+        [NestedConfig("非对称投掷·百花争艳条", 65)]
         public DancerProcBarConfig FountainBar = new DancerProcBarConfig(
             new(-32, -83),
             new(62, 10),
             new(new Vector4(255f / 255f, 215f / 255f, 0f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Steps Bar", 80)]
+        [NestedConfig("舞步条", 80)]
         public DancerStepsBarConfig StepsBar = new DancerStepsBarConfig(
             new(0, -83),
             new(254, 10)
@@ -385,7 +385,7 @@ namespace DelvUI.Interface.Jobs
     [Exportable(false)]
     public class DancerProcBarConfig : ProgressBarConfig
     {
-        [Checkbox("Ignore Buff Duration")]
+        [Checkbox("忽视增益状态持续时间")]
         [Order(4)]
         public bool IgnoreBuffDuration = true;
 
@@ -403,19 +403,19 @@ namespace DelvUI.Interface.Jobs
         [Order(50)]
         public bool HideProcs = true;
 
-        [ColorEdit4("Emboite", spacing = true)]
+        [ColorEdit4("蔷薇曲脚步", spacing = true)]
         [Order(55)]
         public PluginConfigColor EmboiteColor = new(new Vector4(255f / 255f, 0f / 255f, 0f / 255f, 100f / 100f));
 
-        [ColorEdit4("Entrechat")]
+        [ColorEdit4("小鸟交叠跳")]
         [Order(60)]
         public PluginConfigColor EntrechatColor = new(new Vector4(0f / 255f, 0f / 255f, 255f / 255f, 100f / 100f));
 
-        [ColorEdit4("Jete")]
+        [ColorEdit4("绿叶小踢腿")]
         [Order(65)]
         public PluginConfigColor JeteColor = new(new Vector4(0f / 255f, 255f / 255f, 0f / 255f, 100f / 100f));
 
-        [ColorEdit4("Pirouette")]
+        [ColorEdit4("金冠趾尖转")]
         [Order(70)]
         public PluginConfigColor PirouetteColor = new(new Vector4(255f / 255f, 215f / 255f, 0f / 255f, 100f / 100f));
 

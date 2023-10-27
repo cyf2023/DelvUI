@@ -13,7 +13,7 @@ using System.Numerics;
 namespace DelvUI.Interface.Party
 {
     [Exportable(false)]
-    [Section("小队框架", true)]
+    [Section("小队界面", true)]
     [SubSection("通用", 0)]
     public class PartyFramesConfig : MovablePluginConfigObject
     {
@@ -80,7 +80,7 @@ namespace DelvUI.Interface.Party
     [Exportable(false)]
     [Disableable(false)]
     [DisableParentSettings("Position", "Anchor", "BackgroundColor", "FillColor", "HideWhenInactive", "DrawBorder", "BorderColor", "BorderThickness")]
-    [Section("小队框架", true)]
+    [Section("小队界面", true)]
     [SubSection("生命条", 0)]
     public class PartyFramesHealthBarsConfig : BarConfig
     {
@@ -302,7 +302,7 @@ namespace DelvUI.Interface.Party
 
     [DisableParentSettings("HideWhenInactive", "Label")]
     [Exportable(false)]
-    [Section("小队框架", true)]
+    [Section("小队界面", true)]
     [SubSection("魔力条", 0)]
     public class PartyFramesManaBarConfig : PrimaryResourceConfig
     {
@@ -370,7 +370,7 @@ namespace DelvUI.Interface.Party
 
     [Disableable(false)]
     [Exportable(false)]
-    [Section("小队框架", true)]
+    [Section("小队界面", true)]
     [SubSection("图标", 0)]
     public class PartyFramesIconsConfig : PluginConfigObject
     {
@@ -553,7 +553,7 @@ namespace DelvUI.Interface.Party
     }
 
     [Exportable(false)]
-    [Section("小队框架", true)]
+    [Section("小队界面", true)]
     [SubSection("增益状态", 0)]
     public class PartyFramesBuffsConfig : PartyFramesStatusEffectsListConfig
     {
@@ -585,7 +585,7 @@ namespace DelvUI.Interface.Party
     }
 
     [Exportable(false)]
-    [Section("小队框架", true)]
+    [Section("小队界面", true)]
     [SubSection("减益状态", 0)]
     public class PartyFramesDebuffsConfig : PartyFramesStatusEffectsListConfig
     {
@@ -631,7 +631,7 @@ namespace DelvUI.Interface.Party
 
     [Disableable(false)]
     [Exportable(false)]
-    [Section("小队框架", true)]
+    [Section("小队界面", true)]
     [SubSection("监控器", 0)]
     public class PartyFramesTrackersConfig : PluginConfigObject
     {
@@ -772,7 +772,7 @@ namespace DelvUI.Interface.Party
 
     [Exportable(false)]
     [DisableParentSettings("Anchor")]
-    [Section("小队框架", true)]
+    [Section("小队界面", true)]
     [SubSection("冷却时间", 0)]
     public class PartyFramesCooldownListConfig : AnchorablePluginConfigObject
     {

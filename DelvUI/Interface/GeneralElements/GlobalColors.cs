@@ -363,7 +363,7 @@ namespace DelvUI.Interface.GeneralElements
         [Order(4)]
         public GradientDirection GradientDirection = GradientDirection.Down;
 
-        [ColorEdit4("空单元框架", separator = true)]
+        [ColorEdit4("空单元界面", separator = true)]
         [Order(5)]
         public PluginConfigColor EmptyUnitFrameColor = new PluginConfigColor(new(0f / 255f, 0f / 255f, 0f / 255f, 95f / 100f));
 

@@ -11,7 +11,7 @@ namespace DelvUI.Interface.GeneralElements
 {
     public class IconConfig : AnchorablePluginConfigObject
     {
-        [Anchor("框架锚")]
+        [Anchor("界面锚")]
         [Order(16)]
         public DrawAnchor FrameAnchor = DrawAnchor.Center;
 

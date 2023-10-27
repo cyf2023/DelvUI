@@ -155,7 +155,7 @@ namespace DelvUI.Interface.GeneralElements
         [Order(15)]
         public string? FontID = null;
 
-        [Anchor("框架锚")]
+        [Anchor("界面锚")]
         [Order(20)]
         public DrawAnchor FrameAnchor = DrawAnchor.Center;
 

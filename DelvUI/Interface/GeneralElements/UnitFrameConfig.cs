@@ -8,7 +8,7 @@ using System.Numerics;
 namespace DelvUI.Interface.GeneralElements
 {
     [DisableParentSettings("HideWhenInactive", "HideHealthIfPossible", "RangeConfig", "EnemyRangeConfig")]
-    [Section("单元框架")]
+    [Section("单元界面")]
     [SubSection("玩家", 0)]
     public class PlayerUnitFrameConfig : UnitFrameConfig
     {
@@ -68,7 +68,7 @@ namespace DelvUI.Interface.GeneralElements
     }
 
     [DisableParentSettings("HideWhenInactive")]
-    [Section("单元框架")]
+    [Section("单元界面")]
     [SubSection("目标", 0)]
     public class TargetUnitFrameConfig : UnitFrameConfig
     {
@@ -91,7 +91,7 @@ namespace DelvUI.Interface.GeneralElements
     }
 
     [DisableParentSettings("HideWhenInactive")]
-    [Section("单元框架")]
+    [Section("单元界面")]
     [SubSection("目标的目标", 0)]
     public class TargetOfTargetUnitFrameConfig : UnitFrameConfig
     {
@@ -117,7 +117,7 @@ namespace DelvUI.Interface.GeneralElements
     }
 
     [DisableParentSettings("HideWhenInactive")]
-    [Section("单元框架")]
+    [Section("单元界面")]
     [SubSection("焦点目标", 0)]
     public class FocusTargetUnitFrameConfig : UnitFrameConfig
     {

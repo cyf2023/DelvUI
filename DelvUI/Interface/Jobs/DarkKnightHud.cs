@@ -251,14 +251,14 @@ namespace DelvUI.Interface.Jobs
             return config;
         }
 
-        [NestedConfig("Mana Bar", 30)]
+        [NestedConfig("魔力条", 30)]
         public DarkKnightManaBarConfig ManaBar = new DarkKnightManaBarConfig(
             new Vector2(0, -61),
             new Vector2(254, 10),
             new PluginConfigColor(new Vector4(0f / 255f, 162f / 255f, 252f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Blood Gauge", 35)]
+        [NestedConfig("暗血量谱", 35)]
         public ChunkedProgressBarConfig BloodGauge = new ChunkedProgressBarConfig(
             new Vector2(0, -49),
             new Vector2(254, 10),
@@ -267,7 +267,7 @@ namespace DelvUI.Interface.Jobs
             new PluginConfigColor(new Vector4(180f / 255f, 180f / 255f, 180f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Darkside Bar", 40)]
+        [NestedConfig("暗黑条", 40)]
         public ProgressBarConfig DarksideBar = new ProgressBarConfig(
             new Vector2(0, -73),
             new Vector2(254, 10),
@@ -277,21 +277,21 @@ namespace DelvUI.Interface.Jobs
             5
         );
 
-        [NestedConfig("Blood Weapon Bar", 45)]
+        [NestedConfig("嗜血条", 45)]
         public DarkKnightChunkedBarConfig BloodWeaponBar = new DarkKnightChunkedBarConfig(
             new Vector2(-64, -32),
             new Vector2(126, 20),
             new PluginConfigColor(new Vector4(160f / 255f, 0f / 255f, 0f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Delirium Bar", 50)]
+        [NestedConfig("血乱条", 50)]
         public DarkKnightChunkedBarConfig DeliriumBar = new DarkKnightChunkedBarConfig(
             new Vector2(64, -32),
             new Vector2(126, 20),
             new PluginConfigColor(new Vector4(255f / 255f, 255f / 255f, 255f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Living Shadow Bar", 55)]
+        [NestedConfig("掠影示现条", 55)]
         public ProgressBarConfig LivingShadowBar = new ProgressBarConfig(
             new Vector2(0, -10),
             new Vector2(254, 20),
@@ -302,11 +302,11 @@ namespace DelvUI.Interface.Jobs
     [Exportable(false)]
     public class DarkKnightManaBarConfig : ChunkedProgressBarConfig
     {
-        [ColorEdit4("Dark Arts Color" + "##MP")]
+        [ColorEdit4("暗技颜色" + "##MP")]
         [Order(26)]
         public PluginConfigColor DarkArtsColor = new PluginConfigColor(new Vector4(210f / 255f, 33f / 255f, 33f / 255f, 100f / 100f));
 
-        [Checkbox("Show mana values up to 10k (will break thresholds)", spacing = true)]
+        [Checkbox("显示最多1万的法力值(将超过阈值)", spacing = true)]
         [Order(27)]
         public bool ShowFullMana = false;
 

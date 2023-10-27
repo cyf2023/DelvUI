@@ -234,7 +234,7 @@ namespace DelvUI.Interface
             _hudElementsWithPreview.Add(_focusTargetUnitFrameHud);
 
             var partyFramesConfig = ConfigurationManager.Instance.GetConfigObject<PartyFramesConfig>();
-            var partyFramesHud = new PartyFramesHud(partyFramesConfig, "小队框架");
+            var partyFramesHud = new PartyFramesHud(partyFramesConfig, "小队界面");
             _hudElements.Add(partyFramesConfig, partyFramesHud);
             _hudElementsWithPreview.Add(partyFramesHud);
 

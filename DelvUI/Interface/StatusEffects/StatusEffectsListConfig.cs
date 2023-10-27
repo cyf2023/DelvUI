@@ -155,11 +155,11 @@ namespace DelvUI.Interface.StatusEffects
 
     public abstract class UnitFrameStatusEffectsListConfig : StatusEffectsListConfig
     {
-        [Checkbox("锚定到单元框架")]
+        [Checkbox("锚定到单元界面")]
         [Order(16)]
         public bool AnchorToUnitFrame = false;
 
-        [Anchor("单元框架锚")]
+        [Anchor("单元界面锚")]
         [Order(17, collapseWith = nameof(AnchorToUnitFrame))]
         public DrawAnchor UnitFrameAnchor = DrawAnchor.TopLeft;
 

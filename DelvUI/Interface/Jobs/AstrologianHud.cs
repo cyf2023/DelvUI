@@ -494,10 +494,10 @@ namespace DelvUI.Interface.Jobs
         public class AstrologianDrawBarConfig : ProgressBarConfig
         {
 
-            [NestedConfig("Draw Side Timer Label" + "##Draw", 101, separator = false, spacing = true)]
+            [NestedConfig("绘制旁计时器标签" + "##Draw", 101, separator = false, spacing = true)]
             public NumericLabelConfig DrawDrawLabel = new(new Vector2(0, 0), "", DrawAnchor.Left, DrawAnchor.Left);
 
-            [NestedConfig("Draw Charges Label" + "##Draw", 104, separator = false, spacing = true)]
+            [NestedConfig("绘制充能标签" + "##Draw", 104, separator = false, spacing = true)]
             public NumericLabelConfig DrawDrawChargesLabel = new(new Vector2(0, 0), "", DrawAnchor.Right, DrawAnchor.Right);
 
             [ColorEdit4("Draw on CD" + "##Draw")]

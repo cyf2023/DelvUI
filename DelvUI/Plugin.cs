@@ -139,10 +139,10 @@ namespace DelvUI
                 "/delvui",
                 new CommandInfo(PluginCommand)
                 {
-                    HelpMessage = "Opens the DelvUI configuration window.\n"
-                                + "/delvui toggle → Toggles HUD visibility.\n"
-                                + "/delvui show → Shows HUD.\n"
-                                + "/delvui hide → Hides HUD.",
+                    HelpMessage = "打开DelvUI设置窗口。\n"
+                                + "/delvui toggle → 切换HUD可见性。\n"
+                                + "/delvui show → 显示HUD。\n"
+                                + "/delvui hide → 隐藏HUD。",
 
                     ShowInHelp = true
                 }
@@ -152,10 +152,10 @@ namespace DelvUI
                 "/dui",
                 new CommandInfo(PluginCommand)
                 {
-                    HelpMessage = "Opens the DelvUI configuration window.\n"
-                                + "/delvui toggle → Toggles HUD visibility.\n"
-                                + "/delvui show → Shows HUD.\n"
-                                + "/delvui hide → Hides HUD.",
+                    HelpMessage = "打开DelvUI设置窗口。\n"
+                                + "/delvui toggle → 切换HUD可见性。\n"
+                                + "/delvui show → 显示HUD。\n"
+                                + "/delvui hide → 隐藏HUD。",
 
                     ShowInHelp = true
                 }

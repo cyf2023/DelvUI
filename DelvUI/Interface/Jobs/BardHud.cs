@@ -320,42 +320,42 @@ namespace DelvUI.Interface.Jobs
             return config;
         }
 
-        [NestedConfig("Song Gauge Bar", 30)]
+        [NestedConfig("战歌量谱条", 30)]
         public BardSongBarConfig SongGaugeBar = new BardSongBarConfig(
             new(0, -22),
             new(254, 20),
             new PluginConfigColor(new Vector4(255f / 255f, 255f / 255f, 255f / 255f, 0f / 100f))
         );
 
-        [NestedConfig("Soul Voice Bar", 35)]
+        [NestedConfig("灵魂之声量谱条", 35)]
         public BardSoulVoiceBarConfig SoulVoiceBar = new BardSoulVoiceBarConfig(
             new(0, -5),
             new(254, 10),
             new PluginConfigColor(new Vector4(248f / 255f, 227f / 255f, 0f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Stacks Bar", 40)]
+        [NestedConfig("诗心条", 40)]
         public BardStacksBarConfig StacksBar = new BardStacksBarConfig(
             new(0, -39),
             new(254, 10),
             new PluginConfigColor(new Vector4(255f / 255f, 255f / 255f, 255f / 255f, 0f / 100f))
         );
 
-        [NestedConfig("Caustic Bite Bar", 60)]
+        [NestedConfig("烈毒咬箭条", 60)]
         public ProgressBarConfig CausticBiteDoTBar = new ProgressBarConfig(
             new(-64, -51),
             new(126, 10),
             new PluginConfigColor(new Vector4(182f / 255f, 68f / 255f, 235f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Stormbite Bar", 65)]
+        [NestedConfig("狂风蚀箭条", 65)]
         public ProgressBarConfig StormbiteDoTBar = new ProgressBarConfig(
             new(64, -51),
             new(126, 10),
             new PluginConfigColor(new Vector4(72f / 255f, 117f / 255f, 202f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Coda Bar", 40)]
+        [NestedConfig("尾声标识条", 40)]
         public BardCodaBarConfig CodaBar = new BardCodaBarConfig(
             new(0, -63),
             new(254, 10),
@@ -379,7 +379,7 @@ namespace DelvUI.Interface.Jobs
         [Order(33)]
         public PluginConfigColor APColor = new(new Vector4(207f / 255f, 205f / 255f, 52f / 255f, 100f / 100f));
 
-        [NestedConfig("Wanderer's Minuet Threshold", 36, separator = false, spacing = true)]
+        [NestedConfig("放浪神的小步舞曲阈值", 36, separator = false, spacing = true)]
         public ThresholdConfig WMThreshold = new ThresholdConfig()
         {
             ChangeColor = true,
@@ -388,7 +388,7 @@ namespace DelvUI.Interface.Jobs
             Value = 3
         };
 
-        [NestedConfig("Mage's Ballad Threshold", 37, separator = false, spacing = true)]
+        [NestedConfig("贤者的叙事谣阈值", 37, separator = false, spacing = true)]
         public ThresholdConfig MBThreshold = new ThresholdConfig()
         {
             ChangeColor = true,
@@ -397,7 +397,7 @@ namespace DelvUI.Interface.Jobs
             Value = 14
         };
 
-        [NestedConfig("Army's Paeon Threshold", 38, separator = false, spacing = true)]
+        [NestedConfig("军神的赞美歌阈值", 38, separator = false, spacing = true)]
         public ThresholdConfig APThreshold = new ThresholdConfig()
         {
             ChangeColor = true,
@@ -415,7 +415,7 @@ namespace DelvUI.Interface.Jobs
     [Exportable(false)]
     public class BardSoulVoiceBarConfig : ProgressBarConfig
     {
-        [NestedConfig("Show Glow", 39, separator = false, spacing = true)]
+        [NestedConfig("显示增长", 39, separator = false, spacing = true)]
         public BarGlowConfig GlowConfig = new BarGlowConfig();
 
         public BardSoulVoiceBarConfig(Vector2 position, Vector2 size, PluginConfigColor fillColor)
@@ -428,33 +428,33 @@ namespace DelvUI.Interface.Jobs
     [Exportable(false)]
     public class BardStacksBarConfig : ChunkedBarConfig
     {
-        [Checkbox("Wanderer's Minuet Stacks", separator = false, spacing = true)]
+        [Checkbox("放浪神的小步舞曲诗心", separator = false, spacing = true)]
         [Order(51)]
         public bool ShowWMStacks = true;
 
-        [NestedConfig("Wanderer's Minuet Stacks Glow", 52, separator = false, spacing = true)]
+        [NestedConfig("放浪神的小步舞曲诗心增长", 52, separator = false, spacing = true)]
         public BarGlowConfig WMGlowConfig = new BarGlowConfig();
 
-        [Checkbox("Mage's Ballad Proc" + "##Stacks")]
+        [Checkbox("贤者的叙事谣触发" + "##Stacks")]
         [Order(53)]
         public bool ShowMBProc = true;
 
-        [NestedConfig("Mage's Ballad Proc Glow", 54, separator = false, spacing = true)]
+        [NestedConfig("贤者的叙事谣触发增长", 54, separator = false, spacing = true)]
         public BarGlowConfig MBGlowConfig = new BarGlowConfig();
 
-        [Checkbox("Army's Paeon Stacks" + "##Stacks")]
+        [Checkbox("军神的赞美歌诗心" + "##Stacks")]
         [Order(56)]
         public bool ShowAPStacks = true;
 
-        [ColorEdit4("Wanderer's Minuet Stack" + "##Stacks")]
+        [ColorEdit4("放浪神的小步舞曲诗心" + "##Stacks")]
         [Order(57)]
         public PluginConfigColor WMStackColor = new(new Vector4(150f / 255f, 215f / 255f, 232f / 255f, 100f / 100f));
 
-        [ColorEdit4("Mage's Ballad Proc" + "##Stacks")]
+        [ColorEdit4("贤者的叙事谣触发" + "##Stacks")]
         [Order(58)]
         public PluginConfigColor MBProcColor = new(new Vector4(199f / 255f, 46f / 255f, 46f / 255f, 100f / 100f));
 
-        [ColorEdit4("Army's Paeon Stack" + "##Stacks")]
+        [ColorEdit4("军神的赞美歌诗心" + "##Stacks")]
         [Order(59)]
         public PluginConfigColor APStackColor = new(new Vector4(0f / 255f, 222f / 255f, 177f / 255f, 100f / 100f));
 
@@ -468,19 +468,19 @@ namespace DelvUI.Interface.Jobs
     [Exportable(false)]
     public class BardCodaBarConfig : ChunkedBarConfig
     {
-        [ColorEdit4("Wanderer's Minuet" + "##Coda", spacing = true)]
+        [ColorEdit4("放浪神的小步舞曲" + "##Coda", spacing = true)]
         [Order(71)]
         public PluginConfigColor WMColor = new(new Vector4(145f / 255f, 186f / 255f, 94f / 255f, 100f / 100f));
 
-        [ColorEdit4("Mage's Ballad" + "##Coda")]
+        [ColorEdit4("贤者的叙事谣" + "##Coda")]
         [Order(72)]
         public PluginConfigColor MBColor = new(new Vector4(143f / 255f, 90f / 255f, 143f / 255f, 100f / 100f));
 
-        [ColorEdit4("Army's Paeon" + "##Coda")]
+        [ColorEdit4("军神的赞美歌" + "##Coda")]
         [Order(73)]
         public PluginConfigColor APColor = new(new Vector4(207f / 255f, 205f / 255f, 52f / 255f, 100f / 100f));
 
-        [DragDropHorizontal("Order", "Wanderer's Minuet", "Mage's Ballad", "Army's Paeon")]
+        [DragDropHorizontal("次序", "放浪神的小步舞曲", "贤者的叙事谣", "军神的赞美歌")]
         [Order(74)]
         public int[] CodaOrder = new int[] { 0, 1, 2 };
 

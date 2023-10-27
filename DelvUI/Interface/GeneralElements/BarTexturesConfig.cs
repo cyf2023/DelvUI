@@ -18,7 +18,7 @@ namespace DelvUI.Interface.GeneralElements
 {
     [Disableable(false)]
     [Section("定制")]
-    [SubSection("条纹理", 0)]
+    [SubSection("条的纹理", 0)]
     public class BarTexturesConfig : PluginConfigObject
     {
         public new static BarTexturesConfig DefaultConfig() { return new BarTexturesConfig(); }
@@ -55,7 +55,7 @@ namespace DelvUI.Interface.GeneralElements
                 }
             };
 
-            _fileDialogManager.OpenFolderDialog("选择条纹理文件夹", callback);
+            _fileDialogManager.OpenFolderDialog("选择条的纹理文件夹", callback);
         }
 
         [ManualDraw]
@@ -66,10 +66,10 @@ namespace DelvUI.Interface.GeneralElements
             string[] textureNames = BarTexturesManager.Instance.BarTextureNames.ToArray();
             string[] drawModes = new string[] { "Stretch", "Repeat Horizontal", "Repeat Vertical", "Repeat" };
 
-            if (ImGui.BeginChild("条纹理", new Vector2(800, 400), false, ImGuiWindowFlags.NoSavedSettings | ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse))
+            if (ImGui.BeginChild("条的纹理", new Vector2(800, 400), false, ImGuiWindowFlags.NoSavedSettings | ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse))
             {
                 ImGuiHelper.NewLineAndTab();
-                ImGui.Text("自定义条纹理的路径");
+                ImGui.Text("自定义条的纹理的路径");
 
                 ImGuiHelper.Tab();
                 if (ImGui.InputText("", ref BarTexturesPath, 200, ImGuiInputTextFlags.EnterReturnsTrue))
@@ -135,7 +135,7 @@ namespace DelvUI.Interface.GeneralElements
 
             if (_applying)
             {
-                string[] lines = new string[] { "这将取代条纹理", "以及绘制模式应用到 所有 条！", "这是无法挽回的!", "你确定吗?" };
+                string[] lines = new string[] { "这将取代条的纹理", "以及绘制模式应用到 所有 条！", "这是无法挽回的!", "你确定吗?" };
                 var (didConfirm, didClose) = ImGuiHelper.DrawConfirmationModal("应用到所有条？", lines);
 
                 if (didConfirm)

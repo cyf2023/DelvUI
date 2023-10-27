@@ -386,55 +386,55 @@ namespace DelvUI.Interface.Jobs
             return config;
         }
 
-        [NestedConfig("Mana Bar", 30)]
+        [NestedConfig("魔力条", 30)]
         public BlackMageManaBarConfig ManaBar = new BlackMageManaBarConfig(
             new Vector2(0, -10),
             new Vector2(254, 18),
             new PluginConfigColor(new Vector4(234f / 255f, 95f / 255f, 155f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Umbral Ice / Astral Fire Bar", 31)]
+        [NestedConfig("灵极冰/星极火条", 31)]
         public BlackMageStacksBarConfig StacksBar = new BlackMageStacksBarConfig(
             new(-67, -27),
             new(120, 10)
         );
 
-        [NestedConfig("Umbral Heart Bar", 32)]
+        [NestedConfig("灵极心条", 32)]
         public ChunkedBarConfig UmbralHeartBar = new ChunkedBarConfig(
             new(67, -27),
             new(120, 10),
             new PluginConfigColor(new Vector4(125f / 255f, 195f / 255f, 205f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Paradox Bar", 33)]
+        [NestedConfig("悖论条", 33)]
         public BlackMageParadoxBarConfig ParadoxBar = new BlackMageParadoxBarConfig(
             new(0, -27),
             new(10, 10),
             new PluginConfigColor(new Vector4(123f / 255f, 66f / 255f, 177f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Enochian Bar", 40)]
+        [NestedConfig("天语条", 40)]
         public ProgressBarConfig EnochianBar = new ProgressBarConfig(
             new(-16, -41),
             new(222, 14),
             new PluginConfigColor(new Vector4(234f / 255f, 95f / 255f, 155f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Polyglot Bar", 45)]
+        [NestedConfig("通晓条", 45)]
         public BlackMagePolyglotBarConfig PolyglotBar = new BlackMagePolyglotBarConfig(
             new(112, -41),
             new(30, 14),
             new PluginConfigColor(new Vector4(234f / 255f, 95f / 255f, 155f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Triplecast Bar", 50)]
+        [NestedConfig("三连咏唱条", 50)]
         public BlackMageTriplecastBarConfig TriplecastBar = new BlackMageTriplecastBarConfig(
             new(0, -55),
             new(254, 10),
             new PluginConfigColor(new Vector4(255f / 255f, 255f / 255f, 255f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Thundercloud Bar", 55)]
+        [NestedConfig("雷云条", 55)]
         public ProgressBarConfig ThundercloudBar = new ProgressBarConfig(
             new(-64, -69),
             new(126, 14),
@@ -442,14 +442,14 @@ namespace DelvUI.Interface.Jobs
             BarDirection.Left
         );
 
-        [NestedConfig("Thunder DoT Bar", 60)]
+        [NestedConfig("雷DoT条", 60)]
         public ProgressBarConfig ThunderDoTBar = new ProgressBarConfig(
             new(64, -69),
             new(126, 14),
             new PluginConfigColor(new Vector4(67f / 255f, 187 / 255f, 255f / 255f, 100f / 100f))
         );
 
-        [NestedConfig("Firestarter Bar", 65)]
+        [NestedConfig("火苗条", 65)]
         public ProgressBarConfig FirestarterBar = new ProgressBarConfig(
             new(0, -85),
             new(254, 14),
@@ -460,33 +460,33 @@ namespace DelvUI.Interface.Jobs
     [Exportable(false)]
     public class BlackMageManaBarConfig : BarConfig
     {
-        [Checkbox("Use Element Color" + "##MP", spacing = true)]
+        [Checkbox("使用元素颜色" + "##MP", spacing = true)]
         [Order(50)]
         public bool UseElementColor = true;
 
-        [ColorEdit4("Ice Color" + "##MP")]
+        [ColorEdit4("冰的颜色" + "##MP")]
         [Order(51, collapseWith = nameof(UseElementColor))]
         public PluginConfigColor IceColor = new PluginConfigColor(new Vector4(69f / 255f, 115f / 255f, 202f / 255f, 100f / 100f));
 
-        [ColorEdit4("Ice Background Color" + "##MP")]
+        [ColorEdit4("冰背景色" + "##MP")]
         [Order(52, collapseWith = nameof(UseElementColor))]
         public PluginConfigColor IceBackgroundColor = new PluginConfigColor(new Vector4(50f / 255f, 80f / 255f, 130f / 255f, 50f / 100f));
 
-        [ColorEdit4("Fire Color" + "##MP")]
+        [ColorEdit4("火的颜色" + "##MP")]
         [Order(53, collapseWith = nameof(UseElementColor))]
         public PluginConfigColor FireColor = new PluginConfigColor(new Vector4(204f / 255f, 40f / 255f, 40f / 255f, 100f / 100f));
 
-        [ColorEdit4("Fire Background Color" + "##MP")]
+        [ColorEdit4("火背景色" + "##MP")]
         [Order(54, collapseWith = nameof(UseElementColor))]
         public PluginConfigColor FireBackgroundColor = new PluginConfigColor(new Vector4(120f / 255f, 30f / 255f, 30f / 255f, 50f / 100f));
 
-        [NestedConfig("Value Label", 60, separator = false, spacing = true)]
+        [NestedConfig("值的标签", 60, separator = false, spacing = true)]
         public NumericLabelConfig ValueLabelConfig = new NumericLabelConfig(new Vector2(2, 0), "", DrawAnchor.Left, DrawAnchor.Left);
 
-        [NestedConfig("Element Timer Label", 65, separator = false, spacing = true)]
+        [NestedConfig("元素计时器标签", 65, separator = false, spacing = true)]
         public NumericLabelConfig ElementTimerLabelConfig = new NumericLabelConfig(Vector2.Zero, "", DrawAnchor.Center, DrawAnchor.Center);
 
-        [NestedConfig("Threshold", 70, separator = false, spacing = true)]
+        [NestedConfig("阈值", 70, separator = false, spacing = true)]
         public BlackMakeManaBarThresholdConfig ThresholdConfig = new BlackMakeManaBarThresholdConfig();
 
         public BlackMageManaBarConfig(Vector2 position, Vector2 size, PluginConfigColor fillColor)
@@ -498,7 +498,7 @@ namespace DelvUI.Interface.Jobs
     [Exportable(false)]
     public class BlackMakeManaBarThresholdConfig : ThresholdConfig
     {
-        [Checkbox("Show Only During Astral Fire")]
+        [Checkbox("仅在星极火时显示")]
         [Order(5)]
         public bool ShowOnlyDuringAstralFire = true;
 
@@ -516,11 +516,11 @@ namespace DelvUI.Interface.Jobs
     [Exportable(false)]
     public class BlackMageStacksBarConfig : ChunkedBarConfig
     {
-        [ColorEdit4("Ice Color" + "##MP")]
+        [ColorEdit4("冰的颜色" + "##MP")]
         [Order(26)]
         public PluginConfigColor IceColor = new PluginConfigColor(new Vector4(69f / 255f, 115f / 255f, 202f / 255f, 100f / 100f));
 
-        [ColorEdit4("Fire Color" + "##MP")]
+        [ColorEdit4("火的颜色" + "##MP")]
         [Order(27)]
         public PluginConfigColor FireColor = new PluginConfigColor(new Vector4(204f / 255f, 40f / 255f, 40f / 255f, 100f / 100f));
 
@@ -533,7 +533,7 @@ namespace DelvUI.Interface.Jobs
     [Exportable(false)]
     public class BlackMagePolyglotBarConfig : ChunkedBarConfig
     {
-        [NestedConfig("Show Glow", 60, separator = false, spacing = true)]
+        [NestedConfig("显示增长", 60, separator = false, spacing = true)]
         public BarGlowConfig GlowConfig = new BarGlowConfig();
 
         public BlackMagePolyglotBarConfig(Vector2 position, Vector2 size, PluginConfigColor fillColor)
@@ -545,19 +545,19 @@ namespace DelvUI.Interface.Jobs
     [Exportable(false)]
     public class BlackMageParadoxBarConfig : BarConfig
     {
-        [Checkbox("Use Element Color" + "##Paradox", spacing = true)]
+        [Checkbox("使用元素颜色" + "##Paradox", spacing = true)]
         [Order(50)]
         public bool UseElementColor = true;
 
-        [ColorEdit4("Ice Color" + "##Paradox")]
+        [ColorEdit4("冰的颜色" + "##Paradox")]
         [Order(51, collapseWith = nameof(UseElementColor))]
         public PluginConfigColor IceColor = new PluginConfigColor(new Vector4(69f / 255f, 115f / 255f, 202f / 255f, 100f / 100f));
 
-        [ColorEdit4("Fire Color" + "##Paradox")]
+        [ColorEdit4("火的颜色" + "##Paradox")]
         [Order(52, collapseWith = nameof(UseElementColor))]
         public PluginConfigColor FireColor = new PluginConfigColor(new Vector4(204f / 255f, 40f / 255f, 40f / 255f, 100f / 100f));
 
-        [NestedConfig("Show Glow", 60, separator = false, spacing = true)]
+        [NestedConfig("显示增长", 60, separator = false, spacing = true)]
         public BarGlowConfig GlowConfig = new BarGlowConfig();
 
         public BlackMageParadoxBarConfig(Vector2 position, Vector2 size, PluginConfigColor fillColor)
@@ -569,7 +569,7 @@ namespace DelvUI.Interface.Jobs
     [Exportable(false)]
     public class BlackMageTriplecastBarConfig : ChunkedBarConfig
     {
-        [Checkbox("Count Swiftcast" + "##Triplecast", spacing = true)]
+        [Checkbox("技能瞬发计数" + "##Triplecast", spacing = true)]
         [Order(50)]
         public bool CountSwiftcast = false;
 

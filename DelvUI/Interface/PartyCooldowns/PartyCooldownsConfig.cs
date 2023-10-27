@@ -195,7 +195,7 @@ namespace DelvUI.Interface.PartyCooldowns
         private string[] _enabledOptions = new string[] {
             "启用",
             "仅小队冷却时间",
-            "仅小队框架",
+            "仅小队界面",
             "禁用"
         };
 

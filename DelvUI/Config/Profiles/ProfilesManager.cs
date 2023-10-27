@@ -25,10 +25,10 @@ namespace DelvUI.Config.Profiles
         {
             // fake nodes
             ProfilesNode = new SectionNode();
-            ProfilesNode.Name = "Profiles";
+            ProfilesNode.Name = "配置文件";
 
             NestedSubSectionNode subSectionNode = new NestedSubSectionNode();
-            subSectionNode.Name = "General";
+            subSectionNode.Name = "通用";
             subSectionNode.Depth = 0;
 
             ProfilesConfigPageNode configPageNode = new ProfilesConfigPageNode();
@@ -69,7 +69,7 @@ namespace DelvUI.Config.Profiles
                 }
                 catch (Exception e)
                 {
-                    PluginLog.Error("Error copying default profile!: " + e.Message);
+                    PluginLog.Error("复制默认配置文件时出错！：" + e.Message);
                 }
             }
 
@@ -108,7 +108,7 @@ namespace DelvUI.Config.Profiles
 
             if (Instance == null)
             {
-                PluginLog.Error("Error initializing DelvUI's profiles!!!");
+                PluginLog.Error("初始化DelvUI配置文件时出错！！！");
                 return;
             }
 
@@ -117,7 +117,7 @@ namespace DelvUI.Config.Profiles
                 !ConfigurationManager.Instance.IsFreshInstall() && 
                 !Directory.Exists(ProfilesPath))
             {
-                Instance.CurrentProfileName = "Restored Profile";
+                Instance.CurrentProfileName = "恢复配置文件";
 
                 Profile defaultProfile = new Profile(Instance.CurrentProfileName);
                 Instance.Profiles.Add(Instance.CurrentProfileName, defaultProfile);
@@ -256,7 +256,7 @@ namespace DelvUI.Config.Profiles
             }
             catch (Exception e)
             {
-                PluginLog.Error("Error saving profile: " + e.Message);
+                PluginLog.Error("保存配置文件错误：" + e.Message);
             }
         }
 
@@ -275,7 +275,7 @@ namespace DelvUI.Config.Profiles
             }
             catch (Exception e)
             {
-                PluginLog.Error("Error saving profile: " + e.Message);
+                PluginLog.Error("保存配置文件错误：" + e.Message);
             }
         }
 
@@ -288,7 +288,7 @@ namespace DelvUI.Config.Profiles
             }
             catch (Exception e)
             {
-                PluginLog.Error("Error loading profile: " + e.Message);
+                PluginLog.Error("加载配置文件错误：" + e.Message);
             }
 
             return false;
@@ -307,7 +307,7 @@ namespace DelvUI.Config.Profiles
             }
             catch (Exception e)
             {
-                PluginLog.Error("Error re-loading profile: " + e.Message);
+                PluginLog.Error("重载配置文件错误：" + e.Message);
             }
 
             return false;
@@ -383,7 +383,7 @@ namespace DelvUI.Config.Profiles
             if (!LoadCurrentProfile(oldProfile))
             {
                 _currentProfileName = oldProfile;
-                return "Couldn't load profile \"" + profile + "\"!";
+                return "无法加载配置文件\"" + profile + "\"！";
             }
 
             UpdateSelectedIndex();
@@ -395,8 +395,8 @@ namespace DelvUI.Config.Profiles
             }
             catch (Exception e)
             {
-                PluginLog.Error("Error saving profile: " + e.Message);
-                return "Couldn't load profile \"" + profile + "\"!";
+                PluginLog.Error("保存配置文件错误：" + e.Message);
+                return "无法保存配置文件\"" + profile + "\"！";
             }
 
             return null;
@@ -429,19 +429,19 @@ namespace DelvUI.Config.Profiles
 
             if (Profiles.Keys.Contains(newProfileName))
             {
-                return "A profile with the name \"" + newProfileName + "\" already exists!";
+                return "配置文件\"" + newProfileName + "\"已存在！";
             }
 
             try
             {
                 if (!File.Exists(srcPath))
                 {
-                    return "Couldn't find profile \"" + profileName + "\"!";
+                    return "无法找到配置文件\"" + profileName + "\"！";
                 }
 
                 if (File.Exists(dstPath))
                 {
-                    return "A profile with the name \"" + newProfileName + "\" already exists!";
+                    return "配置文件\"" + newProfileName + "\"已存在！";
                 }
 
                 File.Copy(srcPath, dstPath);
@@ -452,8 +452,8 @@ namespace DelvUI.Config.Profiles
             }
             catch (Exception e)
             {
-                PluginLog.Error("Error cloning profile: " + e.Message);
-                return "Error trying to clone profile \"" + profileName + "\"!";
+                PluginLog.Error("克隆配置文件错误：" + e.Message);
+                return "尝试克隆配置文件时出错\"" + profileName + "\"！";
             }
 
             return null;
@@ -468,7 +468,7 @@ namespace DelvUI.Config.Profiles
 
             if (Profiles.ContainsKey(newProfileName))
             {
-                return "A profile with the name \"" + newProfileName + "\" already exists!";
+                return "配置文件\"" + newProfileName + "\"已存在！";
             }
 
             string srcPath = Path.Combine(ProfilesPath, _currentProfileName + ".delvui");
@@ -479,7 +479,7 @@ namespace DelvUI.Config.Profiles
 
                 if (File.Exists(dstPath))
                 {
-                    return "A profile with the name \"" + newProfileName + "\" already exists!";
+                    return "配置文件\"" + newProfileName + "\"已存在！";
                 }
 
                 File.Move(srcPath, dstPath);
@@ -496,8 +496,8 @@ namespace DelvUI.Config.Profiles
             }
             catch (Exception e)
             {
-                PluginLog.Error("Error renaming profile: " + e.Message);
-                return "Error trying to rename profile \"" + _currentProfileName + "\"!";
+                PluginLog.Error("重命名配置文件错误：" + e.Message);
+                return "试图重命名配置文件时出错\"" + _currentProfileName + "\"！";
             }
 
             return null;
@@ -512,7 +512,7 @@ namespace DelvUI.Config.Profiles
 
             if (Profiles.Keys.Contains(newProfileName))
             {
-                return "A profile with the name \"" + newProfileName + "\" already exists!";
+                return "配置文件\"" + newProfileName + "\"已存在！";
             }
 
             string dstPath = Path.Combine(ProfilesPath, newProfileName + ".delvui");
@@ -521,7 +521,7 @@ namespace DelvUI.Config.Profiles
             {
                 if (File.Exists(dstPath))
                 {
-                    return "A profile with the name \"" + newProfileName + "\" already exists!";
+                    return "配置文件\"" + newProfileName + "\"已存在！";
                 }
 
                 File.WriteAllText(dstPath, importString);
@@ -542,8 +542,8 @@ namespace DelvUI.Config.Profiles
             }
             catch (Exception e)
             {
-                PluginLog.Error("Error importing profile: " + e.Message);
-                return "Error trying to import profile \"" + newProfileName + "\"!";
+                PluginLog.Error("导入配置文件错误:" + e.Message);
+                return "试图导入配置文件时出错\"" + newProfileName + "\"！";
             }
 
             return null;
@@ -554,7 +554,7 @@ namespace DelvUI.Config.Profiles
             string importString = ImGui.GetClipboardText();
             if (importString.Length == 0)
             {
-                return "Invalid import string!";
+                return "无效的导入字符串!";
             }
 
             return Import(newProfileName, importString);
@@ -584,12 +584,12 @@ namespace DelvUI.Config.Profiles
                 }
                 catch (Exception e)
                 {
-                    PluginLog.Error("Error reading import file: " + e.Message);
-                    _errorMessage = "Error reading the file!";
+                    PluginLog.Error("读取导入文件时出错！" + e.Message);
+                    _errorMessage = "读取文件时出错!";
                 }
             };
 
-            _fileDialogManager.OpenFileDialog("Select a DelvUI Profile to import", "DelvUI Profile{.delvui}", callback);
+            _fileDialogManager.OpenFileDialog("选择要导入的DelvUI配置文件", "DelvUI Profile{.delvui}", callback);
         }
 
         private void ExportToFile(string newProfileName)
@@ -611,19 +611,19 @@ namespace DelvUI.Config.Profiles
                 }
                 catch (Exception e)
                 {
-                    PluginLog.Error("Error copying file: " + e.Message);
-                    _errorMessage = "Error exporting the file!";
+                    PluginLog.Error("复制文件错误：" + e.Message);
+                    _errorMessage = "导出文件错误!";
                 }
             };
 
-            _fileDialogManager.SaveFileDialog("Save Profile", "DelvUI Profile{.delvui}", newProfileName + ".delvui", ".delvui", callback);
+            _fileDialogManager.SaveFileDialog("保存配置文件", "DelvUI Profile{.delvui}", newProfileName + ".delvui", ".delvui", callback);
         }
 
         private string? DeleteProfile(string profileName)
         {
             if (!Profiles.ContainsKey(profileName))
             {
-                return "Couldn't find profile \"" + profileName + "\"!";
+                return "找不到配置文件\"" + profileName + "\"！";
             }
 
             string path = Path.Combine(ProfilesPath, profileName + ".delvui");
@@ -632,7 +632,7 @@ namespace DelvUI.Config.Profiles
             {
                 if (!File.Exists(path))
                 {
-                    return "Couldn't find profile \"" + profileName + "\"!";
+                    return "找不到配置文件\"" + profileName + "\"！";
                 }
 
                 File.Delete(path);
@@ -649,8 +649,8 @@ namespace DelvUI.Config.Profiles
             }
             catch (Exception e)
             {
-                PluginLog.Error("Error deleting profile: " + e.Message);
-                return "Error trying to delete profile \"" + profileName + "\"!";
+                PluginLog.Error("删除配置文件错误:" + e.Message);
+                return "试图删除配置文件时出错\"" + profileName + "\"！";
             }
 
             return null;
@@ -676,18 +676,18 @@ namespace DelvUI.Config.Profiles
         {
             string[] profiles = Profiles.Keys.ToArray();
 
-            if (ImGui.BeginChild("Profiles", new Vector2(800, 600), false))
+            if (ImGui.BeginChild("配置文件", new Vector2(800, 600), false))
             {
                 if (Profiles.Count == 0)
                 {
                     ImGuiHelper.Tab();
-                    ImGui.Text("Profiles not found in \"%appdata%/Roaming/XIVLauncher/pluginConfigs/DelvUI/Profiles/\"");
+                    ImGui.Text("配置文件未在路径中找到\"%appdata%/Roaming/XIVLauncher/pluginConfigs/DelvUI/Profiles/\"");
                     return false;
                 }
 
                 ImGui.PushItemWidth(408);
                 ImGuiHelper.NewLineAndTab();
-                if (ImGui.Combo("Active Profile", ref _selectedProfileIndex, profiles, profiles.Length, 10))
+                if (ImGui.Combo("当前配置文件", ref _selectedProfileIndex, profiles, profiles.Length, 10))
                 {
                     string newProfileName = profiles[_selectedProfileIndex];
 
@@ -705,7 +705,7 @@ namespace DelvUI.Config.Profiles
                     _resetingProfileName = _currentProfileName;
                 }
                 ImGui.PopFont();
-                ImGuiHelper.SetTooltip("Reset");
+                ImGuiHelper.SetTooltip("重置");
 
                 if (_currentProfileName != DefaultProfileName)
                 {
@@ -717,7 +717,7 @@ namespace DelvUI.Config.Profiles
                         _renamingProfileName = _currentProfileName;
                     }
                     ImGui.PopFont();
-                    ImGuiHelper.SetTooltip("Rename");
+                    ImGuiHelper.SetTooltip("重命名");
 
                     // delete
                     ImGui.SameLine();
@@ -727,13 +727,13 @@ namespace DelvUI.Config.Profiles
                         _deletingProfileName = _currentProfileName;
                     }
                     ImGui.PopFont();
-                    ImGuiHelper.SetTooltip("Delete");
+                    ImGuiHelper.SetTooltip("删除");
                 }
 
                 // export to string
                 ImGuiHelper.Tab();
                 ImGui.SameLine();
-                if (ImGui.Button("Export to Clipboard", new Vector2(200, 0)))
+                if (ImGui.Button("导出到剪贴板", new Vector2(200, 0)))
                 {
                     string? exportString = ConfigurationManager.Instance.ExportCurrentConfigs();
                     if (exportString != null)
@@ -751,7 +751,7 @@ namespace DelvUI.Config.Profiles
                 }
 
                 ImGui.SameLine();
-                if (ImGui.Button("Export to File", new Vector2(200, 0)))
+                if (ImGui.Button("导出到文件", new Vector2(200, 0)))
                 {
                     ExportToFile(_currentProfileName);
                 }
@@ -764,18 +764,18 @@ namespace DelvUI.Config.Profiles
 
                 ImGuiHelper.DrawSeparator(1, 1);
                 ImGuiHelper.Tab();
-                ImGui.Text("Create a new profile:");
+                ImGui.Text("创建一个新的配置文件：");
 
                 ImGuiHelper.Tab();
                 ImGui.PushItemWidth(408);
-                ImGui.InputText("Profile Name", ref _newProfileName, 200);
+                ImGui.InputText("配置文件名称", ref _newProfileName, 200);
 
                 ImGuiHelper.Tab();
                 ImGui.PushItemWidth(200);
                 ImGui.Combo("", ref _copyFromIndex, profiles, profiles.Length, 10);
 
                 ImGui.SameLine();
-                if (ImGui.Button("Copy", new Vector2(200, 0)))
+                if (ImGui.Button("复制", new Vector2(200, 0)))
                 {
                     _newProfileName = _newProfileName.Trim();
                     if (_newProfileName.Length == 0)
@@ -795,7 +795,7 @@ namespace DelvUI.Config.Profiles
                 }
 
                 ImGuiHelper.NewLineAndTab();
-                if (ImGui.Button("Import From Clipboard", new Vector2(200, 0)))
+                if (ImGui.Button("从剪贴板导入", new Vector2(200, 0)))
                 {
                     _newProfileName = _newProfileName.Trim();
                     if (_newProfileName.Length == 0)
@@ -814,7 +814,7 @@ namespace DelvUI.Config.Profiles
                 }
 
                 ImGui.SameLine();
-                if (ImGui.Button("Import From File", new Vector2(200, 0)))
+                if (ImGui.Button("从文件导入", new Vector2(200, 0)))
                 {
                     _newProfileName = _newProfileName.Trim();
                     if (_newProfileName.Length == 0)
@@ -828,7 +828,7 @@ namespace DelvUI.Config.Profiles
                 }
 
                 ImGui.SameLine();
-                if (ImGui.Button("Browse Presets", new Vector2(200, 0)))
+                if (ImGui.Button("浏览配置文件", new Vector2(200, 0)))
                 {
                     Utils.OpenUrl("https://wago.io/delvui");
                 }
@@ -836,7 +836,7 @@ namespace DelvUI.Config.Profiles
                 // no name popup
                 if (ImGui.BeginPopup("import_error_popup"))
                 {
-                    ImGui.Text("Please type a name for the new profile!");
+                    ImGui.Text("请输入新配置文件的名称!");
                     ImGui.EndPopup();
                 }
             }
@@ -855,8 +855,8 @@ namespace DelvUI.Config.Profiles
             // delete confirmation
             if (_deletingProfileName != null)
             {
-                string[] lines = new string[] { "Are you sure you want to delete the profile:", "\u2002- " + _deletingProfileName };
-                var (didConfirm, didClose) = ImGuiHelper.DrawConfirmationModal("Delete?", lines);
+                string[] lines = new string[] { "你确定要删除配置文件吗？", "\u2002- " + _deletingProfileName };
+                var (didConfirm, didClose) = ImGuiHelper.DrawConfirmationModal("删除？", lines);
 
                 if (didConfirm)
                 {
@@ -873,8 +873,8 @@ namespace DelvUI.Config.Profiles
             // reset confirmation
             if (_resetingProfileName != null)
             {
-                string[] lines = new string[] { "Are you sure you want to reset the profile:", "\u2002- " + _resetingProfileName };
-                var (didConfirm, didClose) = ImGuiHelper.DrawConfirmationModal("Reset?", lines);
+                string[] lines = new string[] { "你确定要重置配置文件吗？", "\u2002- " + _resetingProfileName };
+                var (didConfirm, didClose) = ImGuiHelper.DrawConfirmationModal("重置？", lines);
 
                 if (didConfirm)
                 {
@@ -893,7 +893,7 @@ namespace DelvUI.Config.Profiles
             // rename modal
             if (_renamingProfileName != null)
             {
-                var (didConfirm, didClose) = ImGuiHelper.DrawInputModal("Rename", "Type a new name for the profile:", ref _renamingProfileName);
+                var (didConfirm, didClose) = ImGuiHelper.DrawInputModal("重命名", "为配置文件输入一个新名称：", ref _renamingProfileName);
 
                 if (didConfirm)
                 {
@@ -917,7 +917,7 @@ namespace DelvUI.Config.Profiles
         {
             Profile profile = CurrentProfile();
 
-            changed |= ImGui.Checkbox("Auto-Switch For Specific Jobs", ref profile.AutoSwitchEnabled);
+            changed |= ImGui.Checkbox("为特定职业自动切换", ref profile.AutoSwitchEnabled);
 
             if (!profile.AutoSwitchEnabled)
             {
@@ -977,7 +977,7 @@ namespace DelvUI.Config.Profiles
         {
             Profile profile = CurrentProfile();
 
-            changed |= ImGui.Checkbox("Attach HUD Layout to this profile", ref profile.AttachHudEnabled);
+            changed |= ImGui.Checkbox("将HUD布局添加到此配置文件", ref profile.AttachHudEnabled);
 
             if (!profile.AttachHudEnabled)
             {
@@ -993,7 +993,7 @@ namespace DelvUI.Config.Profiles
             {
                 ImGui.SameLine();
                 bool hudLayoutEnabled = hudLayout == i;
-                if (ImGui.Checkbox("Hud Layout " + i, ref hudLayoutEnabled))
+                if (ImGui.Checkbox("Hud布局" + i, ref hudLayoutEnabled))
                 {
                     profile.HudLayout = i;
                     changed = true;

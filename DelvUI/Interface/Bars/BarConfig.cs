@@ -21,7 +21,7 @@ namespace DelvUI.Interface.Bars
         [Order(30)]
         public BarDirection FillDirection;
 
-        [BarTexture("Bar Texture", spacing = true, help = "默认情况下，条将使用在 颜色>杂项 中找到的条的全局梯度设置绘制。")]
+        [BarTexture("条的纹理", spacing = true, help = "默认情况下，条将使用在 颜色>杂项 中找到的条的全局梯度设置绘制。")]
         [Order(31)]
         public string BarTextureName = "";
 

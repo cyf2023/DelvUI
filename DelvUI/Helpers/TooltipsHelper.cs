@@ -226,52 +226,52 @@ namespace DelvUI.Helpers
         }
     }
 
-    [Section("Misc")]
-    [SubSection("Tooltips", 0)]
+    [Section("杂项")]
+    [SubSection("提示框", 0)]
     public class TooltipsConfig : PluginConfigObject
     {
         public new static TooltipsConfig DefaultConfig() { return new TooltipsConfig(); }
 
-        [Checkbox("Show Status Effects IDs")]
+        [Checkbox("显示状态效果ID")]
         [Order(5)]
         public bool ShowStatusIDs = false;
 
-        [Checkbox("Show Source Name")]
+        [Checkbox("显示来源名字")]
         [Order(10)]
         public bool ShowSourceName = false;
 
-        [ColorEdit4("Background Color")]
+        [ColorEdit4("背景色")]
         [Order(15)]
         public PluginConfigColor BackgroundColor = new PluginConfigColor(new(19f / 255f, 19f / 255f, 19f / 255f, 190f / 250f));
 
-        [Font("Title Font and Size", spacing = true)]
+        [Font("标题字体与尺寸", spacing = true)]
         [Order(20)]
         public string? TitleFontID = null;
 
-        [ColorEdit4("Title Color")]
+        [ColorEdit4("标题颜色")]
         [Order(25)]
         public PluginConfigColor TitleColor = new PluginConfigColor(new(255f / 255f, 210f / 255f, 31f / 255f, 100f / 100f));
 
-        [Font("Text Font and Size", spacing = true)]
+        [Font("文本字体与尺寸", spacing = true)]
         [Order(30)]
         public string? TextFontID = null;
 
-        [ColorEdit4("Text Color")]
+        [ColorEdit4("文本颜色")]
         [Order(35)]
         public PluginConfigColor TextColor = new PluginConfigColor(new(255f / 255f, 255f / 255f, 255f / 255f, 100f / 100f));
 
-        [NestedConfig("Border", 40, separator = false, spacing = true, collapsingHeader = false)]
+        [NestedConfig("边框", 40, separator = false, spacing = true, collapsingHeader = false)]
         public TooltipBorderConfig BorderConfig = new();
     }
 
     [Exportable(false)]
     public class TooltipBorderConfig : PluginConfigObject
     {
-        [ColorEdit4("Color")]
+        [ColorEdit4("颜色")]
         [Order(5)]
         public PluginConfigColor Color = new(new Vector4(10f / 255f, 10f / 255f, 10f / 255f, 160f / 255f));
 
-        [DragInt("Thickness", min = 1, max = 100)]
+        [DragInt("厚度", min = 1, max = 100)]
         [Order(10)]
         public int Thickness = 4;
 
