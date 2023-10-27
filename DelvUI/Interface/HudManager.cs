@@ -210,36 +210,36 @@ namespace DelvUI.Interface
         private void CreateUnitFrames()
         {
             var playerUnitFrameConfig = ConfigurationManager.Instance.GetConfigObject<PlayerUnitFrameConfig>();
-            _playerUnitFrameHud = new PlayerUnitFrameHud(playerUnitFrameConfig, "Player");
+            _playerUnitFrameHud = new PlayerUnitFrameHud(playerUnitFrameConfig, "玩家");
             _hudElements.Add(playerUnitFrameConfig, _playerUnitFrameHud);
             _hudElementsUsingPlayer.Add(_playerUnitFrameHud);
             _hudElementsWithPreview.Add(_playerUnitFrameHud);
 
             var targetUnitFrameConfig = ConfigurationManager.Instance.GetConfigObject<TargetUnitFrameConfig>();
-            _targetUnitFrameHud = new UnitFrameHud(targetUnitFrameConfig, "Target");
+            _targetUnitFrameHud = new UnitFrameHud(targetUnitFrameConfig, "目标");
             _hudElements.Add(targetUnitFrameConfig, _targetUnitFrameHud);
             _hudElementsUsingTarget.Add(_targetUnitFrameHud);
             _hudElementsWithPreview.Add(_targetUnitFrameHud);
 
             var targetOfTargetUnitFrameConfig = ConfigurationManager.Instance.GetConfigObject<TargetOfTargetUnitFrameConfig>();
-            _totUnitFrameHud = new UnitFrameHud(targetOfTargetUnitFrameConfig, "Target of Target");
+            _totUnitFrameHud = new UnitFrameHud(targetOfTargetUnitFrameConfig, "目标的目标");
             _hudElements.Add(targetOfTargetUnitFrameConfig, _totUnitFrameHud);
             _hudElementsUsingTargetOfTarget.Add(_totUnitFrameHud);
             _hudElementsWithPreview.Add(_totUnitFrameHud);
 
             var focusTargetUnitFrameConfig = ConfigurationManager.Instance.GetConfigObject<FocusTargetUnitFrameConfig>();
-            _focusTargetUnitFrameHud = new UnitFrameHud(focusTargetUnitFrameConfig, "Focus Target");
+            _focusTargetUnitFrameHud = new UnitFrameHud(focusTargetUnitFrameConfig, "焦点目标");
             _hudElements.Add(focusTargetUnitFrameConfig, _focusTargetUnitFrameHud);
             _hudElementsUsingFocusTarget.Add(_focusTargetUnitFrameHud);
             _hudElementsWithPreview.Add(_focusTargetUnitFrameHud);
 
             var partyFramesConfig = ConfigurationManager.Instance.GetConfigObject<PartyFramesConfig>();
-            var partyFramesHud = new PartyFramesHud(partyFramesConfig, "Party Frames");
+            var partyFramesHud = new PartyFramesHud(partyFramesConfig, "小队框架");
             _hudElements.Add(partyFramesConfig, partyFramesHud);
             _hudElementsWithPreview.Add(partyFramesHud);
 
             var enemyListConfig = ConfigurationManager.Instance.GetConfigObject<EnemyListConfig>();
-            var enemyListHud = new EnemyListHud(enemyListConfig, "Enemy List");
+            var enemyListHud = new EnemyListHud(enemyListConfig, "敌人列表");
             _hudElements.Add(enemyListConfig, enemyListHud);
             _hudElementsWithPreview.Add(enemyListHud);
         }
@@ -247,25 +247,25 @@ namespace DelvUI.Interface
         private void CreateManaBars()
         {
             var playerManaBarConfig = ConfigurationManager.Instance.GetConfigObject<PlayerPrimaryResourceConfig>();
-            _playerManaBarHud = new PrimaryResourceHud(playerManaBarConfig, "Player Mana Bar");
+            _playerManaBarHud = new PrimaryResourceHud(playerManaBarConfig, "玩家魔力条");
             _playerManaBarHud.ParentConfig = _playerUnitFrameHud.Config;
             _hudElements.Add(playerManaBarConfig, _playerManaBarHud);
             _hudElementsUsingPlayer.Add(_playerManaBarHud);
 
             var targetManaBarConfig = ConfigurationManager.Instance.GetConfigObject<TargetPrimaryResourceConfig>();
-            var targetManaBarHud = new PrimaryResourceHud(targetManaBarConfig, "Target Mana Bar");
+            var targetManaBarHud = new PrimaryResourceHud(targetManaBarConfig, "目标魔力条");
             targetManaBarHud.ParentConfig = _targetUnitFrameHud.Config;
             _hudElements.Add(targetManaBarConfig, targetManaBarHud);
             _hudElementsUsingTarget.Add(targetManaBarHud);
 
             var totManaBarConfig = ConfigurationManager.Instance.GetConfigObject<TargetOfTargetPrimaryResourceConfig>();
-            var totManaBarHud = new PrimaryResourceHud(totManaBarConfig, "ToT Mana Bar");
+            var totManaBarHud = new PrimaryResourceHud(totManaBarConfig, "目标的目标魔力条");
             totManaBarHud.ParentConfig = _totUnitFrameHud.Config;
             _hudElements.Add(totManaBarConfig, totManaBarHud);
             _hudElementsUsingTargetOfTarget.Add(totManaBarHud);
 
             var focusManaBarConfig = ConfigurationManager.Instance.GetConfigObject<FocusTargetPrimaryResourceConfig>();
-            var focusManaBarHud = new PrimaryResourceHud(focusManaBarConfig, "Focus Mana Bar");
+            var focusManaBarHud = new PrimaryResourceHud(focusManaBarConfig, "焦点魔力条");
             focusManaBarHud.ParentConfig = _focusTargetUnitFrameHud.Config;
             _hudElements.Add(focusManaBarConfig, focusManaBarHud);
             _hudElementsUsingFocusTarget.Add(focusManaBarHud);
@@ -274,28 +274,28 @@ namespace DelvUI.Interface
         private void CreateCastbars()
         {
             var playerCastbarConfig = ConfigurationManager.Instance.GetConfigObject<PlayerCastbarConfig>();
-            _playerCastbarHud = new PlayerCastbarHud(playerCastbarConfig, "Player Castbar");
+            _playerCastbarHud = new PlayerCastbarHud(playerCastbarConfig, "玩家咏唱条");
             _playerCastbarHud.ParentConfig = _playerUnitFrameHud.Config;
             _hudElements.Add(playerCastbarConfig, _playerCastbarHud);
             _hudElementsUsingPlayer.Add(_playerCastbarHud);
             _hudElementsWithPreview.Add(_playerCastbarHud);
 
             var targetCastbarConfig = ConfigurationManager.Instance.GetConfigObject<TargetCastbarConfig>();
-            var targetCastbar = new TargetCastbarHud(targetCastbarConfig, "Target Castbar");
+            var targetCastbar = new TargetCastbarHud(targetCastbarConfig, "目标咏唱条");
             targetCastbar.ParentConfig = _targetUnitFrameHud.Config;
             _hudElements.Add(targetCastbarConfig, targetCastbar);
             _hudElementsUsingTarget.Add(targetCastbar);
             _hudElementsWithPreview.Add(targetCastbar);
 
             var targetOfTargetCastbarConfig = ConfigurationManager.Instance.GetConfigObject<TargetOfTargetCastbarConfig>();
-            var targetOfTargetCastbar = new TargetOfTargetCastbarHud(targetOfTargetCastbarConfig, "ToT Castbar");
+            var targetOfTargetCastbar = new TargetOfTargetCastbarHud(targetOfTargetCastbarConfig, "目标的目标咏唱条");
             targetOfTargetCastbar.ParentConfig = _totUnitFrameHud.Config;
             _hudElements.Add(targetOfTargetCastbarConfig, targetOfTargetCastbar);
             _hudElementsUsingTargetOfTarget.Add(targetOfTargetCastbar);
             _hudElementsWithPreview.Add(targetOfTargetCastbar);
 
             var focusTargetCastbarConfig = ConfigurationManager.Instance.GetConfigObject<FocusTargetCastbarConfig>();
-            var focusTargetCastbar = new FocusTargetCastbarHud(focusTargetCastbarConfig, "Focus Castbar");
+            var focusTargetCastbar = new FocusTargetCastbarHud(focusTargetCastbarConfig, "焦点目标咏唱条");
             focusTargetCastbar.ParentConfig = _focusTargetUnitFrameHud.Config;
             _hudElements.Add(focusTargetCastbarConfig, focusTargetCastbar);
             _hudElementsUsingFocusTarget.Add(focusTargetCastbar);
@@ -305,49 +305,49 @@ namespace DelvUI.Interface
         private void CreateStatusEffectsLists()
         {
             var playerBuffsConfig = ConfigurationManager.Instance.GetConfigObject<PlayerBuffsListConfig>();
-            var playerBuffs = new StatusEffectsListHud(playerBuffsConfig, "Buffs");
+            var playerBuffs = new StatusEffectsListHud(playerBuffsConfig, "增益效果");
             playerBuffs.ParentConfig = _playerUnitFrameHud.Config;
             _hudElements.Add(playerBuffsConfig, playerBuffs);
             _hudElementsUsingPlayer.Add(playerBuffs);
             _hudElementsWithPreview.Add(playerBuffs);
 
             var playerDebuffsConfig = ConfigurationManager.Instance.GetConfigObject<PlayerDebuffsListConfig>();
-            var playerDebuffs = new StatusEffectsListHud(playerDebuffsConfig, "Debufffs");
+            var playerDebuffs = new StatusEffectsListHud(playerDebuffsConfig, "减益效果");
             playerDebuffs.ParentConfig = _playerUnitFrameHud.Config;
             _hudElements.Add(playerDebuffsConfig, playerDebuffs);
             _hudElementsUsingPlayer.Add(playerDebuffs);
             _hudElementsWithPreview.Add(playerDebuffs);
 
             var targetBuffsConfig = ConfigurationManager.Instance.GetConfigObject<TargetBuffsListConfig>();
-            var targetBuffs = new StatusEffectsListHud(targetBuffsConfig, "Target Buffs");
+            var targetBuffs = new StatusEffectsListHud(targetBuffsConfig, "目标增益效果");
             targetBuffs.ParentConfig = _targetUnitFrameHud.Config;
             _hudElements.Add(targetBuffsConfig, targetBuffs);
             _hudElementsUsingTarget.Add(targetBuffs);
             _hudElementsWithPreview.Add(targetBuffs);
 
             var targetDebuffsConfig = ConfigurationManager.Instance.GetConfigObject<TargetDebuffsListConfig>();
-            var targetDebuffs = new StatusEffectsListHud(targetDebuffsConfig, "Target Debuffs");
+            var targetDebuffs = new StatusEffectsListHud(targetDebuffsConfig, "目标减益效果");
             targetDebuffs.ParentConfig = _targetUnitFrameHud.Config;
             _hudElements.Add(targetDebuffsConfig, targetDebuffs);
             _hudElementsUsingTarget.Add(targetDebuffs);
             _hudElementsWithPreview.Add(targetDebuffs);
 
             var focusTargetBuffsConfig = ConfigurationManager.Instance.GetConfigObject<FocusTargetBuffsListConfig>();
-            var focusTargetBuffs = new StatusEffectsListHud(focusTargetBuffsConfig, "focusTarget Buffs");
+            var focusTargetBuffs = new StatusEffectsListHud(focusTargetBuffsConfig, "焦点目标增益效果");
             focusTargetBuffs.ParentConfig = _focusTargetUnitFrameHud.Config;
             _hudElements.Add(focusTargetBuffsConfig, focusTargetBuffs);
             _hudElementsUsingFocusTarget.Add(focusTargetBuffs);
             _hudElementsWithPreview.Add(focusTargetBuffs);
 
             var focusTargetDebuffsConfig = ConfigurationManager.Instance.GetConfigObject<FocusTargetDebuffsListConfig>();
-            var focusTargetDebuffs = new StatusEffectsListHud(focusTargetDebuffsConfig, "focusTarget Debuffs");
+            var focusTargetDebuffs = new StatusEffectsListHud(focusTargetDebuffsConfig, "焦点目标减益效果");
             focusTargetDebuffs.ParentConfig = _focusTargetUnitFrameHud.Config;
             _hudElements.Add(focusTargetDebuffsConfig, focusTargetDebuffs);
             _hudElementsUsingFocusTarget.Add(focusTargetDebuffs);
             _hudElementsWithPreview.Add(focusTargetDebuffs);
 
             var custonEffectsConfig = ConfigurationManager.Instance.GetConfigObject<CustomEffectsListConfig>();
-            _customEffectsHud = new CustomEffectsListHud(custonEffectsConfig, "Custom Effects");
+            _customEffectsHud = new CustomEffectsListHud(custonEffectsConfig, "自定义效果");
             _hudElements.Add(custonEffectsConfig, _customEffectsHud);
             _hudElementsUsingPlayer.Add(_customEffectsHud);
             _hudElementsWithPreview.Add(_customEffectsHud);
@@ -356,31 +356,31 @@ namespace DelvUI.Interface
         private void CreateMiscElements()
         {
             var gcdIndicatorConfig = ConfigurationManager.Instance.GetConfigObject<GCDIndicatorConfig>();
-            var gcdIndicator = new GCDIndicatorHud(gcdIndicatorConfig, "GCD Indicator");
+            var gcdIndicator = new GCDIndicatorHud(gcdIndicatorConfig, "GCD监控器");
             _hudElements.Add(gcdIndicatorConfig, gcdIndicator);
             _hudElementsUsingPlayer.Add(gcdIndicator);
 
             var mpTickerConfig = ConfigurationManager.Instance.GetConfigObject<MPTickerConfig>();
-            var mpTicker = new MPTickerHud(mpTickerConfig, "MP Ticker");
+            var mpTicker = new MPTickerHud(mpTickerConfig, "跳蓝监控器");
             _hudElements.Add(mpTickerConfig, mpTicker);
             _hudElementsUsingPlayer.Add(mpTicker);
 
             var expBarConfig = ConfigurationManager.Instance.GetConfigObject<ExperienceBarConfig>();
-            var expBarHud = new ExperienceBarHud(expBarConfig, "Experience Bar");
+            var expBarHud = new ExperienceBarHud(expBarConfig, "经验跳");
             _hudElements.Add(expBarConfig, expBarHud);
             _hudElementsUsingPlayer.Add(expBarHud);
 
             var pullTimerConfig = ConfigurationManager.Instance.GetConfigObject<PullTimerConfig>();
-            var pullTimerHud = new PullTimerHud(pullTimerConfig, "Pull Timer");
+            var pullTimerHud = new PullTimerHud(pullTimerConfig, "倒计时");
             _hudElements.Add(pullTimerConfig, pullTimerHud);
             _hudElementsUsingPlayer.Add(pullTimerHud);
 
             var limitBreakConfig = ConfigurationManager.Instance.GetConfigObject<LimitBreakConfig>();
-            var limitBreakHud = new LimitBreakHud(limitBreakConfig, "Limit Break");
+            var limitBreakHud = new LimitBreakHud(limitBreakConfig, "极限技");
             _hudElements.Add(limitBreakConfig, limitBreakHud);
 
             var partyCooldownsConfig = ConfigurationManager.Instance.GetConfigObject<PartyCooldownsConfig>();
-            var partyCooldownsHud = new PartyCooldownsHud(partyCooldownsConfig, "Party Cooldowns");
+            var partyCooldownsHud = new PartyCooldownsHud(partyCooldownsConfig, "小队冷却时间");
             _hudElements.Add(partyCooldownsConfig, partyCooldownsHud);
             _hudElementsWithPreview.Add(partyCooldownsHud);
         }
@@ -604,34 +604,34 @@ namespace DelvUI.Interface
             _jobsMap = new Dictionary<uint, JobHudTypes>()
             {
                 // tanks
-                [JobIDs.PLD] = new JobHudTypes(typeof(PaladinHud), typeof(PaladinConfig), "Paladin HUD"),
-                [JobIDs.WAR] = new JobHudTypes(typeof(WarriorHud), typeof(WarriorConfig), "Warrior HUD"),
-                [JobIDs.DRK] = new JobHudTypes(typeof(DarkKnightHud), typeof(DarkKnightConfig), "Dark Knight HUD"),
-                [JobIDs.GNB] = new JobHudTypes(typeof(GunbreakerHud), typeof(GunbreakerConfig), "Gunbreaker HUD"),
+                [JobIDs.PLD] = new JobHudTypes(typeof(PaladinHud), typeof(PaladinConfig), "骑士HUD"),
+                [JobIDs.WAR] = new JobHudTypes(typeof(WarriorHud), typeof(WarriorConfig), "战士HUD"),
+                [JobIDs.DRK] = new JobHudTypes(typeof(DarkKnightHud), typeof(DarkKnightConfig), "暗黑骑士HUD"),
+                [JobIDs.GNB] = new JobHudTypes(typeof(GunbreakerHud), typeof(GunbreakerConfig), "绝枪战士HUD"),
 
                 // healers
-                [JobIDs.WHM] = new JobHudTypes(typeof(WhiteMageHud), typeof(WhiteMageConfig), "White Mage HUD"),
-                [JobIDs.SCH] = new JobHudTypes(typeof(ScholarHud), typeof(ScholarConfig), "Scholar HUD"),
-                [JobIDs.AST] = new JobHudTypes(typeof(AstrologianHud), typeof(AstrologianConfig), "Astrologian HUD"),
-                [JobIDs.SGE] = new JobHudTypes(typeof(SageHud), typeof(SageConfig), "Sage HUD"),
+                [JobIDs.WHM] = new JobHudTypes(typeof(WhiteMageHud), typeof(WhiteMageConfig), "白魔法师HUD"),
+                [JobIDs.SCH] = new JobHudTypes(typeof(ScholarHud), typeof(ScholarConfig), "学者HUD"),
+                [JobIDs.AST] = new JobHudTypes(typeof(AstrologianHud), typeof(AstrologianConfig), "占星术士HUD"),
+                [JobIDs.SGE] = new JobHudTypes(typeof(SageHud), typeof(SageConfig), "贤者HUD"),
 
                 // melee
-                [JobIDs.MNK] = new JobHudTypes(typeof(MonkHud), typeof(MonkConfig), "Monk HUD"),
-                [JobIDs.DRG] = new JobHudTypes(typeof(DragoonHud), typeof(DragoonConfig), "Dragoon HUD"),
-                [JobIDs.NIN] = new JobHudTypes(typeof(NinjaHud), typeof(NinjaConfig), "Ninja HUD"),
-                [JobIDs.SAM] = new JobHudTypes(typeof(SamuraiHud), typeof(SamuraiConfig), "Samurai HUD"),
-                [JobIDs.RPR] = new JobHudTypes(typeof(ReaperHud), typeof(ReaperConfig), "Reaper HUD"),
+                [JobIDs.MNK] = new JobHudTypes(typeof(MonkHud), typeof(MonkConfig), "武僧HUD"),
+                [JobIDs.DRG] = new JobHudTypes(typeof(DragoonHud), typeof(DragoonConfig), "龙骑士HUD"),
+                [JobIDs.NIN] = new JobHudTypes(typeof(NinjaHud), typeof(NinjaConfig), "忍者HUD"),
+                [JobIDs.SAM] = new JobHudTypes(typeof(SamuraiHud), typeof(SamuraiConfig), "武士HUD"),
+                [JobIDs.RPR] = new JobHudTypes(typeof(ReaperHud), typeof(ReaperConfig), "钐镰客HUD"),
 
                 // ranged
-                [JobIDs.BRD] = new JobHudTypes(typeof(BardHud), typeof(BardConfig), "Bard HUD"),
-                [JobIDs.MCH] = new JobHudTypes(typeof(MachinistHud), typeof(MachinistConfig), "Mechanic HUD"),
-                [JobIDs.DNC] = new JobHudTypes(typeof(DancerHud), typeof(DancerConfig), "Dancer HUD"),
+                [JobIDs.BRD] = new JobHudTypes(typeof(BardHud), typeof(BardConfig), "诗人HUD"),
+                [JobIDs.MCH] = new JobHudTypes(typeof(MachinistHud), typeof(MachinistConfig), "机工士HUD"),
+                [JobIDs.DNC] = new JobHudTypes(typeof(DancerHud), typeof(DancerConfig), "舞者HUD"),
 
                 // casters
-                [JobIDs.BLM] = new JobHudTypes(typeof(BlackMageHud), typeof(BlackMageConfig), "Black Mage HUD"),
-                [JobIDs.SMN] = new JobHudTypes(typeof(SummonerHud), typeof(SummonerConfig), "Summoner HUD"),
-                [JobIDs.RDM] = new JobHudTypes(typeof(RedMageHud), typeof(RedMageConfig), "Red Mage HUD"),
-                [JobIDs.BLU] = new JobHudTypes(typeof(BlueMageHud), typeof(BlueMageConfig), "Blue Mage HUD")
+                [JobIDs.BLM] = new JobHudTypes(typeof(BlackMageHud), typeof(BlackMageConfig), "黑魔法师HUD"),
+                [JobIDs.SMN] = new JobHudTypes(typeof(SummonerHud), typeof(SummonerConfig), "召唤师HUD"),
+                [JobIDs.RDM] = new JobHudTypes(typeof(RedMageHud), typeof(RedMageConfig), "赤魔法师HUD"),
+                [JobIDs.BLU] = new JobHudTypes(typeof(BlueMageHud), typeof(BlueMageConfig), "青魔法师HUD")
             };
 
             _unsupportedJobsMap = new Dictionary<uint, Type>()

@@ -24,8 +24,8 @@ namespace DelvUI.Interface.PartyCooldowns
     }
 
     [Exportable(false)]
-    [Section("Party Cooldowns", true)]
-    [SubSection("General", 0)]
+    [Section("小队冷却时间", true)]
+    [SubSection("通用", 0)]
     public class PartyCooldownsConfig : MovablePluginConfigObject
     {
         public new static PartyCooldownsConfig DefaultConfig()
@@ -36,58 +36,58 @@ namespace DelvUI.Interface.PartyCooldowns
             return config;
         }
 
-        [Checkbox("Preview", isMonitored = true)]
+        [Checkbox("预览", isMonitored = true)]
         [Order(4)]
         public bool Preview = false;
 
-        [Combo("Sections Growth Direction", "Down", "Up", "Right", "Left", spacing = true)]
+        [Combo("生长方向", "下", "上", "右", "左", spacing = true)]
         [Order(20)]
         public PartyCooldownsGrowthDirection GrowthDirection = PartyCooldownsGrowthDirection.Down;
 
-        [DragInt2("Padding", min = -1000, max = 1000)]
+        [DragInt2("填充", min = -1000, max = 1000)]
         [Order(15)]
         public Vector2 Padding = new Vector2(0, -1);
 
-        [Checkbox("Tooltips", spacing = true)]
+        [Checkbox("提示框", spacing = true)]
         [Order(16)]
         public bool ShowTooltips = true;
 
-        [Checkbox("Show Only in Duties", spacing = true, isMonitored = true)]
+        [Checkbox("仅在任务中显示", spacing = true, isMonitored = true)]
         [Order(20)]
         public bool ShowOnlyInDuties = true;
 
-        [Checkbox("Show When Solo", isMonitored = true)]
+        [Checkbox("单人时显示", isMonitored = true)]
         [Order(21)]
         public bool ShowWhenSolo = false;
 
-        [NestedConfig("Visibility", 200)]
+        [NestedConfig("可见性", 200)]
         public VisibilityConfig VisibilityConfig = new VisibilityConfig();
     }
 
     [Disableable(false)]
     [Exportable(false)]
     [DisableParentSettings("Position", "Anchor", "HideWhenInactive", "FillColor", "Background", "FillDirection")]
-    [Section("Party Cooldowns", true)]
-    [SubSection("Cooldown Bar", 0)]
+    [Section("小队冷却时间", true)]
+    [SubSection("冷却时间条", 0)]
     public class PartyCooldownsBarConfig : BarConfig
     {
-        [Checkbox("Show Bar", spacing = true)]
+        [Checkbox("显示条", spacing = true)]
         [Order(70)]
         public bool ShowBar = true;
 
-        [ColorEdit4("Available Color")]
+        [ColorEdit4("可用的颜色")]
         [Order(71, collapseWith = nameof(ShowBar))]
         public PluginConfigColor AvailableColor = new PluginConfigColor(new Vector4(0f / 255f, 150f / 255f, 0f / 255f, 100f / 100f));
 
-        [ColorEdit4("Available Background Color")]
+        [ColorEdit4("可用的背景色")]
         [Order(72, collapseWith = nameof(ShowBar))]
         public PluginConfigColor AvailableBackgroundColor = new PluginConfigColor(new Vector4(0f / 255f, 150f / 255f, 0f / 255f, 25f / 100f));
 
-        [ColorEdit4("Recharging Color")]
+        [ColorEdit4("充能的颜色")]
         [Order(73, collapseWith = nameof(ShowBar))]
         public PluginConfigColor RechargingColor = new PluginConfigColor(new Vector4(150f / 255f, 0f / 255f, 0f / 255f, 100f / 100f));
 
-        [ColorEdit4("Recharging Background Color")]
+        [ColorEdit4("冲能的背景色")]
         [Order(74, collapseWith = nameof(ShowBar))]
         public PluginConfigColor RechargingBackgroundColor = new PluginConfigColor(new Vector4(150f / 255f, 0f / 255f, 0f / 255f, 25f / 100f));
 
@@ -95,38 +95,38 @@ namespace DelvUI.Interface.PartyCooldowns
         [Order(75, collapseWith = nameof(ShowBar))]
         public bool UseJobColors = false;
 
-        [Checkbox("Show Icon", spacing = true)]
+        [Checkbox("显示图标", spacing = true)]
         [Order(80)]
         public bool ShowIcon = true;
 
-        [Checkbox("Show Icon Cooldown Animation")]
+        [Checkbox("显示图标冷却动画")]
         [Order(81, collapseWith = nameof(ShowIcon))]
         public bool ShowIconCooldownAnimation = false;
 
-        [Checkbox("Change Icon Border When Active")]
+        [Checkbox("活跃时更改图标边框")]
         [Order(82, collapseWith = nameof(ShowIcon))]
         public bool ChangeIconBorderWhenActive = false;
 
-        [ColorEdit4("Icon Active Border Color")]
+        [ColorEdit4("图标活跃边框颜色")]
         [Order(83, collapseWith = nameof(ChangeIconBorderWhenActive))]
         public PluginConfigColor IconActiveBorderColor = new PluginConfigColor(new Vector4(255f / 255f, 200f / 255f, 35f / 255f, 100f / 100f));
 
-        [DragInt("Icon Active Border Thickness", min = 1, max = 10)]
+        [DragInt("图标活跃边框厚度", min = 1, max = 10)]
         [Order(84, collapseWith = nameof(ChangeIconBorderWhenActive))]
         public int IconActiveBorderThickness = 3;
 
-        [Checkbox("Change Labels Color When Active", spacing = true)]
+        [Checkbox("活跃时改变标签颜色", spacing = true)]
         [Order(85)]
         public bool ChangeLabelsColorWhenActive = false;
 
-        [ColorEdit4("Labels Active Color")]
+        [ColorEdit4("标签活跃颜色")]
         [Order(86, collapseWith = nameof(ChangeLabelsColorWhenActive))]
         public PluginConfigColor LabelsActiveColor = new PluginConfigColor(new Vector4(255f / 255f, 200f / 255f, 35f / 255f, 100f / 100f));
 
-        [NestedConfig("Name Label", 100)]
+        [NestedConfig("名字标签", 100)]
         public EditableLabelConfig NameLabel = new EditableLabelConfig(new Vector2(5, 0), "[name:initials]", DrawAnchor.Left, DrawAnchor.Left);
 
-        [NestedConfig("Time Label", 105)]
+        [NestedConfig("时间标签", 105)]
         public PartyCooldownTimeLabelConfig TimeLabel = new PartyCooldownTimeLabelConfig(new Vector2(-5, 0), "", DrawAnchor.Right, DrawAnchor.Right);
 
         public new static PartyCooldownsBarConfig DefaultConfig()
@@ -155,19 +155,19 @@ namespace DelvUI.Interface.PartyCooldowns
         {
         }
 
-        [Checkbox("Show Effect Duration", spacing = true)]
+        [Checkbox("显示效果持续时间", spacing = true)]
         [Order(70)]
         public bool ShowEffectDuration = true;
 
-        [Checkbox("Show Remainin Cooldown")]
+        [Checkbox("显示剩余冷却时间")]
         [Order(71)]
         public bool ShowRemainingCooldown = true;
     }
 
     [Exportable(false)]
     [Disableable(false)]
-    [Section("Party Cooldowns", true)]
-    [SubSection("Cooldowns Tracked", 0)]
+    [Section("小队冷却时间", true)]
+    [SubSection("冷却时间监控", 0)]
     public class PartyCooldownsDataConfig : PluginConfigObject
     {
         public List<PartyCooldownData> Cooldowns = new List<PartyCooldownData>();
@@ -193,10 +193,10 @@ namespace DelvUI.Interface.PartyCooldowns
         public new static PartyCooldownsDataConfig DefaultConfig() => new PartyCooldownsDataConfig();
 
         private string[] _enabledOptions = new string[] {
-            "Enabled",
-            "Party Cooldowns Only",
-            "Party Frames Only",
-            "Disabled"
+            "启用",
+            "仅小队冷却时间",
+            "仅小队框架",
+            "禁用"
         };
 
 
@@ -267,14 +267,14 @@ namespace DelvUI.Interface.PartyCooldowns
 
             // filter
             ImGui.SameLine();
-            ImGui.Text("Filter: ");
+            ImGui.Text("筛选：");
 
-            DrawFilter("All", JobRoles.Unknown);
-            DrawFilter("Tanks", JobRoles.Tank);
-            DrawFilter("Healers", JobRoles.Healer);
-            DrawFilter("Melee", JobRoles.DPSMelee);
-            DrawFilter("Ranged", JobRoles.DPSRanged);
-            DrawFilter("Casters", JobRoles.DPSCaster);
+            DrawFilter("所有", JobRoles.Unknown);
+            DrawFilter("防护", JobRoles.Tank);
+            DrawFilter("治疗", JobRoles.Healer);
+            DrawFilter("近战", JobRoles.DPSMelee);
+            DrawFilter("远敏", JobRoles.DPSRanged);
+            DrawFilter("法系", JobRoles.DPSCaster);
 
             DrawJobFilters();
 
@@ -295,14 +295,14 @@ namespace DelvUI.Interface.PartyCooldowns
 
             if (ImGui.BeginTable("##DelvUI_PartyCooldownsTable", 8, flags, new Vector2(900, 500)))
             {
-                ImGui.TableSetupColumn("Enabled", ImGuiTableColumnFlags.WidthStretch, 22, 0);
-                ImGui.TableSetupColumn("Icon", ImGuiTableColumnFlags.WidthStretch, 5, 1);
-                ImGui.TableSetupColumn("Name", ImGuiTableColumnFlags.WidthStretch, 24, 2);
-                ImGui.TableSetupColumn("Cooldown", ImGuiTableColumnFlags.WidthStretch, 8, 3);
-                ImGui.TableSetupColumn("Duration", ImGuiTableColumnFlags.WidthStretch, 8, 4);
-                ImGui.TableSetupColumn("Priority", ImGuiTableColumnFlags.WidthStretch, 11, 5);
-                ImGui.TableSetupColumn("Section", ImGuiTableColumnFlags.WidthStretch, 11, 6);
-                ImGui.TableSetupColumn("Exclude Jobs", ImGuiTableColumnFlags.WidthStretch, 11, 7);
+                ImGui.TableSetupColumn("启用", ImGuiTableColumnFlags.WidthStretch, 22, 0);
+                ImGui.TableSetupColumn("图标", ImGuiTableColumnFlags.WidthStretch, 5, 1);
+                ImGui.TableSetupColumn("名字", ImGuiTableColumnFlags.WidthStretch, 24, 2);
+                ImGui.TableSetupColumn("冷却时间", ImGuiTableColumnFlags.WidthStretch, 8, 3);
+                ImGui.TableSetupColumn("持续时间", ImGuiTableColumnFlags.WidthStretch, 8, 4);
+                ImGui.TableSetupColumn("优先级", ImGuiTableColumnFlags.WidthStretch, 11, 5);
+                ImGui.TableSetupColumn("部分", ImGuiTableColumnFlags.WidthStretch, 11, 6);
+                ImGui.TableSetupColumn("排除的职业", ImGuiTableColumnFlags.WidthStretch, 11, 7);
 
                 ImGui.TableSetupScrollFreeze(0, 1);
                 ImGui.TableHeadersRow();
@@ -379,7 +379,7 @@ namespace DelvUI.Interface.PartyCooldowns
                             CooldownsDataChangedEvent?.Invoke(this);
                         }
 
-                        ImGuiHelper.SetTooltip("Priority determines which cooldows show first on the list.");
+                        ImGuiHelper.SetTooltip("优先级决定了哪个冷却时间优先在列表中显示");
                     }
 
                     // column
@@ -394,7 +394,7 @@ namespace DelvUI.Interface.PartyCooldowns
                             CooldownsDataChangedEvent?.Invoke(this);
                         }
 
-                        ImGuiHelper.SetTooltip("Allows to separate cooldowns in different columns.");
+                        ImGuiHelper.SetTooltip("允许在不同列中分离冷却时间");
                     }
 
                     // exlude
@@ -417,7 +417,7 @@ namespace DelvUI.Interface.PartyCooldowns
 
             if (_needsPopupOpen)
             {
-                ImGui.OpenPopup("Exclude Jobs##DelvUI");
+                ImGui.OpenPopup("排除的职业##DelvUI");
                 _needsPopupOpen = false;
             }
 
@@ -453,7 +453,7 @@ namespace DelvUI.Interface.PartyCooldowns
             float width = Math.Max(100, ImGui.CalcTextSize(title).X + 10);
             ImGui.SetNextWindowSize(new(width, jobIds.Count * 30 + 32));
 
-            if (ImGui.BeginPopup("Exclude Jobs##DelvUI", ImGuiWindowFlags.NoMove))
+            if (ImGui.BeginPopup("排除的职业##DelvUI", ImGuiWindowFlags.NoMove))
             {
                 ImGui.Text(title);
 

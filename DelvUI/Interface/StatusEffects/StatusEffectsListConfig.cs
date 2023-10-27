@@ -16,8 +16,8 @@ using System.Numerics;
 
 namespace DelvUI.Interface.StatusEffects
 {
-    [Section("Buffs and Debuffs")]
-    [SubSection("Player Buffs", 0)]
+    [Section("增益效果与减益效果")]
+    [SubSection("玩家增益效果", 0)]
     public class PlayerBuffsListConfig : UnitFrameStatusEffectsListConfig
     {
         public new static PlayerBuffsListConfig DefaultConfig()
@@ -37,8 +37,8 @@ namespace DelvUI.Interface.StatusEffects
         }
     }
 
-    [Section("Buffs and Debuffs")]
-    [SubSection("Player Debuffs", 0)]
+    [Section("增益效果与减益效果")]
+    [SubSection("玩家减益效果", 0)]
     public class PlayerDebuffsListConfig : UnitFrameStatusEffectsListConfig
     {
         public new static PlayerDebuffsListConfig DefaultConfig()
@@ -57,8 +57,8 @@ namespace DelvUI.Interface.StatusEffects
         }
     }
 
-    [Section("Buffs and Debuffs")]
-    [SubSection("Target Buffs", 0)]
+    [Section("增益效果与减益效果")]
+    [SubSection("目标增益效果", 0)]
     public class TargetBuffsListConfig : UnitFrameStatusEffectsListConfig
     {
         public new static TargetBuffsListConfig DefaultConfig()
@@ -81,8 +81,8 @@ namespace DelvUI.Interface.StatusEffects
         }
     }
 
-    [Section("Buffs and Debuffs")]
-    [SubSection("Target Debuffs", 0)]
+    [Section("增益效果与减益效果")]
+    [SubSection("目标减益效果", 0)]
     public class TargetDebuffsListConfig : UnitFrameStatusEffectsListConfig
     {
         public new static TargetDebuffsListConfig DefaultConfig()
@@ -105,8 +105,8 @@ namespace DelvUI.Interface.StatusEffects
         }
     }
 
-    [Section("Buffs and Debuffs")]
-    [SubSection("Focus Target Buffs", 0)]
+    [Section("增益效果与减益效果")]
+    [SubSection("焦点目标增益效果", 0)]
     public class FocusTargetBuffsListConfig : UnitFrameStatusEffectsListConfig
     {
         public new static FocusTargetBuffsListConfig DefaultConfig()
@@ -129,8 +129,8 @@ namespace DelvUI.Interface.StatusEffects
         }
     }
 
-    [Section("Buffs and Debuffs")]
-    [SubSection("Focus Target Debuffs", 0)]
+    [Section("增益效果与减益效果")]
+    [SubSection("焦点目标减益效果", 0)]
     public class FocusTargetDebuffsListConfig : UnitFrameStatusEffectsListConfig
     {
         public new static FocusTargetDebuffsListConfig DefaultConfig()
@@ -155,15 +155,15 @@ namespace DelvUI.Interface.StatusEffects
 
     public abstract class UnitFrameStatusEffectsListConfig : StatusEffectsListConfig
     {
-        [Checkbox("Anchor to Unit Frame")]
+        [Checkbox("锚定到单元框架")]
         [Order(16)]
         public bool AnchorToUnitFrame = false;
 
-        [Anchor("Unit Frame Anchor")]
+        [Anchor("单元框架锚")]
         [Order(17, collapseWith = nameof(AnchorToUnitFrame))]
         public DrawAnchor UnitFrameAnchor = DrawAnchor.TopLeft;
 
-        [NestedConfig("Visibility", 200)]
+        [NestedConfig("可见性", 200)]
         public VisibilityConfig VisibilityConfig = new VisibilityConfig();
 
         public UnitFrameStatusEffectsListConfig(Vector2 position, Vector2 size, bool showBuffs, bool showDebuffs, bool showPermanentEffects,
@@ -178,79 +178,79 @@ namespace DelvUI.Interface.StatusEffects
         public bool ShowBuffs;
         public bool ShowDebuffs;
 
-        [DragInt2("Size", min = 1, max = 4000)]
+        [DragInt2("尺寸", min = 1, max = 4000)]
         [Order(15)]
         public Vector2 Size;
 
-        [DragInt2("Icon Padding", min = 0, max = 500)]
+        [DragInt2("图标填充", min = 0, max = 500)]
         [Order(19)]
         public Vector2 IconPadding = new(2, 2);
 
-        [Checkbox("Preview", isMonitored = true)]
+        [Checkbox("预览", isMonitored = true)]
         [Order(20)]
         public bool Preview;
 
-        [Checkbox("Fill Rows First", spacing = true)]
+        [Checkbox("优先填充行", spacing = true)]
         [Order(25)]
         public bool FillRowsFirst = true;
 
-        [Combo("Icons Growth Direction",
-            "Right and Down",
-            "Right and Up",
-            "Left and Down",
-            "Left and Up",
-            "Centered and Up",
-            "Centered and Down",
-            "Centered and Left",
-            "Centered and Right"
+        [Combo("图标增长方向",
+            "右下",
+            "右上",
+            "左下",
+            "左上",
+            "中上",
+            "中下",
+            "中左",
+            "中右"
         )]
         [Order(30)]
         public int Directions;
 
-        [DragInt("Limit (-1 for no limit)", min = -1, max = 1000)]
+        [DragInt("限制（-1表示无限制）", min = -1, max = 1000)]
         [Order(35)]
         public int Limit = -1;
 
-        [Checkbox("Permanent Effects", spacing = true)]
+        [Checkbox("长期状态", spacing = true)]
         [Order(40)]
         public bool ShowPermanentEffects;
 
-        [Checkbox("Permanent Effects First")]
+        [Checkbox("长期状态优先")]
         [Order(41)]
         public bool ShowPermanentFirst;
 
-        [Checkbox("Only My Effects", spacing = true)]
+        [Checkbox("仅我的状态", spacing = true)]
         [Order(42)]
         public bool ShowOnlyMine = false;
 
-        [Checkbox("My Effects First")]
+        [Checkbox("我的状态优先")]
         [Order(43)]
         public bool ShowMineFirst = false;
 
-        [Checkbox("Pet As Own Effect")]
+        [Checkbox("宠物当作自己的状态")]
         [Order(44)]
         public bool IncludePetAsOwn = false;
 
-        [Checkbox("Sort by Duration", spacing = true, help = "If enabled, \"Permanent Effects First\" and \"My Effects First\" will be ignored!")]
+        [Checkbox("根据持续时间排序", spacing = true, help = "若启用，“长期状态优先”与“我的状态优先”将会被忽略！")]
         [Order(45)]
         public bool SortByDuration = false;
 
-        [RadioSelector("Ascending", "Descending")]
+        [RadioSelector("升序", "降序")]
         [Order(46, collapseWith = nameof(SortByDuration))]
         public StatusEffectDurationSortType DurationSortType = StatusEffectDurationSortType.Ascending;
 
-        [Checkbox("Tooltips", spacing = true)]
+        [Checkbox("提示框", spacing = true)]
         [Order(47)]
         public bool ShowTooltips = true;
 
-        [Checkbox("Disable Interaction", help = "Enabling this will disable right clicking buffs off, or the shortcut to blacklist/whitelist a status effect.")]
+        [Checkbox("禁用交互", help = "启用这个将禁用右键点掉增益状态，或者将状态添加到黑名单/白名单的功能。")]
         [Order(48)]
         public bool DisableInteraction = false;
 
-        [NestedConfig("Icons", 65)]
+        [NestedConfig("图标", 65)]
         public StatusEffectIconConfig IconConfig;
 
-        [NestedConfig("Filter Status Effects", 70, separator = true, spacing = false, collapsingHeader = false)]
+        [NestedConfig("筛选状态效果", 70, separator = true, spacing = false, collapsingHeader = false)]
         public StatusEffectsBlacklistConfig BlacklistConfig = new StatusEffectsBlacklistConfig();
 
 
@@ -280,30 +280,30 @@ namespace DelvUI.Interface.StatusEffects
     [Disableable(false)]
     public class StatusEffectIconConfig : PluginConfigObject
     {
-        [DragInt2("Icon Size", min = 1, max = 1000)]
+        [DragInt2("图标尺寸", min = 1, max = 1000)]
         [Order(5)]
         public Vector2 Size = new(40, 40);
 
-        [Checkbox("Crop Icon", spacing = true)]
+        [Checkbox("剪短图标", spacing = true)]
         [Order(20)]
         public bool CropIcon = true;
 
-        [NestedConfig("Border", 25, collapseWith = nameof(CropIcon), collapsingHeader = false)]
+        [NestedConfig("边框", 25, collapseWith = nameof(CropIcon), collapsingHeader = false)]
         public StatusEffectIconBorderConfig BorderConfig = new();
 
-        [NestedConfig("Shadow", 26, collapseWith = nameof(CropIcon), collapsingHeader = false)]
+        [NestedConfig("阴影", 26, collapseWith = nameof(CropIcon), collapsingHeader = false)]
         public ShadowConfig ShadowConfig = new ShadowConfig() { Enabled = false };
 
-        [NestedConfig("Dispellable Effects Border", 30, collapseWith = nameof(CropIcon), collapsingHeader = false)]
+        [NestedConfig("禁用状态边框", 30, collapseWith = nameof(CropIcon), collapsingHeader = false)]
         public StatusEffectIconBorderConfig DispellableBorderConfig = new(new PluginConfigColor(new Vector4(141f / 255f, 206f / 255f, 229f / 255f, 100f / 100f)), 2);
 
-        [NestedConfig("My Effects Border", 35, collapseWith = nameof(CropIcon), collapsingHeader = false)]
+        [NestedConfig("我的状态边框", 35, collapseWith = nameof(CropIcon), collapsingHeader = false)]
         public StatusEffectIconBorderConfig OwnedBorderConfig = new(new PluginConfigColor(new Vector4(35f / 255f, 179f / 255f, 69f / 255f, 100f / 100f)), 1);
 
-        [NestedConfig("Duration", 50)]
+        [NestedConfig("持续时间", 50)]
         public LabelConfig DurationLabelConfig;
 
-        [NestedConfig("Stacks", 60)]
+        [NestedConfig("栈？", 60)]
         public LabelConfig StacksLabelConfig;
 
         public StatusEffectIconConfig(LabelConfig? durationLabelConfig = null, LabelConfig? stacksLabelConfig = null)
@@ -316,11 +316,11 @@ namespace DelvUI.Interface.StatusEffects
     [Exportable(false)]
     public class StatusEffectIconBorderConfig : PluginConfigObject
     {
-        [ColorEdit4("Color")]
+        [ColorEdit4("颜色")]
         [Order(5)]
         public PluginConfigColor Color = new(Vector4.UnitW);
 
-        [DragInt("Thickness", min = 1, max = 100)]
+        [DragInt("厚度", min = 1, max = 100)]
         [Order(10)]
         public int Thickness = 1;
 
@@ -511,11 +511,11 @@ namespace DelvUI.Interface.StatusEffects
             var iconSize = new Vector2(30, 30);
             var indexToRemove = -1;
 
-            if (ImGui.BeginChild("Filter Effects", new Vector2(0, 360), false, ImGuiWindowFlags.NoSavedSettings | ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse))
+            if (ImGui.BeginChild("过滤状态", new Vector2(0, 360), false, ImGuiWindowFlags.NoSavedSettings | ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse))
             {
                 ImGui.Text("\u2002 \u2002");
                 ImGui.SameLine();
-                ImGui.Text("Type an ID or Name");
+                ImGui.Text("输入一个ID或名字");
 
                 ImGui.Text("\u2002 \u2002");
                 ImGui.SameLine();
@@ -544,12 +544,12 @@ namespace DelvUI.Interface.StatusEffects
                     ImGui.OpenPopup("export_succes_popup");
                 }
                 ImGui.PopFont();
-                ImGuiHelper.SetTooltip("Export List to Clipboard");
+                ImGuiHelper.SetTooltip("将列表导出到剪贴板");
 
                 // export success popup
                 if (ImGui.BeginPopup("export_succes_popup"))
                 {
-                    ImGui.Text("List exported to clipboard!");
+                    ImGui.Text("列表已导出到剪贴板!");
                     ImGui.EndPopup();
                 }
 
@@ -561,7 +561,7 @@ namespace DelvUI.Interface.StatusEffects
                     _importString = ImGui.GetClipboardText();
                 }
                 ImGui.PopFont();
-                ImGuiHelper.SetTooltip("Import List from Clipboard");
+                ImGuiHelper.SetTooltip("从剪贴板导入列表");
 
                 // clear
                 ImGui.SameLine();
@@ -571,16 +571,16 @@ namespace DelvUI.Interface.StatusEffects
                     _clearingList = true;
                 }
                 ImGui.PopFont();
-                ImGuiHelper.SetTooltip("Clear List");
+                ImGuiHelper.SetTooltip("清除列表");
 
                 ImGui.Text("\u2002 \u2002");
                 ImGui.SameLine();
 
-                if (ImGui.BeginTable("table", 4, flags, new Vector2(583, List.Count > 0 ? 200 : 40)))
+                if (ImGui.BeginTable("表格", 4, flags, new Vector2(583, List.Count > 0 ? 200 : 40)))
                 {
-                    ImGui.TableSetupColumn("Icon", ImGuiTableColumnFlags.WidthFixed, 0, 0);
+                    ImGui.TableSetupColumn("图标", ImGuiTableColumnFlags.WidthFixed, 0, 0);
                     ImGui.TableSetupColumn("ID", ImGuiTableColumnFlags.WidthFixed, 0, 1);
-                    ImGui.TableSetupColumn("Name", ImGuiTableColumnFlags.WidthStretch, 0, 2);
+                    ImGui.TableSetupColumn("名字", ImGuiTableColumnFlags.WidthStretch, 0, 2);
                     ImGui.TableSetupColumn("", ImGuiTableColumnFlags.WidthFixed, 0, 3);
 
                     ImGui.TableSetupScrollFreeze(0, 1);
@@ -644,7 +644,7 @@ namespace DelvUI.Interface.StatusEffects
                 }
                 ImGui.Text("\u2002 \u2002");
                 ImGui.SameLine();
-                ImGui.Text("Tip: You can [Ctrl + Alt + Shift] + Left Click on a status effect to automatically add it to the list.");
+                ImGui.Text("提示：你可以[Ctrl + Alt + Shift]+左击状态效果来自动将其添加到列表中。");
 
             }
 
@@ -668,10 +668,10 @@ namespace DelvUI.Interface.StatusEffects
             if (_importString != null)
             {
                 string[] message = new string[] {
-                    "All the elements in the list will be replaced.",
-                    "Are you sure you want to import?"
+                    "列表中的所有元素都将被替换。",
+                    "你确定要导入吗？"
                 };
-                var (didConfirm, didClose) = ImGuiHelper.DrawConfirmationModal("Import?", message);
+                var (didConfirm, didClose) = ImGuiHelper.DrawConfirmationModal("导入？", message);
 
                 if (didConfirm)
                 {
@@ -688,9 +688,9 @@ namespace DelvUI.Interface.StatusEffects
             // clear confirmation
             if (_clearingList)
             {
-                string message = "Are you sure you want to clear the list?";
+                string message = "你确定要清空列表吗？";
 
-                var (didConfirm, didClose) = ImGuiHelper.DrawConfirmationModal("Clear List?", message);
+                var (didConfirm, didClose) = ImGuiHelper.DrawConfirmationModal("清空列表？", message);
 
                 if (didConfirm)
                 {
@@ -728,8 +728,8 @@ namespace DelvUI.Interface.StatusEffects
         }
     }
 
-    [Section("Buffs and Debuffs")]
-    [SubSection("Custom Effects", 0)]
+    [Section("增益效果与减益效果")]
+    [SubSection("自定义效果", 0)]
     public class CustomEffectsListConfig : StatusEffectsListConfig
     {
         public new static CustomEffectsListConfig DefaultConfig()
